@@ -1,0 +1,118 @@
+@import '$lib/styles/reset.css';
+@import '$lib/styles/color.css';
+@import '$lib/styles/type.css';
+
+:root {
+	--main-column: repeat(5, 1fr);
+	--main-column-gap: 2.5rem;
+	--main-row-gap: 1.5rem;
+	--sticky-header-height: 4rem;
+	--sidepanel-top-offset: calc(var(--sticky-header-height) + var(--main-row-gap));
+	--sidepanel-max-height: calc(100vh - var(--sidepanel-top-offset));
+
+	--breakpoint-large: 60rem;
+	--breakpoint-small: 40rem;
+
+	--docs-sans: 'Inter', sans-serif;
+	--docs-header: 'InterDisplay', 'Hubot Sans', Inter, sans-serif;
+	--docs-mono: 'SF Mono', 'Jetbrains Mono', 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono',
+		monospace;
+	--jetbrains-font-setting: 'zero' 1, 'calt' 0;
+	--hubot-font-setting: 'ss01' 1;
+
+	@media (--medium-viewport) {
+		--main-column: repeat(4, 1fr);
+	}
+
+	@media (--small-viewport) {
+		--main-column: repeat(3, 1fr);
+	}
+}
+
+html {
+	color: var(--color-text);
+	font-family: var(--docs-sans);
+}
+
+body {
+	position: relative;
+	margin: 0 auto;
+	max-width: 82rem;
+	background-color: var(--color-bg);
+	padding: 0 1rem;
+	display: grid;
+	grid-template-columns: var(--main-column);
+	grid-column-gap: var(--main-column-gap);
+	grid-row-gap: var(--main-row-gap);
+	@media (--small-viewport) {
+		padding: 0;
+	}
+}
+
+h1 {
+	font-family: var(--docs-header);
+	font-size: 1.5rem;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 1.333333;
+	letter-spacing: -0.02em;
+	user-select: none;
+	color: var(--color-text);
+	scroll-margin-top: calc(var(--sidepanel-top-offset));
+}
+
+h2 {
+	font-family: var(--docs-header);
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 520;
+	line-height: 1.5;
+	user-select: none;
+	color: var(--color-text);
+	scroll-margin-top: var(--sidepanel-top-offset);
+}
+
+h3 {
+	font-family: var(--docs-header);
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 450;
+	line-height: 1.333333;
+	color: var(--color-text);
+	user-select: none;
+	letter-spacing: 0.02em;
+}
+
+li {
+	list-style: none;
+	cursor: auto;
+	user-select: none;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+a,
+a:visited {
+	text-decoration: underline;
+	color: var(--color-text);
+	text-underline-position: from-font;
+	text-underline-thickness: 0.0625rem;
+	text-decoration-color: var(--color-text-tertiary);
+	white-space: nowrap;
+}
+
+a:hover {
+	text-decoration: underline;
+	text-decoration-color: var(--db-color-text-brand);
+	text-underline-thickness: 0.5rem;
+}
