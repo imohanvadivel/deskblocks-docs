@@ -52,9 +52,10 @@
 		overflow: auto;
 		background: var(--color-bg-secondary);
 		position: relative;
+		line-height: 1.7;
 	}
 
-	.copy {
+	/* .copy {
 		position: absolute;
 		top: 0.6rem;
 		right: 0.5rem;
@@ -76,5 +77,5 @@
 	.copy:hover svg path,
 	.copy.copying svg path {
 		fill: var(--color-text);
-	}
+	} */
 </style>

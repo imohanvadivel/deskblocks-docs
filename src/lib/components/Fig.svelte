@@ -5,13 +5,13 @@
 	export let src: string;
 	export let lightSrc: string | undefined = undefined;
 	export let darkSrc: string | undefined = undefined;
-
+	export let noBorder: boolean = false;
 	export let height: string;
 	export let showCaption: boolean = false;
 	export let dynamic: boolean = false;
 </script>
 
-<figure>
+<figure class:noborder={noBorder}>
 	{#if dynamic && $theme === 'light'}
 		<img {height} {alt} src={lightSrc} />
 	{:else if dynamic && $theme === 'dark'}
@@ -35,6 +35,10 @@
 		border: 1px solid var(--color-border);
 		border-radius: 0.25rem;
 		overflow: hidden;
+	}
+
+	figure.noborder {
+		border: 1px solid transparent;
 	}
 
 	img {

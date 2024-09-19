@@ -25,7 +25,7 @@
 	};
 </script>
 
-<section style="background-color: {bgColor[type]}; border: 0.0625rem solid {borderColor[type]}; --info-max-width: {maxWidth}">
+<section class="info" style="background-color: {bgColor[type]}; border: 0.0625rem solid {borderColor[type]}; --info-max-width: {maxWidth}">
 	{#if header}
 		<h3 style="color: {textColor[type]}">{header}</h3>
 	{/if}
@@ -46,7 +46,7 @@
 		border: 1px solid var(--color-border);
 		background-color: var(--color-bg-secondary);
 		font-size: 0.875rem;
-		margin-top: 1rem;
+		/* margin-top: 1rem; */
 		margin-bottom: 1.5rem;
 		color: var(--color-text);
 		max-width: var(--info-max-width);
@@ -55,5 +55,12 @@
 	section :global(ul) {
 		margin-top: 0.5rem;
 		margin-left: 1.25rem;
+	}
+
+	section :global(p) {
+		margin: 0.5rem 0;
+	}
+	section :global(p:last-child) {
+		margin-bottom: unset;
 	}
 </style>

@@ -68,8 +68,10 @@
 
 	article :global(p) {
 		font-size: 0.875rem;
-		margin-bottom: 0.5rem;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
 		max-width: 40rem;
+		letter-spacing: 0.01em;
 	}
 
 	article :global(.example-wrapper),
@@ -103,5 +105,9 @@
 
 	article :global(strong), article :global(b) {
 		font-weight: 550;
+	}
+
+	article :global(.info){
+		max-width: 47rem;
 	}
 </style>
