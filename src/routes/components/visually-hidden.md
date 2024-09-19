@@ -65,7 +65,7 @@ index: 18
 
 ```svelte example hideScript hideToolbar
 <script>
-	import { NumberInput, Icon } from 'deskblocks';
+	import { VisuallyHidden, NumberInput, Icon } from 'deskblocks';
 	import { IconFlag } from 'deskblocks/icons';
 </script>
 

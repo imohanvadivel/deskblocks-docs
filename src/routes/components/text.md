@@ -181,13 +181,6 @@ The `tag` prop doesn't automatically apply font size and weight, but they can be
 </script>
 
 <Text italics>Some text here.</Text>
-
-<style>
-	div {
-		display: flex;
-		flex-direction: column;
-	}
-</style>
 ```
 
 ## Props
