@@ -131,9 +131,9 @@
 		background-color: var(--color-bg-tertiary);
 		/* border: 1px solid var(--color-border); */
 	}
-	a {
+	nav a {
 		font-family: var(--docs-sans);
-		color: inherit;
+		color: var(--color-text-secondary);
 		cursor: inherit;
 		text-decoration: none;
 		display: block;
@@ -144,11 +144,11 @@
 		text-overflow: ellipsis;
 	}
 
-	/* a:visited {
+	nav a:visited {
 		color: var(--color-text-secondary);
-	} */
+	}
 
-	a:focus {
+	nav a:focus {
 		outline: 1px solid var(--color-text);
 		border-radius: 4px;
 	}
