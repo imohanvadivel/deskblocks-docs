@@ -153,6 +153,10 @@
 		border-radius: 4px;
 	}
 
+	nav li.active a{
+		color: var(--color-text);
+	}
+
 	.scrim {
 		position: fixed;
 		top: var(--sticky-header-height);
