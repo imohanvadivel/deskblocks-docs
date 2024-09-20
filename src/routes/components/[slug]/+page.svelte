@@ -24,6 +24,7 @@
 		flex-direction: column;
 		/* row-gap: 1rem; */
 		scroll-behavior: auto;
+		font-family: var(--docs-sans);
 
 		@media (--medium-viewport) {
 			padding-right: 1.25rem;
