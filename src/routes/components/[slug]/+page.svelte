@@ -102,4 +102,8 @@
 		text-decoration-color: var(--db-color-text-brand);
 		text-underline-thickness: 0.5rem;
 	}
+
+	article :global(h1 a), article :global(h1 a:hover), article :global(h2 a), article :global(h2 a:hover), article :global(h3 a) {
+		text-decoration: none;
+	}
 </style>
