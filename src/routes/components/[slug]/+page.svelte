@@ -86,4 +86,20 @@
 		margin-bottom: 0.25rem;
 		list-style: disc;
 	}
+
+	article :global(a),
+	article :global(a:visited) {
+		text-decoration: underline;
+		color: var(--color-text);
+		text-underline-position: from-font;
+		text-underline-thickness: 0.0625rem;
+		text-decoration-color: var(--color-text-tertiary);
+		white-space: nowrap;
+	}
+
+	article :global(a:hover) {
+		text-decoration: underline;
+		text-decoration-color: var(--db-color-text-brand);
+		text-underline-thickness: 0.5rem;
+	}
 </style>

@@ -1,10 +1,10 @@
 <script lang="ts">
-	export let data;	
+	export let data;
 </script>
 
 <svelte:head>
 	<title>{data.title}</title>
-	<meta name="description" content="Guidelines - {data.title}">
+	<meta name="description" content="Guidelines - {data.title}" />
 </svelte:head>
 <article class="main-article">
 	<svelte:component this={data.content} />
@@ -103,11 +103,28 @@
 		max-width: 40rem;
 	}
 
-	article :global(strong), article :global(b) {
+	article :global(strong),
+	article :global(b) {
 		font-weight: 550;
 	}
 
-	article :global(.info){
+	article :global(.info) {
 		max-width: 47rem;
+	}
+
+	article :global(a),
+	article :global(a:visited) {
+		text-decoration: underline;
+		color: var(--color-text);
+		text-underline-position: from-font;
+		text-underline-thickness: 0.0625rem;
+		text-decoration-color: var(--color-text-tertiary);
+		white-space: nowrap;
+	}
+
+	article :global(a:hover) {
+		text-decoration: underline;
+		text-decoration-color: var(--db-color-text-brand);
+		text-underline-thickness: 0.5rem;
 	}
 </style>
