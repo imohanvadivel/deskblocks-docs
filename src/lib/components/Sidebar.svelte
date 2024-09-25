@@ -15,7 +15,7 @@
 	if ($page.route.id === '/') {
 		$currentPage = 'home';
 	} else {
-		$currentPage = $page.params.slug;
+		$currentPage = $page.data.slug;
 	}
 
 	onMount(() => {
@@ -25,8 +25,11 @@
 			// Home page
 			if (value.to.route.id === '/') {
 				$currentPage = 'home';
-			} else if (value.to.params) {
+			} else if (value.to.params && value.to.params.slug) {
 				$currentPage = value.to.params.slug;
+			} else if (value.to.route.id) {
+				let slug = value.to.route.id.replace('/', '');
+				$currentPage = value.to.route.id.replace('/', '');
 			}
 		});
 		return unsubscribe;
@@ -153,7 +156,7 @@
 		border-radius: 4px;
 	}
 
-	nav li.active a{
+	nav li.active a {
 		color: var(--color-text);
 	}
 

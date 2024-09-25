@@ -18,27 +18,29 @@ export function load() {
 		}
 	}
 
-	const home = { title: 'Home', url: '/', slug: 'home', dir: '', description: '' };
+	// const home = { title: 'Home', url: '/', slug: 'home', dir: '', description: '' };
 	const figmaLibrary = {
 		title: 'Figma Library ↗',
 		url: 'https://www.figma.com/community/file/928108847914589057/ui2-figmas-design-system',
 		slug: 'figma-library',
-		dir: 'guidelines',
+		dir: 'primary',
 		description: 'UI2 Figma Library'
 	};
+	const primary = data.filter((item) => item.dir === 'primary');
 	const componentHeader = { header: 'Components' };
 	const components = data.filter((item) => item.dir === 'components');
 	const guidelinesHeader = { header: 'Guidelines' };
 	const guidelines = data.filter((item) => item.dir === 'guidelines');
 
+	primary.sort((a, b) => (a.index || 100) - (b.index || 100));
 	guidelines.sort((a, b) => (a.index || 100) - (b.index || 100));
 	components.sort((a, b) => (a.index || 100) - (b.index || 100));
 
 	const navList: NavData = [
-		home,
+		...primary,
+		figmaLibrary,
 		guidelinesHeader,
 		...guidelines,
-		figmaLibrary,
 		componentHeader,
 		...components
 	];

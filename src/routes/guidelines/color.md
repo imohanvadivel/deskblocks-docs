@@ -99,6 +99,11 @@ The interaction state of an element can be modified using the **hover** and **pr
 <ColorSwatch color="var(--db-color-border-strong)" /> --db-color-text-danger-<b>hover</b>​  
 </Pre>
 
+
+<Fig lightSrc="/assets/banner/sample1_light.png" darkSrc="/assets/banner/sample1_dark.png" height="720" dynamic />
+<Fig lightSrc="/assets/banner/sample2_light.png" darkSrc="/assets/banner/sample2_dark.png" height="720" dynamic />
+
+
 ## Color Tokens
 
 

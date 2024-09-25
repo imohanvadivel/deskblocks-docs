@@ -56,6 +56,8 @@
 		font-size: 1rem;
 		color: var(--color-text-secondary);
 		margin-bottom: 1rem;
+		opacity: 1;
+		line-height: 1.5;
 	}
 
 	article :global(p) {
@@ -64,6 +66,7 @@
 		margin-bottom: 1.5rem;
 		max-width: 40rem;
 		letter-spacing: 0.01em;
+		/* opacity: 0.9; */
 	}
 
 	article :global(.example-wrapper),

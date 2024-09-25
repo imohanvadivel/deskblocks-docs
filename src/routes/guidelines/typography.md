@@ -29,6 +29,11 @@ As a developer, you don’t need to manually manage fonts because Deskblocks han
 <Info type="success">
 
 If you're interested in the inner workings, particularly around typography, you can explore more in the article [Supporting multiple fonts in a design system.](https://mohanvadivel.com/thoughts/working-with-multiple-fonts)
+
+- [Line height](/type-test/line-height.html)
+- [font-weight](/type-test/font-weight.html)
+- [font-weight-size](/type-test/font-weight-size.html)
+
 </Info>
 
 ## Font Stack

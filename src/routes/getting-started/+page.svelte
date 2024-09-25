@@ -3,14 +3,15 @@
 </script>
 
 <svelte:head>
-	<title>Deskblocks</title>
+	<title>{data.title}</title>
+	<meta name="description" content="Guidelines - {data.title}" />
 </svelte:head>
-{#key data}
-	<article class="main-article">
-		<svelte:component this={data.content} />
-		<footer />
-	</article>
-{/key}
+<article class="main-article">
+	<svelte:component this={data.content} />
+	<footer />
+</article>
+
+<!-- <PageContent data={data.headings} /> -->
 
 <style>
 	article {
@@ -77,6 +78,11 @@
 		/* opacity: 0.9; */
 	}
 
+
+	article :global(li p) {
+		margin: unset;
+	}
+
 	article :global(.example-wrapper),
 	article :global(.table-wrapper) {
 		margin: 0.5rem 0;
@@ -101,19 +107,17 @@
 		max-width: 40rem;
 	}
 
-	article :global(pre.language-bash) {
+	article :global(pre.language-bash),
+	article :global(pre.language-html) {
 		max-width: 47rem;
 		border: 1px solid var(--color-border);
 		border-radius: 6px;
-		margin: 1.5rem 0;
+		margin: 1rem 0;
 	}
 
-	article :global(p + pre.language-bash) {
+	article :global(p + pre.language-bash),
+	article :global(p + pre.language-html) {
 		margin-top: 0;
-	}
-
-	article :global(.example-wrapper) {
-		max-width: 47rem;
 	}
 
 	article :global(strong),
@@ -122,6 +126,7 @@
 	}
 
 	article :global(section.info) {
+		margin-top: 1rem;
 		max-width: 47rem;
 	}
 

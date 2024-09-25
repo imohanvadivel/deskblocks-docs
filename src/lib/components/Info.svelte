@@ -25,7 +25,12 @@
 	};
 </script>
 
-<section class="info" style="background-color: {bgColor[type]}; border: 0.0625rem solid {borderColor[type]}; --info-max-width: {maxWidth}">
+<section
+	class="info"
+	style="background-color: {bgColor[type]}; border: 0.0625rem solid {borderColor[
+		type
+	]}; --info-max-width: {maxWidth}"
+>
 	{#if header}
 		<h3 style="color: {textColor[type]}">{header}</h3>
 	{/if}
@@ -35,10 +40,11 @@
 </section>
 
 <style>
-	h3 {
+	section h3 {
 		font-weight: 500;
-		margin-bottom: 0.5rem;
+		margin: 0 0 0.5rem 0;
 		color: var(--color-text);
+		font-size: 0.875rem;
 	}
 	section {
 		padding: 1rem 1.25rem 1rem 1.25rem;

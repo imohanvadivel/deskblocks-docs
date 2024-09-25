@@ -65,7 +65,7 @@
 
 		<!-- GitHub Icon -->
 		<a
-			href="https://github.com/imohanvadivel/figblocks"
+			href="https://github.com/imohanvadivel/deskblocks"
 			class="icon-container"
 			target="_blank"
 			aria-label="View on GitHub"

@@ -62,6 +62,8 @@
 		color: var(--color-text-secondary);
 		margin-bottom: 1rem;
 		max-width: 47rem;
+		opacity: 1;
+		line-height: 1.5;
 	}
 	article :global(.table-wrapper + p) {
 		margin-top: 1rem;
@@ -73,6 +75,7 @@
 		margin-bottom: 1.5rem;
 		max-width: 40rem;
 		letter-spacing: 0.01em;
+		/* opacity: 0.9; */
 	}
 
 	article :global(.example-wrapper),
