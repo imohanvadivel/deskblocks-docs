@@ -17,7 +17,7 @@ index: 1
 
 Deskblocks is an open-source UI component library designed to help you build Zoho Desk extensions with Svelte.
 
-<Fig src="/assets/banner/deskblocks.png" noBorder />
+<Fig src="/assets/banner/deskblocks.png" noBorder height="450" />
 
 ## Features
 

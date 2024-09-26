@@ -158,21 +158,3 @@
 	font-display: swap;
 	src: url('/font/jetbrainsMono/JetBrainsMono-Italic.woff2') format('woff2');
 }
-
-/* Hubot Sans */
-@font-face {
-	font-family: 'Hubot Sans';
-	src: url('/font/hubotSans/HubotSans.woff2') format('woff2');
-	font-weight: 200 900;
-	font-stretch: 75% 125%;
-	font-display: swap;
-}
-
-/* Mono Sans */
-@font-face {
-	font-family: 'Mona Sans';
-	src: url('/font/monoSans/MonaSans.woff2') format('woff2');
-	font-weight: 200 900;
-	font-stretch: 75% 125%;
-	font-display: swap;
-}
