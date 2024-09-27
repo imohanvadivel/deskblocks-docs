@@ -1,37 +1,35 @@
 import { files, version } from '$service-worker';
 
 let CACHE = `static-assets-${version}`;
-// let staticAssets = [
-// 	// Primary
-// 	'/assets/banner/deskblocks.png',
+let ASSETS = [
+	// Primary
+	'/assets/banner/deskblocks.png',
 
-// 	// Fonts
-// 	'/font/inter/InterVariable.woff2',
-// 	'/font/inter/InterDisplay-SemiBold.woff2',
-// 	'/font/inter/InterDisplay-Medium.woff2',
-// 	'/font/jetbrainsMono/JetBrainsMono.woff2',
-// 	'https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.woff2',
-// 	'https://mohanvadivel.com/fonts/lato/Lato3Upr3M-VF.woff2',
-// 	'https://fonts.gstatic.com/s/robotoflex/v26/NaOkcZLOBv5T3oB7Cb4i0xG2bBVmtU5Wc7yZcSAEzvBPG65coVt_c4_0HvwJZVPEHzgCEJvQGxsTfsDHFHTjLI7UisR7Ia1RC-BFnA9CgfI_oYDZPRtZvE52xXPNiPcIDbAHhgb_dHlhvhaLUdDTQMDmMEIFXN5NVhgiWKq17lw.woff2',
+	// Fonts
+	'/font/inter/InterVariable.woff2',
+	'/font/inter/InterDisplay-SemiBold.woff2',
+	'/font/inter/InterDisplay-Medium.woff2',
+	'/font/jetbrainsMono/JetBrainsMono.woff2',
+	'https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.woff2',
+	'https://mohanvadivel.com/fonts/lato/Lato3Upr3M-VF.woff2',
+	'https://fonts.gstatic.com/s/robotoflex/v26/NaOkcZLOBv5T3oB7Cb4i0xG2bBVmtU5Wc7yZcSAEzvBPG65coVt_c4_0HvwJZVPEHzgCEJvQGxsTfsDHFHTjLI7UisR7Ia1RC-BFnA9CgfI_oYDZPRtZvE52xXPNiPcIDbAHhgb_dHlhvhaLUdDTQMDmMEIFXN5NVhgiWKq17lw.woff2',
 
-// 	// Images
-// 	'/assets/banner/principia.jpg',
-// 	'/assets/banner/icon_light.png',
-// 	'/assets/banner/icon_dark.png',
-// 	'/assets/banner/type_light.png',
-// 	'/assets/banner/type_dark.png',
-// 	'/assets/banner/color_light.png',
-// 	'/assets/banner/color_dark.png',
-// 	'/assets/banner/sample1_light.png',
-// 	'/assets/banner/sample1_dark.png',
-// 	'/assets/banner/sample2_light.png',
-// 	'/assets/banner/sample2_dark.png',
+	// Images
+	'/assets/banner/principia.jpg',
+	'/assets/banner/icon_light.png',
+	'/assets/banner/icon_dark.png',
+	'/assets/banner/type_light.png',
+	'/assets/banner/type_dark.png',
+	'/assets/banner/color_light.png',
+	'/assets/banner/color_dark.png',
+	'/assets/banner/sample1_light.png',
+	'/assets/banner/sample1_dark.png',
+	'/assets/banner/sample2_light.png',
+	'/assets/banner/sample2_dark.png',
 
-// 	// HTML
-// 	'/offline.html'
-// ];
+];
 
-let ASSETS = [...files];
+// let ASSETS = [...files];
 
 // Install the service worker and cache all the static assets
 self.addEventListener('install', (event) => {
@@ -49,7 +47,7 @@ self.addEventListener('activate', (event) => {
 	// Remove previous cached data from disk
 	async function deleteOldCaches() {
 		for (const key of await caches.keys()) {
-			
+
 			if (key !== CACHE) {
 				console.log('Deleting old caches: ', key);
 				await caches.delete(key);
