@@ -49,11 +49,16 @@ self.addEventListener('activate', (event) => {
 	// Remove previous cached data from disk
 	async function deleteOldCaches() {
 		for (const key of await caches.keys()) {
-			if (key !== CACHE) await caches.delete(key);
+			
+			if (key !== CACHE) {
+				console.log('Deleting old caches: ', key);
+				await caches.delete(key);
+			}
 		}
 	}
 
 	event.waitUntil(deleteOldCaches());
+	console.log('Service Worker activated');
 });
 
 // Fetch the static assets from the cache
@@ -99,6 +104,8 @@ self.addEventListener('fetch', (event) => {
 
 			return response;
 		} catch (err) {
+			console.log(err);
+
 			const response = await cache.match(event.request);
 
 			if (response) {
