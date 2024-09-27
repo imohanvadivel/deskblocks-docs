@@ -72,7 +72,7 @@ self.addEventListener('fetch', (event) => {
 		// If the request is not a navigation request, return the cached assets
 		event.respondWith(
 			caches.match(event.request).then((response) => {
-				return response || fetch(event.request);
+				return response || fetch(event.request).catch(err => console.log(err));
 			})
 		);
 	}
