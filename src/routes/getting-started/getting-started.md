@@ -16,7 +16,7 @@ index: 2
 
 ## Prerequisites
 
-- Ensure that [Node.js](https://nodejs.org/en) and npm are installed on your system.
+- Ensure that [Node.js](https://nodejs.org/en) (18 or above) and npm are installed on your system.
 - **Recommended IDE:** Use [VS Code](https://code.visualstudio.com/) along with the [Svelte extension](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
 - You will need a [Zoho Desk](https://zoho.com/desk) account to test your extension and a [Sigma](https://sigma.zoho.com) account to publish it on the [Zoho Marketplace](https://marketplace.zoho.com/).
 

@@ -105,6 +105,7 @@
 		margin-bottom: 0.25rem;
 		list-style: disc;
 		max-width: 40rem;
+		line-height: 1.7;
 	}
 
 	article :global(pre.language-bash),
