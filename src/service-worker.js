@@ -102,7 +102,7 @@ self.addEventListener('fetch', (event) => {
 
 			return response;
 		} catch (err) {
-			console.log(err);
+			console.log(err, event.request);
 
 			const response = await cache.match(event.request);
 
