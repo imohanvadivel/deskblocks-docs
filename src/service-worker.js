@@ -1,34 +1,43 @@
-import { files, version, build } from '$service-worker';
+// import { files, version, build } from '$service-worker';
 
-let CACHE = `static-assets-${version}`;
-// let ASSETS = [
-// 	// Primary
-// 	'/assets/banner/deskblocks.png',
-
-// 	// Fonts
-// 	'/font/inter/InterVariable.woff2',
-// 	'/font/inter/InterDisplay-SemiBold.woff2',
-// 	'/font/inter/InterDisplay-Medium.woff2',
-// 	'/font/jetbrainsMono/JetBrainsMono.woff2',
-// 	'https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.woff2',
-// 	'https://mohanvadivel.com/fonts/lato/Lato3Upr3M-VF.woff2',
-// 	'https://fonts.gstatic.com/s/robotoflex/v26/NaOkcZLOBv5T3oB7Cb4i0xG2bBVmtU5Wc7yZcSAEzvBPG65coVt_c4_0HvwJZVPEHzgCEJvQGxsTfsDHFHTjLI7UisR7Ia1RC-BFnA9CgfI_oYDZPRtZvE52xXPNiPcIDbAHhgb_dHlhvhaLUdDTQMDmMEIFXN5NVhgiWKq17lw.woff2',
-
-// 	// Images
-// 	'/assets/banner/principia.jpg',
-// 	'/assets/banner/icon_light.png',
-// 	'/assets/banner/icon_dark.png',
-// 	'/assets/banner/type_light.png',
-// 	'/assets/banner/type_dark.png',
-// 	'/assets/banner/color_light.png',
-// 	'/assets/banner/color_dark.png',
-// 	'/assets/banner/sample1_light.png',
-// 	'/assets/banner/sample1_dark.png',
-// 	'/assets/banner/sample2_light.png',
-// 	'/assets/banner/sample2_dark.png',
-// ];
+let CACHE = `static-assets-v1`;
 let OFFLINE_URL = '/offline';
-let ASSETS = [...files, ...build];
+
+let ASSETS = [
+	// Primary
+	'/',
+	'/assets/banner/deskblocks.png',
+	'/getting-started',
+	'/design-principles',
+	'/color',
+	'/typography',
+	'/icons',
+	'/other-tokens',
+	'/offline',
+
+	// Fonts
+	'/font/inter/InterVariable.woff2',
+	'/font/inter/InterDisplay-SemiBold.woff2',
+	'/font/inter/InterDisplay-Medium.woff2',
+	'/font/jetbrainsMono/JetBrainsMono.woff2',
+	'https://static.zohocdn.com/zohofonts/zohopuvi/4.0/Zoho_Puvi_Regular.woff2',
+	'https://mohanvadivel.com/fonts/lato/Lato3Upr3M-VF.woff2',
+	'https://fonts.gstatic.com/s/robotoflex/v26/NaOkcZLOBv5T3oB7Cb4i0xG2bBVmtU5Wc7yZcSAEzvBPG65coVt_c4_0HvwJZVPEHzgCEJvQGxsTfsDHFHTjLI7UisR7Ia1RC-BFnA9CgfI_oYDZPRtZvE52xXPNiPcIDbAHhgb_dHlhvhaLUdDTQMDmMEIFXN5NVhgiWKq17lw.woff2',
+
+	// Images
+	'/assets/banner/principia.jpg',
+	'/assets/banner/icon_light.png',
+	'/assets/banner/icon_dark.png',
+	'/assets/banner/type_light.png',
+	'/assets/banner/type_dark.png',
+	'/assets/banner/color_light.png',
+	'/assets/banner/color_dark.png',
+	'/assets/banner/sample1_light.png',
+	'/assets/banner/sample1_dark.png',
+	'/assets/banner/sample2_light.png',
+	'/assets/banner/sample2_dark.png'
+];
+// let ASSETS = [...files, ...build];
 
 // Install the service worker and cache all the static assets
 self.addEventListener('install', (event) => {
