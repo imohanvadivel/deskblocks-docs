@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Code from '$lib/customComponent/code.svelte';
-	import { theme, toastMessage } from '$lib/store';
+	import { libStore, toastMessage } from '$lib/store';
 	import colorData from '$lib/utils/colorData.json';
 	import ColorSwatch from './ColorSwatch.svelte';
 
@@ -16,8 +16,8 @@
 	export let darkColors: string[][];
 	let colorTokens: string[][];
 
-	theme.subscribe((value) => {
-		colorTokens = value === 'light' ? lightColors : darkColors;
+	libStore.subscribe((value) => {
+		colorTokens = value.appearance === 'light' ? lightColors : darkColors;
 	});
 </script>
 
@@ -37,26 +37,25 @@
 		<tbody>
 			{#each colorTokens as data, i}
 				<tr>
-					<td class="variable-name" on:click={() => handleClick(data[0], 'token')}><Code>{data[0]}</Code></td>
+					<td class="variable-name" on:click={() => handleClick(data[0], 'token')}
+						><Code>{data[0]}</Code></td
+					>
 
 					{#each [1, 2, 3, 4, 5] as index}
 						<td class="hex-cnt" on:click={() => handleClick(data[index])}>
 							<div class="right-part">
-								<ColorSwatch color={data[index]} size="medium"/>
+								<ColorSwatch color={data[index]} size="medium" />
 								<span>{data[index]}</span>
 							</div>
 						</td>
 					{/each}
 				</tr>
-			
 			{/each}
 		</tbody>
 	</table>
 </div>
 
 <style>
-
-
 	.right-part {
 		display: flex;
 		align-items: center;
@@ -74,7 +73,7 @@
 		font-weight: 400;
 	}
 
-	.variable-name{
+	.variable-name {
 		min-width: 21.375rem;
 	}
 	td {

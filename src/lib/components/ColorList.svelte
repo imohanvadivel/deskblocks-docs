@@ -2,7 +2,7 @@
 	import colorData from '$lib/utils/colorData.json';
 	import ColorTable from './ColorTable.svelte';
 	import { Radio, RadioGroup } from 'deskblocks';
-	import { theme } from '$lib/store';
+	import { libStore } from '$lib/store';
 
 	let lightIcon = colorData.light.icon;
 	let darkIcon = colorData.dark.icon;
@@ -13,13 +13,13 @@
 	let lightText = colorData.light.text;
 	let darkText = colorData.dark.text;
 
-	let docsTheme = $theme;
+	let docsTheme = $libStore.appearance;
 
-	theme.subscribe((value) => (docsTheme = value));
+	libStore.subscribe((value) => (docsTheme = value.appearance));
 
 	function handleThemeChange(ev: any) {
 		const newTheme = ev.target.value;
-		if (newTheme !== $theme) theme.toggle();
+		if (newTheme !== $libStore.appearance) libStore.toggleAppearance();
 	}
 </script>
 

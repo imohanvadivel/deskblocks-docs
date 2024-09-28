@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { drawer, libStore, theme } from '$lib/store.js';
+	import { drawer, libStore } from '$lib/store.js';
 	import DarkmodeIcon from '$lib/icons/Darkmode.svg';
 	import GitHubIcon from '$lib/icons/Github.svg';
 	import MenuIcon from '$lib/icons/Menu.svg';
@@ -36,12 +36,12 @@
 			{@html SearchIcon}
 		</button> -->
 
-			<!-- DarkMode Icon -->
-			<button
+		<!-- DarkMode Icon -->
+		<button
 			use:tooltip={`Toggle Darkmode`}
 			aria-label="dark mode"
 			type="button"
-			on:click={theme.toggle}
+			on:click={libStore.toggleAppearance}
 			class="icon-container"
 		>
 			<span class="sr-only">Toggle Darkmode</span>
@@ -61,8 +61,6 @@
 			</select>
 		</div>
 
-	
-
 		<!-- GitHub Icon -->
 		<a
 			href="https://github.com/imohanvadivel/deskblocks"
@@ -78,7 +76,7 @@
 </header>
 
 <style>
-	.theme-container{
+	.theme-container {
 		display: flex;
 		align-items: center;
 		column-gap: 0.5rem;
@@ -90,8 +88,7 @@
 		padding: 0 0.5rem;
 		font-size: 0.875rem;
 	}
-	.theme-container:hover{
-
+	.theme-container:hover {
 		background-color: var(--color-bg-secondary);
 	}
 	header {

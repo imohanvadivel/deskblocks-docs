@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { theme } from '$lib/store';
+	import { libStore } from '$lib/store';
 
 	export let alt: string;
 	export let src: string;
@@ -12,9 +12,9 @@
 </script>
 
 <figure class:noborder={noBorder}>
-	{#if dynamic && $theme === 'light'}
+	{#if dynamic && $libStore.appearance === 'light'}
 		<img {height} {alt} src={lightSrc} />
-	{:else if dynamic && $theme === 'dark'}
+	{:else if dynamic && $libStore.appearance === 'dark'}
 		<img {height} {alt} src={darkSrc} />
 	{:else}
 		<img {height} {alt} {src} />

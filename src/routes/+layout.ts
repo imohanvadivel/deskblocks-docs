@@ -6,6 +6,9 @@ export function load() {
 	// Import all the markdown files
 	const files = import.meta.glob('/src/routes/**/*.md', { eager: true });
 
+	// const markdownFiles = Object.keys(files).map(path => path.replace('/src/routes', ''));
+	// console.log(markdownFiles);
+	
 	type File = {
 		metadata: Meta;
 	};
@@ -48,4 +51,3 @@ export function load() {
 	return { navList };
 }
 
-// export const ssr = false;

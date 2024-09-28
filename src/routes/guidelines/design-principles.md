@@ -20,7 +20,7 @@ These principles form the foundation for creating experiences, guiding designers
 
 ---
 
-<Fig src="/assets/banner/_principia.jpg" height="720" />
+<Fig src="/assets/banner/principia.jpg" height="720" />
 
 ## Prioritize user experience
 
