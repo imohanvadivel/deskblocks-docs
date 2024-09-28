@@ -1,19 +1,11 @@
 // import { files, version, build } from '$service-worker';
 
-let CACHE = `static-assets-v1`;
+let CACHE = `static-assets-v2`;
 let OFFLINE_URL = '/offline';
 
 let ASSETS = [
 	// Primary
-	'/',
 	'/assets/banner/deskblocks.png',
-	'/getting-started',
-	'/design-principles',
-	'/color',
-	'/typography',
-	'/icons',
-	'/other-tokens',
-	'/offline',
 
 	// Fonts
 	'/font/inter/InterVariable.woff2',
@@ -45,7 +37,12 @@ self.addEventListener('install', (event) => {
 		const cache = await caches.open(CACHE);
 
 		console.log('Caching assets:', ASSETS);
-		await cache.addAll(ASSETS).catch((err) => console.error(err));
+		try {
+			await cache.addAll(ASSETS);
+		} catch (err) {
+			console.log('failed to cache some assets');
+			console.log(err);
+		}
 	}
 
 	event.waitUntil(addFilesToCache());
