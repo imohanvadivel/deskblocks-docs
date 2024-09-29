@@ -71,11 +71,8 @@ self.addEventListener('activate', (event) => {
 // Fetch the static assets from the cache
 self.addEventListener('fetch', (event) => {
 	// ignore POST requests etc
-	if (event.request.method !== 'GET') return;
-
-	// Exclude requests with 'chrome-extension' scheme
-	if (event.request.url.startsWith('chrome-extension')) {
-		return; // Ignore these requests
+	if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension')) {
+		return; // Ignore non-GET requests and chrome-extension requests
 	}
 
 	async function respond() {
