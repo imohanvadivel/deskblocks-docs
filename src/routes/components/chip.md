@@ -4,7 +4,7 @@ dir: components
 description: A chip displays a compact element, often representing an entity, tag, or a piece of information.
 slug: chip
 url: /components/chip
-index: 10
+index: 13
 ---
 
 <script>
@@ -56,7 +56,7 @@ To make a chip dismissible, pass the `dismissible` prop. Once enabled, the chip 
 </Chip>
 ```
 
-## Chip with Avatar
+## Chip with avatar
 
 <!-- A chip can include an avatar by passing the [Avatar component](/components/avatar) into the `icon` slot. -->
 
@@ -67,6 +67,22 @@ To make a chip dismissible, pass the `dismissible` prop. Once enabled, the chip 
 
 <Chip>
 	<Avatar slot="icon" size={20} src="/assets/avatar/pic3.jpg" /> Jenny
+</Chip>
+```
+
+## Disabled state
+
+<!-- A chip can include an avatar by passing the [Avatar component](/components/avatar) into the `icon` slot. -->
+
+```svelte example
+<script>
+	import { Chip, Icon } from 'deskblocks';
+	import { IconSkills } from 'deskblocks/icons';
+</script>
+
+<Chip disabled>Languages</Chip>
+<Chip disabled>
+	<Icon slot="icon" icon={IconSkills} /> Language
 </Chip>
 ```
 

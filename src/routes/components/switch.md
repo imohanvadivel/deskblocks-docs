@@ -4,7 +4,7 @@ dir: components
 description: A switch toggles between two states, often used to enable or disable settings or features.
 slug: switch
 url: /components/switch
-index: 9
+index: 12
 ---
 
 <script>

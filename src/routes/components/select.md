@@ -4,7 +4,7 @@ dir: components
 description: A select dropdowns allow users to pick a single choice from a predefined list.
 slug: select
 url: /components/select
-index: 8
+index: 11
 ---
 
 # Select
@@ -106,7 +106,7 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 
 ```svelte example hideStyle
 <script>
-	import { Select, FormErrorMessage } from 'deskblocks';
+	import { Select, FormHelpMessage } from 'deskblocks';
 </script>
 
 <div>
@@ -115,9 +115,9 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 		<option value="option2">Option 2</option>
 	</Select>
 
-	<FormErrorMessage>
+	<FormHelpMessage invalid>
 		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormErrorMessage>
+	</FormHelpMessage>
 </div>
 
 <style>

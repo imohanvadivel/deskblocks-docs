@@ -4,7 +4,7 @@ dir: components
 description: The type component defines the typography styles for text elements, ensuring consistent and readable text throughout the interface.
 slug: text
 url: /components/text
-index: 12
+index: 15
 ---
 
 <script>

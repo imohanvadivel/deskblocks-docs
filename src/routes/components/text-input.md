@@ -107,14 +107,14 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 
 ```svelte example hideStyle
 <script>
-	import { TextInput, FormErrorMessage } from 'deskblocks';
+	import { TextInput, FormHelpMessage } from 'deskblocks';
 </script>
 
 <div>
 	<TextInput invalid value={42} />
-	<FormErrorMessage>
+	<FormHelpMessage invalid>
 		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormErrorMessage>
+	</FormHelpMessage>
 </div>
 
 <style>

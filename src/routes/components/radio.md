@@ -4,7 +4,7 @@ dir: components
 description: A radio button lets users select a single option from a set, ensuring that only one choice is possible.
 slug: radio
 url: /components/radio
-index: 7
+index: 10
 ---
 
 <script>

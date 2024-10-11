@@ -4,7 +4,7 @@ dir: components
 description: A tooltip displays a brief, informative message when users hover over or focus on an element, providing additional context or guidance.
 slug: tooltip
 url: /components/tooltip
-index: 16
+index: 19
 ---
 
 <script>

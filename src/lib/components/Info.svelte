@@ -42,12 +42,12 @@
 <style>
 	section h3 {
 		font-weight: 500;
-		margin: 0 0 0.5rem 0;
+		margin: 0 0 .75rem 0;
 		color: var(--color-text);
 		font-size: 0.875rem;
 	}
 	section {
-		padding: 1rem 1.25rem 1rem 1.25rem;
+		padding: 1.25rem 1.25rem .75rem 1.25rem;
 		border-radius: 4px;
 		border: 1px solid var(--color-border);
 		background-color: var(--color-bg-secondary);

@@ -106,14 +106,14 @@ To display a help message, use the `FormHelpMessage` component. -->
 
 ```svelte example hideStyle
 <script>
-	import { NumberInput, FormErrorMessage } from 'deskblocks';
+	import { NumberInput, FormHelpMessage } from 'deskblocks';
 </script>
 
 <div>
 	<NumberInput invalid value={42} />
-	<FormErrorMessage>
+	<FormHelpMessage invalid>
 		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormErrorMessage>
+	</FormHelpMessage>
 </div>
 
 <style>

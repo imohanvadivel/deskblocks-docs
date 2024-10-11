@@ -4,7 +4,7 @@ dir: components
 description: A link navigates users to another page or resource.
 slug: link
 url: /components/link
-index: 13
+index: 16
 ---
 
 <script>

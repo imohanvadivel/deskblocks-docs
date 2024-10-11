@@ -4,7 +4,7 @@ dir: components
 description: An icon is a small graphical element that represents actions, objects, or concepts, adding visual clarity to interface.
 slug: icon
 url: /components/icon
-index: 11
+index: 14
 ---
 
 <script>

@@ -4,7 +4,7 @@ dir: components
 description: A checkbox allows users to select one or multiple options from a set.
 slug: checkbox
 url: /components/checkbox
-index: 6
+index: 9
 ---
 
 <script>

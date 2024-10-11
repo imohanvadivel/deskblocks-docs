@@ -7,7 +7,7 @@
 
 <svelte:head>
 	<title>{data.title}</title>
-	<meta name="description" content="Component - {data.title} : {data.description}">
+	<meta name="description" content="Component - {data.title} : {data.description}" />
 </svelte:head>
 {#key data}
 	<article use:observer class="main-article">
@@ -85,10 +85,28 @@
 		margin-top: 0.5rem;
 	}
 
+	article :global(ul) {
+		margin-bottom: 0.5rem;
+	}
+
 	article :global(li) {
 		font-size: 0.875rem;
 		margin-bottom: 0.25rem;
 		list-style: disc;
+	}
+
+	article :global(p + div .example-wrapper) {
+		margin-top: 0;
+	}
+
+	article :global(strong),
+	article :global(b) {
+		font-weight: 550;
+	}
+
+	article :global(section.info) {
+		margin-top: 1rem;
+		max-width: 47rem;
 	}
 
 	article :global(a),
@@ -107,7 +125,11 @@
 		text-underline-thickness: 0.5rem;
 	}
 
-	article :global(h1 a), article :global(h1 a:hover), article :global(h2 a), article :global(h2 a:hover), article :global(h3 a) {
+	article :global(h1 a),
+	article :global(h1 a:hover),
+	article :global(h2 a),
+	article :global(h2 a:hover),
+	article :global(h3 a) {
 		text-decoration: none;
 	}
 </style>
