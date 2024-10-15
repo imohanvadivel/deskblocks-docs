@@ -76,19 +76,17 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 
 ## Help message
 
-<!--
-To display a help message, use the `FormHelpMessage` component. -->
-
 ```svelte example hideStyle
 <script>
-	import { NumberInput, FormHelpMessage } from 'deskblocks';
+	import { NumberInput } from 'deskblocks';
 </script>
 
 <div>
-	<NumberInput value={42} />
-	<FormHelpMessage>
-		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormHelpMessage>
+	<NumberInput value={42}>
+		<span slot="help-msg">
+			Answer to the Ultimate Question of Life, the Universe, and Everything
+		</span>
+	</NumberInput>
 </div>
 
 <style>
@@ -100,20 +98,17 @@ To display a help message, use the `FormHelpMessage` component. -->
 
 ## Invalid state
 
-<!--
-- To indicate that the input field is invalid, pass the `invalid` prop to the input.
-- Use the `FormErrorMessage` component to display the corresponding error message. -->
-
 ```svelte example hideStyle
 <script>
-	import { NumberInput, FormHelpMessage } from 'deskblocks';
+	import { NumberInput } from 'deskblocks';
 </script>
 
 <div>
-	<NumberInput invalid value={42} />
-	<FormHelpMessage invalid>
-		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormHelpMessage>
+	<NumberInput invalid value={42}>
+		<span slot="error-msg">
+			Answer to the Ultimate Question of Life, the Universe, and Everything
+		</span>
+	</NumberInput>
 </div>
 
 <style>

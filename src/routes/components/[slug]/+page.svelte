@@ -69,6 +69,11 @@
 		/* opacity: 0.9; */
 	}
 
+	article :global(li) {
+		max-width: 40rem;
+		line-height: 1.7;
+	}
+
 	article :global(.example-wrapper),
 	article :global(.table-wrapper) {
 		margin: 0.5rem 0;
@@ -131,5 +136,16 @@
 	article :global(h2 a:hover),
 	article :global(h3 a) {
 		text-decoration: none;
+	}
+
+	article :global(pre.language-ts) {
+		max-width: 47rem;
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		margin: 1rem 0;
+	}
+
+	article :global(p + pre.language-ts) {
+		margin-top: 0;
 	}
 </style>

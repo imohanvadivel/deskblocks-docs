@@ -72,19 +72,17 @@ Pass the [Icon component](/components/icon) within the `left` to render it on th
 
 ## Help message
 
-<!--
-To display a help message, use the `FormHelpMessage` component. -->
-
 ```svelte example hideStyle
 <script>
-	import { DateTimeInput, FormHelpMessage } from 'deskblocks';
+	import { DateTimeInput } from 'deskblocks';
 </script>
 
 <div>
-	<DateTimeInput value="2024-09-13T13:00" />
-	<FormHelpMessage>
-		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormHelpMessage>
+	<DateTimeInput value="2024-09-13T13:00">
+		<span slot="help-msg">
+			Answer to the Ultimate Question of Life, the Universe, and Everything
+		</span>
+	</DateTimeInput>
 </div>
 
 <style>
@@ -96,20 +94,17 @@ To display a help message, use the `FormHelpMessage` component. -->
 
 ## Invalid state
 
-<!--
-- To indicate that the input field is invalid, pass the `invalid` prop to the input.
-- Use the `FormErrorMessage` component to display the corresponding error message. -->
-
 ```svelte example hideStyle
 <script>
-	import { DateTimeInput, FormHelpMessage } from 'deskblocks';
+	import { DateTimeInput } from 'deskblocks';
 </script>
 
 <div>
-	<DateTimeInput invalid value="2024-09-13T13:00" />
-	<FormHelpMessage invalid>
-		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormHelpMessage>
+	<DateTimeInput invalid value="2024-09-13T13:00">
+		<span slot="error-msg">
+			Answer to the Ultimate Question of Life, the Universe, and Everything
+		</span>
+	</DateTimeInput>
 </div>
 
 <style>

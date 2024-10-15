@@ -30,8 +30,10 @@
 }
 
 html {
-	color: var(--color-text);
-	font-family: var(--docs-sans);
+	color: var(--color-text) !important;
+	background-color: var(--color-bg) !important;
+	font-family: var(--docs-sans) !important;
+	color: var(--color-text) !important;
 }
 
 body {

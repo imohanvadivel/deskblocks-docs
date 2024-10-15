@@ -83,14 +83,15 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 
 ```svelte example hideStyle
 <script>
-	import { TextInput, FormHelpMessage } from 'deskblocks';
+	import { TextInput } from 'deskblocks';
 </script>
 
 <div>
-	<TextInput value={42} />
-	<FormHelpMessage>
-		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormHelpMessage>
+	<TextInput value={42}>
+		<span slot="help-msg">
+			Answer to the Ultimate Question of Life, the Universe, and Everything
+		</span>
+	</TextInput>
 </div>
 
 <style>
@@ -107,14 +108,15 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 
 ```svelte example hideStyle
 <script>
-	import { TextInput, FormHelpMessage } from 'deskblocks';
+	import { TextInput } from 'deskblocks';
 </script>
 
 <div>
-	<TextInput invalid value={42} />
-	<FormHelpMessage invalid>
-		Answer to the Ultimate Question of Life, the Universe, and Everything
-	</FormHelpMessage>
+	<TextInput invalid value={42}>
+		<span slot="error-msg">
+			Answer to the Ultimate Question of Life, the Universe, and Everything
+		</span>
+	</TextInput>
 </div>
 
 <style>

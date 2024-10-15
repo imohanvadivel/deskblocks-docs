@@ -27,19 +27,18 @@ index: 8
 
 ## Help message
 
-<!-- To display a help message, use the `FormHelpMessage` component. -->
-
 ```svelte example hideStyle hideScript
 <script>
-	import { Textarea, FormHelpMessage } from 'deskblocks';
+	import { Textarea } from 'deskblocks';
 	const message = `If, in your thinking, you rely entirely on others—often through purchase of professional advice—whenever outside a small territory of your own, you will suffer much calamity.`;
 </script>
 
 <div>
-	<Textarea value={message} />
-	<FormHelpMessage>
-		Above all, never fool yourself, and remember that you are the easiest person to fool.
-	</FormHelpMessage>
+	<Textarea value={message}>
+		<span slot="help-msg">
+			Above all, never fool yourself, and remember that you are the easiest person to fool.
+		</span>
+	</Textarea>
 </div>
 
 <style>
