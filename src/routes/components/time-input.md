@@ -55,7 +55,7 @@ Pass the [Icon component](/components/icon) within the `left` slot to render it 
 </script>
 
 <TimeInput value="21:00">
-	<Icon slot="left" icon={IconActivity} />
+	<Icon slot="left-icon" icon={IconActivity} />
 </TimeInput>
 ```
 
@@ -153,8 +153,7 @@ Specifies the increment step in seconds.
 
 ## Slots
 
-- `left`
-- `right`
+- `left-icon`
 
 ## Events
 

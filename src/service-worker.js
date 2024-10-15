@@ -1,6 +1,6 @@
 // import { files, version, build } from '$service-worker';
 
-let CACHE = `static-assets-v4`;
+let CACHE = `static-assets-v5`;
 let OFFLINE_URL = '/offline';
 
 let ASSETS = [

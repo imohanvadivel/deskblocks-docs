@@ -55,7 +55,7 @@ Pass the [Icon component](/components/icon) within the `left` slot to render it 
 </script>
 
 <DateInput value="2024-12-13">
-	<Icon slot="left" icon={IconActivity} />
+	<Icon slot="left-icon" icon={IconActivity} />
 </DateInput>
 ```
 
@@ -159,7 +159,7 @@ Specifies the increment step in days.
 
 ## Slots
 
-- `icon`
+- `left-icon`
 
 ## Events
 

@@ -46,6 +46,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"deskblocks": "^0.1.0"
+		"deskblocks": "^0.1.2"
 	}
 }

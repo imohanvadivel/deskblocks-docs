@@ -65,12 +65,12 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 
 <!-- Left Icon -->
 <NumberInput value={15}>
-	<Icon slot="left" icon={IconActivity} />
+	<Icon slot="left-icon" icon={IconActivity} />
 </NumberInput>
 
 <!-- Right Icon -->
 <NumberInput value={15}>
-	<Icon slot="right" icon={IconActivity} />
+	<Icon slot="right-icon" icon={IconActivity} />
 </NumberInput>
 ```
 
@@ -173,8 +173,8 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 
 ## Slots
 
-- `left`
-- `right`
+- `left-icon`
+- `right-icon`
 
 ## Events
 

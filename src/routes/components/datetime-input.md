@@ -66,7 +66,7 @@ Pass the [Icon component](/components/icon) within the `left` to render it on th
 </script>
 
 <DateTimeInput value="2024-09-13T13:00">
-	<Icon slot="left" icon={IconActivity} />
+	<Icon slot="left-icon" icon={IconActivity} />
 </DateTimeInput>
 ```
 
@@ -156,8 +156,7 @@ Pass the [Icon component](/components/icon) within the `left` to render it on th
 
 ## Slots
 
-- `left`
-- `right`
+- `left-icon`
 
 ## Events
 

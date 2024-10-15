@@ -224,7 +224,7 @@ You can start with no options and let users populate MultiSelect from scratch. I
 
 ## Slots
 
-- `left`
+- `left-icon`
 
 ## Events
 
