@@ -31,9 +31,9 @@ As a developer, you don’t need to manually manage fonts because Deskblocks han
 If you're curious about the details, especially regarding typography, you can learn more in the article [Supporting Multiple Fonts in a Design System](https://mohanvadivel.com/thoughts/working-with-multiple-fonts).
 
 Additionally, here are some links to the type test bench for further exploration:
-- [Line Height](/type-test/line-height.html)
-- [Font Weight](/type-test/font-weight.html)
-- [Font Weight and Size](/type-test/font-weight-size.html)
+- [Line Height](https://imohanvadivel.github.io/nlato-test/line-height.html)
+- [Font Weight](https://imohanvadivel.github.io/nlato-test/font-weight.html)
+- [Font Weight and Size](https://imohanvadivel.github.io/nlato-test/font-weight-size.html)
 
 </Info>
 
