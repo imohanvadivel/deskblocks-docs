@@ -1,7 +1,7 @@
 ---
 title: Typography
 dir: guidelines
-description: Deskblocks offers a typography system that simplifies font management, allowing developers to focus on features rather than font specifics.
+description: Deskblocks offers a typography system that simplifies font management, allowing designers and developers to focus on features rather than font specifics.
 slug: typography
 url: /guidelines/typography
 index: 3
@@ -26,13 +26,14 @@ Zoho Desk supports three typefaces: Zoho Puvi, Roboto, and Lato. Zoho Puvi is se
 
 As a developer, you don’t need to manually manage fonts because Deskblocks handles all the complex processes. Simply use the tokens below to modify any typography-specific parameters, and the system will automatically adjust everything. When users switch to a different font in their interface, your extension will seamlessly update the typography settings.
 
-<Info type="success">
+<Info type="success" header="Typography Insights" maxWidth="47rem">
 
-If you're interested in the inner workings, particularly around typography, you can explore more in the article [Supporting multiple fonts in a design system.](https://mohanvadivel.com/thoughts/working-with-multiple-fonts)
+If you're curious about the details, especially regarding typography, you can learn more in the article [Supporting Multiple Fonts in a Design System](https://mohanvadivel.com/thoughts/working-with-multiple-fonts).
 
-- [Line height](/type-test/line-height.html)
-- [font-weight](/type-test/font-weight.html)
-- [font-weight-size](/type-test/font-weight-size.html)
+Additionally, here are some links to the type test bench for further exploration:
+- [Line Height](https://imohanvadivel.github.io/nlato-test/line-height.html)
+- [Font Weight](https://imohanvadivel.github.io/nlato-test/font-weight.html)
+- [Font Weight and Size](https://imohanvadivel.github.io/nlato-test/font-weight-size.html)
 
 </Info>
 

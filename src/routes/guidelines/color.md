@@ -18,7 +18,7 @@ index: 2
 
 # Color
 
-Deskblocks uses a color system to simplify color management and application, allowing developers to focus on features rather than the complexities of color.
+Deskblocks uses a color system to simplify color management and application, allowing designers and developers to focus on features rather than the complexities of color.
 
 ---
 
@@ -99,6 +99,7 @@ The interaction state of an element can be modified using the **hover** and **pr
 <ColorSwatch color="var(--db-color-border-strong)" /> --db-color-text-danger-<b>hover</b>​  
 </Pre>
 
+## Color Token Usage Examples
 
 <Fig lightSrc="/assets/banner/sample1_light.png" darkSrc="/assets/banner/sample1_dark.png" height="720" dynamic />
 <Fig lightSrc="/assets/banner/sample2_light.png" darkSrc="/assets/banner/sample2_dark.png" height="720" dynamic />

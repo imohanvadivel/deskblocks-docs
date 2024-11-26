@@ -24,7 +24,7 @@ export function load() {
 	// const home = { title: 'Home', url: '/', slug: 'home', dir: '', description: '' };
 	const figmaLibrary = {
 		title: 'Figma Library ↗',
-		url: 'https://www.figma.com/community/file/928108847914589057/ui2-figmas-design-system',
+		url: 'https://www.figma.com/community/file/1429784656177593269/deskblocks',
 		slug: 'figma-library',
 		dir: 'primary',
 		description: 'UI2 Figma Library'

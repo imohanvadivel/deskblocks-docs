@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       deskblocks:
-        specifier: ^0.1.2
-        version: 0.1.2(svelte@4.2.18)
+        specifier: ^0.1.3
+        version: 0.1.3(svelte@4.2.18)
     devDependencies:
       '@csstools/postcss-global-data':
         specifier: ^2.1.1
@@ -1285,8 +1285,8 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
-  deskblocks@0.1.2:
-    resolution: {integrity: sha512-WSEnzo7r/SyzKiZGkJ9q4qMI7AHdC9vW/NYjqJcG5h4YgsX/fi+oYAn1ETVivL3VIVKNT0l/36QsHtbKXQDGAg==}
+  deskblocks@0.1.3:
+    resolution: {integrity: sha512-pWqv3osGwj0GGYa3kuzsaivM69WX44oYIVL36GoJg69qAXgY/zFzUAlzhjPOHW51frKFYahtQlTkbzAdM6LtmQ==}
     peerDependencies:
       svelte: ^4.0.0
 
@@ -3655,7 +3655,7 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  deskblocks@0.1.2(svelte@4.2.18):
+  deskblocks@0.1.3(svelte@4.2.18):
     dependencies:
       '@floating-ui/dom': 1.6.11
       svelte: 4.2.18

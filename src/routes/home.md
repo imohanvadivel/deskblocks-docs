@@ -107,4 +107,4 @@ Import the required components from `deskblocks` and start crafting your desk ex
 
 - [Extension Guide](https://www.zoho.com/desk/extensions/guide/introduction.html)
 - [Developer Forum](https://help.zoho.com/portal/en/community/zoho-desk/zoho-desk-extension-developers)
-- [Figma library](https://figma.com)
+- [Figma library](https://www.figma.com/community/file/1429784656177593269/deskblocks)

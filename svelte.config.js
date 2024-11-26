@@ -61,7 +61,16 @@ const config = {
 		}
 	},
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// Ignore static HTML files in type-test directory
+				if (path.startsWith('/type-test/')) {
+					return;
+				}
+				throw new Error(message);
+			}
+		}
 	}
 };
 
