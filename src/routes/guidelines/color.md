@@ -1,7 +1,7 @@
 ---
 title: Color
 dir: guidelines
-description:
+description: Deskblocks uses a color system to simplify color management and application, allowing designers and developers to focus on features rather than the complexities of color.
 slug: color
 url: /guidelines/color
 index: 2
@@ -26,11 +26,17 @@ Deskblocks uses a color system to simplify color management and application, all
 
 ## Color System
 
-Managing colors for an app that supports multiple themes (blue, red, green, orange, yellow), modes (light and dark), and various contrast levels can be complex. To address this, a semantic color system has been developed. This system handles all the heavy lifting, allowing developers to focus on features without worrying about the intricacies of color management.
+Managing colors for an app that supports multiple themes (blue, red, green, orange, yellow), along with light & dark modes, and various contrast levels can be complex. Deskblocks addresses this with a semantic color system, which automates color management, enabling developers to focus on building features.
+
+<Info type="success" header="Note:" maxWidth="40rem">
+
+Curious about the inner workings of the color system? Check out the article [Building an accessible color system](https://mohanvadivel.com/thoughts/building-accessible-color-system) to learn more.
+
+</Info>
 
 ## Semantic Color Token
 
-The semantic color token system organizes colors in a meaningful way, making them easier to manage and apply. Though it may initially seem to have a lot of tokens, once you understand its structure, it becomes easy to use. All tokens follow the same semantic structure.
+The semantic token system organizes colors logically for easy application. While it might seem extensive at first, its consistent structure simplifies use. All tokens follow the same semantic structure.
 
 <Pre>
   --db-color-<b>&#123;type&#125;</b>-<b>&#123;role&#125;</b>-<b>&#123;prominence&#125;</b>-<b>&#123;interaction&#125;</b>
@@ -38,7 +44,7 @@ The semantic color token system organizes colors in a meaningful way, making the
 
 In this structure, db acts as the namespace, representing ‘deskblocks,’ followed by the keyword ‘color’ and additional parameters specifies the type, role, prominence, and interaction. Among these, only 'type' is mandatory, while the others are optional.
 
-### Type
+### Type (required)
 
 The type parameter specifies the type of element that is being colored. There are four possible values for type:
 
@@ -54,7 +60,7 @@ The type parameter specifies the type of element that is being colored. There ar
 <ColorSwatch color="var(--db-color-border)" /> --db-color-<b>border</b>​
 </Pre>
 
-### Role
+### Role (optional)
 
 Roles are a way to define the underlying hue based on its intended use rather than the specific color. For example, a success message uses a green background, so instead of labeling it as `--db-color-bg-green`, it’s called `--db-color-bg-success`. Here are a few examples.
 
@@ -76,7 +82,7 @@ The possible values for the role parameter are:
 - <ColorSwatch color="var(--db-color-bg-disabled)" /> <b>Disabled</b>: A light grey hue used for inactive buttons, text, borders, and icons.
 - <ColorSwatch color="var(--db-color-bg-selected)" /> <b>Selected</b>: A dynamic hue, similar to the brand color, used for backgrounds and borders of selected elements, adjusting based on the current theme.
 
-### Prominence
+### Prominence (optional)
 
 To establish hierarchy and adjust visual emphasis, bg, text, and icon elements can be modified with **secondary** and **tertiary** variations. Similarly, for borders, there are three options: the default option, which doesn’t require a modifier `--db-color-border` can be used as for standard divider, **strong** for a darker border, and **light** for a lighter border.
 
@@ -90,7 +96,7 @@ To establish hierarchy and adjust visual emphasis, bg, text, and icon elements c
 <ColorSwatch color="var(--db-color-border-strong)" /> --db-color-border-<b>strong</b>​   
 </Pre>
 
-### Interaction
+### Interaction (optional)
 
 The interaction state of an element can be modified using the **hover** and **pressed** modifiers.
 
@@ -99,13 +105,24 @@ The interaction state of an element can be modified using the **hover** and **pr
 <ColorSwatch color="var(--db-color-border-strong)" /> --db-color-text-danger-<b>hover</b>​  
 </Pre>
 
+## Selective Theming
+
+To apply custom styles for specific themes or appearances, use CSS classes to target them. The root element dynamically adds classes like `theme-blue` and `appearance-light` based on the current theme and appearance.
+
+For example, to style a node specifically for **dark mode** and **red theme**, use the following CSS:
+
+```css
+:global(.theme-red.appearance-dark div) {
+  /* Your styles here */
+}
+``` 
+
+
 ## Color Token Usage Examples
 
-<Fig lightSrc="/assets/banner/sample1_light.png" darkSrc="/assets/banner/sample1_dark.png" height="720" dynamic />
-<Fig lightSrc="/assets/banner/sample2_light.png" darkSrc="/assets/banner/sample2_dark.png" height="720" dynamic />
-
+<Fig lightSrc="/assets/banner/sample1_light.png" darkSrc="/assets/banner/sample1_dark.png" height="720" dynamic maxWidth="40rem" />
+<Fig lightSrc="/assets/banner/sample2_light.png" darkSrc="/assets/banner/sample2_dark.png" height="720" dynamic maxWidth="40rem" />
 
 ## Color Tokens
-
 
 <ColorList />

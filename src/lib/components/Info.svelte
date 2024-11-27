@@ -47,7 +47,7 @@
 		font-size: 0.875rem;
 	}
 	section {
-		padding: 1.25rem 1.25rem .75rem 1.25rem;
+		padding: 1.25rem 1.25rem 1rem 1.25rem;
 		border-radius: 4px;
 		border: 1px solid var(--color-border);
 		background-color: var(--color-bg-secondary);

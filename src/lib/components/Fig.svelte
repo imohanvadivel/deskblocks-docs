@@ -9,9 +9,10 @@
 	export let height: string;
 	export let showCaption: boolean = false;
 	export let dynamic: boolean = false;
+	export let maxWidth: string = '47rem';
 </script>
 
-<figure class:noborder={noBorder}>
+<figure class:noborder={noBorder} style:max-width={maxWidth}>
 	{#if dynamic && $libStore.appearance === 'light'}
 		<img {height} {alt} src={lightSrc} />
 	{:else if dynamic && $libStore.appearance === 'dark'}
@@ -30,7 +31,7 @@
 		flex-direction: column;
 		align-items: center;
 		width: 100%;
-		max-width: 47rem;
+		max-width: var(--max-width);
 		margin-top: 1rem;
 		border: 1px solid var(--color-border);
 		border-radius: 0.25rem;

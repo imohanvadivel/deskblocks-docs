@@ -107,6 +107,17 @@
 		max-width: 40rem;
 	}
 
+	article :global(pre.language-css) {
+		max-width: 40rem;
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		margin: 1rem 0;
+	}
+
+	article :global(p + pre.language-css){
+		margin-top: 0;
+	}
+
 	article :global(strong),
 	article :global(b) {
 		font-weight: 550;

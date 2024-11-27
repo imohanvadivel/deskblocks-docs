@@ -22,15 +22,16 @@ index: 3
 
 ## Type system
 
-Zoho Desk supports three typefaces: Zoho Puvi, Roboto, and Lato. Zoho Puvi is selected by default, but users can choose their preferred option.
+Zoho Desk supports three typefaces: Zoho Puvi, Roboto, and Lato. While Zoho Puvi is the default selection, users have the flexibility to choose their preferred font.
 
-As a developer, you don’t need to manually manage fonts because Deskblocks handles all the complex processes. Simply use the tokens below to modify any typography-specific parameters, and the system will automatically adjust everything. When users switch to a different font in their interface, your extension will seamlessly update the typography settings.
+As a developer, you don't need to handle font management manually—Deskblocks takes care of the complexities for you. Simply use the provided tokens to adjust typography-related parameters, and the system will automatically adapt. If users switch fonts in their interface, your extension will seamlessly update its typography settings.
 
-<Info type="success" header="Typography Insights" maxWidth="47rem">
+<Info type="success" header="Note:" maxWidth="47rem">
 
-If you're curious about the details, especially regarding typography, you can learn more in the article [Supporting Multiple Fonts in a Design System](https://mohanvadivel.com/thoughts/working-with-multiple-fonts).
+Curious about the inner workings of the typography system? Check out the article [Supporting Multiple Fonts in a Design System](https://mohanvadivel.com/thoughts/working-with-multiple-fonts).
 
-Additionally, here are some links to the type test bench for further exploration:
+For additional resources, explore the type test bench:
+
 - [Line Height](https://imohanvadivel.github.io/nlato-test/line-height.html)
 - [Font Weight](https://imohanvadivel.github.io/nlato-test/font-weight.html)
 - [Font Weight and Size](https://imohanvadivel.github.io/nlato-test/font-weight-size.html)
@@ -41,10 +42,10 @@ Additionally, here are some links to the type test bench for further exploration
 
 The primary font in the font stack changes based on the user's preference.
 
-|                       |                                                                                        |
-| --------------------- | -------------------------------------------------------------------------------------- |
+|                       |                                                                              |
+| --------------------- | ---------------------------------------------------------------------------- |
 | `--db-fontstack`      | puvi, roboto flex, roboto, lato, inter, system-ui, -apple-system, sans-serif |
-| `--db-fontstack-mono` | sf mono, jetbrains mono, zoho puvi mono, monospace                               |
+| `--db-fontstack-mono` | sf mono, jetbrains mono, zoho puvi mono, monospace                           |
 
 ## Font Size
 
