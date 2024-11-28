@@ -10,6 +10,7 @@ index: 1
 <script>
   import Info from "$lib/components/Info.svelte";
   import Fig from "$lib/components/Fig.svelte";
+  import Video from "$lib/components/Video.svelte";
   import 'deskblocks/globalStyles';
 </script>
 
@@ -23,33 +24,46 @@ Deskblocks is an open-source UI component library designed to help you build Zoh
 
 ### Smart Type Definitions
 
-Deskblocks fully supports TypeScript, providing auto-completion and static type checking for all components. It also includes type definitions for the desk SDK through my other [project](https://github.com/imohanvadivel/desk-ext-types), offering detailed descriptions, examples, and code completion directly within your IDE.
+Deskblocks offers full TypeScript support, including auto-completion and static type checking for all components. The starter template also includes type definitions for the Desk SDK from my [other project](https://github.com/imohanvadivel/desk-ext-types). This offers detailed descriptions, examples, and code completion for the SDK directly within your IDE.
 
+<Video src="/assets/clips/auto-completion.mp4" autoplay controls loop />
 
-### Automatic Theming
+### Auto-Theming
 
-Deskblocks uses [HCT color space](https://github.com/material-foundation/material-color-utilities/tree/main) to manage colors, handling light and dark modes, as well as five predefined themes (blue, green, yellow, orange, red). This allows you to focus on building features while Deskblocks takes care of theming automatically. Checkout [color section](/guidelines/color)  to learn more.
+Deskblocks automates color management for you. When a user switches between themes or appearances, Deskblocks automatically updates the colors in your extension. There's no need to design or develop separately for each theme or appearance—Deskblocks handles it all. Check out the [color section](/guidelines/color) to learn how to leverage the color tokens.
 
-### Automatic Font Management
+<Video src="/assets/clips/auto-theming.mp4" autoplay controls loop />
 
-Deskblocks manages fonts for you. When a user changes their font settings, it automatically updates within your extension. Checkout [typography section](/guidelines/typography) to learn more.
+### Seamless Font Management
+
+Deskblocks takes care of font management for you. When a user changes their typeface preference, Deskblocks will automatically updates the extension to match. Explore the [typography section](/guidelines/typography) for more details.
+
+<Video src="/assets/clips/auto-type.mp4" autoplay controls loop />
 
 ### Built-in Accessibility
 
-Deskblocks includes accessible color tokens by default and uses the APAC algorithm to calculate contrast, offering better accessibility than standard WCAG2. Features like increased contrast works out of the box, so you don’t need to work to handle them.
+Deskblocks is built on Svelte, which incorporates accessibility (a11y) best practices and performs [a11y checks at compile time](https://svelte.dev/docs/kit/accessibility). Additionally, the color system is based on the [HCT color space](https://mohanvadivel.com/thoughts/building-accessible-color-system), ensuring perceptual uniformity and using perceived lightness. The colors are further evaluated using the [APAC algorithm](https://mohanvadivel.com/thoughts/color-contrast) to ensure optimal contrast and accessibility.
 
-### Figma Library
+### Figma UI Kit
 
-Deskblocks comes with a companion Figma UI kit, including all components and tokens. The Figma kit leverages variables to preview designs in all available themes instantly.
+Deskblocks includes a companion [Figma UI Kit](https://www.figma.com/community/file/1429784656177593269/deskblocks) with all the essential components, tokens, and templates for promotional assets. It leverages Figma’s variables, allowing you to instantly preview your designs in various themes and appearances, without any external plugins.
 
+<Video src="/assets/clips/figma-kit.mp4" autoplay controls loop />
+
+### Design to Code Generation
+
+Deskblocks includes a [Figma plugin](https://www.figma.com/community/plugin/1429884529544766993/figma-to-svelte) that generates production-ready code directly from your designs, powered by [Claude 3.5 Haiku](https://www.anthropic.com/claude/haiku). What sets it apart is that it doesn’t just generate any code—it uses Deskblocks components to build the UI. This ensures all the above features like auto-theming, accessibility, and font management work seamlessly out of the box.
+
+<Video src="/assets/clips/ai-gen.mp4" autoplay controls loop />
 
 ### Vite-Powered Development
 
-Deskblocks uses [vite](https://vitejs.dev/) under the hood, so you can enjoy all of its benefits like **hot module replacement**, fast compilation, lazy loading, optimized build and so on.
+Deskblocks is powered by [Vite](https://vitejs.dev/), bringing all the advantages of a modern build tool to your development workflow. With Vite, you get **hot module replacement**, ultra-fast compilation, lazy loading, optimized builds, and more—ensuring a smooth and efficient development experience from start to finish.
+
 
 ## Installation
 
-To get started, clone the template and install the dependencies:
+To get started, clone the starter template and install the dependencies:
 
 ```bash
 git clone https://github.com/imohanvadivel/desk-ext-template.git
@@ -79,15 +93,13 @@ npm i deskblocks
 
 Then, import global styles in your `main.ts` file to start using Deskblocks components:
 
-
-
 ```bash
 import "deskblocks/globalStyles";
 ```
 
 <Info type="warning" header="Note:">
 
-The official [zoho extension toolkit](https://www.npmjs.com/package/zoho-extension-toolkit) only supports React and does not works with Deskblocks.
+The official [Zoho Extension Toolkit](https://www.npmjs.com/package/zoho-extension-toolkit) CLI does not support Deskblocks. To use Deskblocks, you’ll need to either use the provided starter template or set up your own custom build tool.
 
 </Info>
 

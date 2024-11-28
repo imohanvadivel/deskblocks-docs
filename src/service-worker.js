@@ -1,7 +1,6 @@
 // import { files, version, build } from '$service-worker';
 
-let CACHE = `static-assets-v6`;
-let OFFLINE_URL = '/offline';
+let CACHE = `cache-v1`;
 
 let ASSETS = [
 	// Primary
@@ -27,12 +26,18 @@ let ASSETS = [
 	'/assets/banner/sample1_light.png',
 	'/assets/banner/sample1_dark.png',
 	'/assets/banner/sample2_light.png',
-	'/assets/banner/sample2_dark.png'
-];
-// let ASSETS = [...files, ...build];
+	'/assets/banner/sample2_dark.png',
 
-// Install the service worker and cache all the static assets
+	// Videos
+	'/assets/clips/auto-theming.mp4',
+	'/assets/clips/auto-type.mp4',
+	'/assets/clips/figma-kit.mp4',
+	'/assets/clips/ai-gen.mp4',
+	'/assets/clips/auto-completion.mp4'
+];
+
 self.addEventListener('install', (event) => {
+	// Create a new cache and add all files to it
 	async function addFilesToCache() {
 		const cache = await caches.open(CACHE);
 
@@ -47,10 +52,10 @@ self.addEventListener('install', (event) => {
 
 	event.waitUntil(addFilesToCache());
 
+	// Skip waiting to activate the service worker immediately
 	self.skipWaiting();
 });
 
-// Activate the service worker and remove old cache
 self.addEventListener('activate', (event) => {
 	// Remove previous cached data from disk
 	async function deleteOldCaches() {
@@ -64,16 +69,18 @@ self.addEventListener('activate', (event) => {
 
 	event.waitUntil(deleteOldCaches());
 
+	// Claim clients immediately after activation
 	self.clients.claim();
+
 	console.log('Service Worker activated');
 });
 
-// Fetch the static assets from the cache
 self.addEventListener('fetch', (event) => {
 	// ignore POST requests etc
-	if (event.request.method !== 'GET' || event.request.url.startsWith('chrome-extension')) {
-		return; // Ignore non-GET requests and chrome-extension requests
-	}
+	if (event.request.method !== 'GET') return;
+
+	// Exclude requests with 'chrome-extension' scheme
+	if (event.request.url.startsWith('chrome-extension')) return;
 
 	async function respond() {
 		const url = new URL(event.request.url);
@@ -93,13 +100,12 @@ self.addEventListener('fetch', (event) => {
 		try {
 			const response = await fetch(event.request);
 
+			console.log('fetching', event.request.url, response);
+
 			// if we're offline, fetch can return a value that is not a Response
 			// instead of throwing - and we can't pass this non-Response to respondWith
 			if (!(response instanceof Response)) {
-				// throw new Error('invalid response from fetch');
-
-				const offlineResponse = await cache.match(OFFLINE_URL);
-				return offlineResponse;
+				throw new Error('invalid response from fetch');
 			}
 
 			if (response.status === 200) {
@@ -109,7 +115,6 @@ self.addEventListener('fetch', (event) => {
 			return response;
 		} catch (err) {
 			console.log(err, event.request);
-
 			const response = await cache.match(event.request);
 
 			if (response) {
@@ -124,30 +129,3 @@ self.addEventListener('fetch', (event) => {
 
 	event.respondWith(respond());
 });
-
-// Listen for messages from the client
-// self.addEventListener('message', (event) => {
-// 	if (event.data === 'cache-assets') {
-// 		event.waitUntil(
-// 			caches.open(CACHE).then((cache) => {
-// 				return Promise.all(
-// 					ASSETS.map((asset) => {
-// 						return cache.add(asset).catch((error) => {
-// 							console.error(`Failed to cache ${asset}:`, error);
-// 						});
-// 					})
-// 				).then(() => {
-// 					// Notify the client that all assets have been cached
-// 					self.clients.matchAll().then((clients) => {
-// 						clients.forEach((client) => {
-// 							client.postMessage({
-// 								type: 'assets-cached',
-// 								cached: true // Indicate that caching is complete
-// 							});
-// 						});
-// 					});
-// 				});
-// 			})
-// 		);
-// 	}
-// });

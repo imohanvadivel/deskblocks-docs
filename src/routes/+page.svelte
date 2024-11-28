@@ -101,6 +101,13 @@
 		max-width: 40rem;
 	}
 
+	article :global(video) {
+		max-width: 47rem;
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		margin-bottom: 1.5rem;
+	}
+
 	article :global(pre.language-bash) {
 		max-width: 47rem;
 		border: 1px solid var(--color-border);
