@@ -10,6 +10,7 @@ index: 3
 <script>
   import IconPicker from "$lib/components/IconPicker.svelte";
   import Fig from "$lib/components/Fig.svelte";
+  import Info from "$lib/components/Info.svelte";
 </script>
 
 # Icons
@@ -27,6 +28,10 @@ Proprietary icons are designed to represent specific Zoho Desk features or entit
 ## General icon
 
 General icons represent common actions or concepts within the product and offer flexibility for various design contexts. These icons can be modified to meet different needs, maintaining adaptability while preserving the overall user experience.
+
+<Info maxWidth="47rem">
+  Icons are sourced from <a href="https://www.npmjs.com/package/@zohodesk/icons">@zohodesk/icons</a>
+</Info>
 
 ## Icon gallery
 

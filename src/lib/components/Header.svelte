@@ -17,7 +17,9 @@
 			{@html MenuIcon}
 		</button>
 
-		<h1>Deskblocks</h1>
+		<a href="/" class="logo-link">
+			<h1>Deskblocks</h1>
+		</a>
 
 		<span class="version">{version}</span>
 	</div>
@@ -76,6 +78,12 @@
 </header>
 
 <style>
+	.logo-link {
+		text-decoration: none;
+		color: var(--color-text);
+		cursor: default;
+	}
+
 	.theme-container {
 		display: flex;
 		align-items: center;
