@@ -66,12 +66,17 @@
 		return false;
 	}
 
-	const allIcons = Object.keys(icons).map((e) => ({
-		name: splitOnCaps(e),
-		svg: icons[e as keyof typeof icons],
-		value: e,
-		isProprietary: checkProprietary(e)
-	}));
+	// Deprecated back-compat aliases of renamed icons; hide them from the gallery.
+	const deprecatedAliases = ['IconAnnoncement', 'IconConfiguaration'];
+
+	const allIcons = Object.keys(icons)
+		.filter((e) => !deprecatedAliases.includes(e))
+		.map((e) => ({
+			name: splitOnCaps(e),
+			svg: icons[e as keyof typeof icons],
+			value: e,
+			isProprietary: checkProprietary(e)
+		}));
 
 	let iconAry = [...allIcons].sort((a, b) => a.name!.localeCompare(b.name!));
 

@@ -33,6 +33,10 @@ General icons represent common actions or concepts within the product and offer 
   Icons are sourced from <a href="https://www.npmjs.com/package/@zohodesk/icons">@zohodesk/icons</a>
 </Info>
 
+## Theming and sizing
+
+Icons are exported from `deskblocks/icons` as raw SVG strings. Every glyph uses `fill="currentColor"` and a `1em` intrinsic size, so an icon dropped directly into markup inherits the surrounding text color and font size. The [Icon component](/components/icon) additionally exposes explicit `size` and `color` props.
+
 ## Icon gallery
 
 Clicking on any icon will copy its name to the clipboard. Custom icons can also be used. Refer the [icon component](/components/icon) to learn how to use icons and use your own [custom icons.](/components/icon#custom-icon)

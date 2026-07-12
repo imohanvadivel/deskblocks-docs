@@ -1,0 +1,7 @@
+allowBuilds:
+  '@sveltejs/kit': true
+  esbuild: true
+  svelte-preprocess: true
+  workerd: false
+minimumReleaseAgeExclude:
+  - deskblocks@0.2.0

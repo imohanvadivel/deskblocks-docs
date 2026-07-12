@@ -70,6 +70,22 @@ To make a chip dismissible, pass the `dismissible` prop. Once enabled, the chip 
 </Chip>
 ```
 
+## Tone
+
+The `tone` prop applies a semantic color treatment — useful for status badges and category tags. It defaults to `neutral`, the standard chip appearance.
+
+```svelte example hideScript
+<script>
+	import { Chip } from 'deskblocks';
+</script>
+
+<Chip tone="neutral">Neutral</Chip>
+<Chip tone="info">Info</Chip>
+<Chip tone="success">Success</Chip>
+<Chip tone="warning">Warning</Chip>
+<Chip tone="danger">Danger</Chip>
+```
+
 ## Disabled state
 
 <!-- A chip can include an avatar by passing the [Avatar component](/components/avatar) into the `icon` slot. -->
@@ -95,10 +111,12 @@ To make a chip dismissible, pass the `dismissible` prop. Once enabled, the chip 
 
 Here is the completed description for the `Chip` component props:
 
-| Prop          | Type    | Default   | Description                                                         |
-| ------------- | ------- | --------- | ------------------------------------------------------------------- |
-| `dismissible` | boolean | false     | Determines whether the chip can be dismissed (removed) by the user. |
-| `class`       | string  | undefined | Custom CSS class name for additional styling.                       |
+| Prop          | Type                                                       | Default   | Description                                                         |
+| ------------- | ---------------------------------------------------------- | --------- | ------------------------------------------------------------------- |
+| `tone`        | 'neutral' \| 'info' \| 'success' \| 'warning' \| 'danger' | 'neutral' | Applies a semantic color treatment to the chip.                     |
+| `dismissible` | boolean                                                    | false     | Determines whether the chip can be dismissed (removed) by the user. |
+| `disabled`    | boolean                                                    | false     | Disables the chip.                                                  |
+| `class`       | string                                                     | undefined | Custom CSS class name for additional styling.                       |
 
 ## Events
 
