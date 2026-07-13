@@ -4,4 +4,4 @@ allowBuilds:
   svelte-preprocess: true
   workerd: false
 minimumReleaseAgeExclude:
-  - deskblocks@0.2.0
+  - deskblocks@0.2.0 || 0.3.0
