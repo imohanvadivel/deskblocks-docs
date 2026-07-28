@@ -19,7 +19,7 @@ index: 3
 
 ## Usage
 
-<!-- Import the `TextInput` component form 'deskblocks'. -->
+<!-- Import the `TextInput` component from 'deskblocks'. -->
 
 ```svelte example
 <script>
@@ -56,7 +56,7 @@ index: 3
 
 <!-- - Icons can be placed on either side of the input field. -->
 
-Pass the [Icon component](/components/icon) within the `left` or `right` slot to render it on the left or right side, respectively.
+Pass the [Icon component](/components/icon) within the `left-icon` or `right-icon` slot to render it on the left or right side, respectively.
 
 <!-- - For further icon customization, refer to the [Icon component](/components/icon). -->
 

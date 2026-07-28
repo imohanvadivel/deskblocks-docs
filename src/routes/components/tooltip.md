@@ -24,7 +24,7 @@ The tooltip component takes advantage of [Svelte actions](https://svelte.dev/doc
 
 <Info header="Svelte Actions:" type="info">
 
-- Actions are functions that are called when an element is created. They can return an object with a `destroy` method, that is called after the element is unmounted.
+- Actions are functions that are called when an element is created. They can return an object with a `destroy` method that is called after the element is unmounted.
 
 - Learn more about the [action directive.](https://learn.svelte.dev/tutorial/actions)
 
@@ -53,7 +53,7 @@ The tooltip component takes advantage of [Svelte actions](https://svelte.dev/doc
 	import { tooltip } from 'deskblocks';
 </script>
 
-<div use:tooltip={{ content: 'Tooltip Content', delay: '1500' }}>Displays tooltip after 1500ms</div>
+<div use:tooltip={{ content: 'Tooltip Content', delay: 1500 }}>Displays tooltip after 1500ms</div>
 
 <style>
 	div {
@@ -106,7 +106,14 @@ The tooltip component takes advantage of [Svelte actions](https://svelte.dev/doc
 
 | Prop        | Type                                                                                                                                       | Default   | Description                                                                                              |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------ | --------- | -------------------------------------------------------------------------------------------------------- |
-| `placement` | top \| right \| bottom \| left \| top-start \| right-start \| bottom-start \| left-start \| top-end \| right-end \| bottom-end \| left-end | bottom    | Defines the position of the tooltip relative to the target element.                                      |
+| `placement` | <code>top &#124; right &#124; bottom &#124; left &#124; top-start &#124; right-start &#124; bottom-start &#124; left-start &#124; top-end &#124; right-end &#124; bottom-end &#124; left-end</code> | bottom    | Defines the position of the tooltip relative to the target element.                                      |
 | `offset`    | number                                                                                                                                     | 8         | Sets the distance (in pixels) between the tooltip and the target element.                                |
 | `delay`     | number                                                                                                                                     | 200       | Specifies the delay (in milliseconds) before the tooltip appears after hovering over the target element. |
 | `content`   | string                                                                                                                                     | undefined | The text or content that will be displayed inside the tooltip.                                           |
+| `allowHtml` | boolean                                                                                                                                    | false     | Renders `content` as markup instead of plain text.                                                       |
+
+<Info header="Security:" type="warning">
+
+`content` is rendered as plain text by default, so record data and other untrusted values cannot inject markup into the page. Only set `allowHtml` when the content is authored by you and you need the markup. Never set it for values that come from an API response or user input.
+
+</Info>

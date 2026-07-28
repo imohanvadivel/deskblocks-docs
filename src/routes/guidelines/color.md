@@ -26,7 +26,7 @@ Deskblocks uses a color system to simplify color management and application, all
 
 ## Color System
 
-Managing colors for an app that supports multiple themes (blue, red, green, orange, yellow), along with light & dark modes, and various contrast levels can be complex. Deskblocks addresses this with a semantic color system, which automates color management, enabling developers to focus on building features.
+Managing colors for a Zoho Desk extension that supports multiple themes (blue, red, green, orange, yellow), along with light and dark modes and various contrast levels, can be complex. Deskblocks addresses this with a semantic color system that automates color management, enabling developers to focus on building features.
 
 <Info type="success" header="Note:" maxWidth="40rem">
 
@@ -42,16 +42,16 @@ The semantic token system organizes colors logically for easy application. While
   --db-color-<b>&#123;type&#125;</b>-<b>&#123;role&#125;</b>-<b>&#123;prominence&#125;</b>-<b>&#123;interaction&#125;</b>
 </Pre>
 
-In this structure, db acts as the namespace, representing ‘deskblocks,’ followed by the keyword ‘color’ and additional parameters specifies the type, role, prominence, and interaction. Among these, only 'type' is mandatory, while the others are optional.
+In this structure, db acts as the namespace, representing ‘deskblocks,’ followed by the keyword ‘color’ and additional parameters that specify the type, role, prominence, and interaction. Among these, only 'type' is mandatory, while the others are optional.
 
 ### Type (required)
 
 The type parameter specifies the type of element that is being colored. There are four possible values for type:
 
-- **bg**: Background color
-- **text**: Text color
-- **icon**: Icon color
-- **border**: Border color
+- `bg`: Background color
+- `text`: Text color
+- `icon`: Icon color
+- `border`: Border color
 
 <Pre>
 <ColorSwatch color="var(--db-color-bg)" /> --db-color-<b>bg</b>​
@@ -73,18 +73,18 @@ Roles are a way to define the underlying hue based on its intended use rather th
 
 The possible values for the role parameter are:
 
-- <ColorSwatch color="var(--db-color-bg-brand)" /> <b>Brand</b>: A dynamic hue that adapts to the current theme color. For eg, "--db-color-bg-brand" may start as primary blue, but if the user switches to a green theme, it will change to green.
+- <ColorSwatch color="var(--db-color-bg-brand)" /> Brand: A dynamic hue that adapts to the current theme color. For example, `--db-color-bg-brand` may start as primary blue, but if the user switches to a green theme, it will change to green.
 
-- <ColorSwatch color="var(--db-color-bg-info)" /> <b>Info</b> : A blue hue used to convey information.
-- <ColorSwatch color="var(--db-color-bg-success)" /> <b>Success</b>: A green hue used to indicate confirmation or approval.
-- <ColorSwatch color="var(--db-color-bg-danger)" /> <b>Danger</b>: A red hue used to signal errors or destructive actions.
-- <ColorSwatch color="var(--db-color-bg-warning)" /> <b>Warning</b>: An orange hue used to alert users to potential problems.
-- <ColorSwatch color="var(--db-color-bg-disabled)" /> <b>Disabled</b>: A light grey hue used for inactive buttons, text, borders, and icons.
-- <ColorSwatch color="var(--db-color-bg-selected)" /> <b>Selected</b>: A dynamic hue, similar to the brand color, used for backgrounds and borders of selected elements, adjusting based on the current theme.
+- <ColorSwatch color="var(--db-color-bg-info)" /> Info: A blue hue used to convey information.
+- <ColorSwatch color="var(--db-color-bg-success)" /> Success: A green hue used to indicate confirmation or approval.
+- <ColorSwatch color="var(--db-color-bg-danger)" /> Danger: A red hue used to signal errors or destructive actions.
+- <ColorSwatch color="var(--db-color-bg-warning)" /> Warning: An orange hue used to alert users to potential problems.
+- <ColorSwatch color="var(--db-color-bg-disabled)" /> Disabled: A light gray hue used for inactive buttons, text, borders, and icons.
+- <ColorSwatch color="var(--db-color-bg-selected)" /> Selected: A dynamic hue, similar to the brand color, used for backgrounds and borders of selected elements, adjusting based on the current theme.
 
 ### Prominence (optional)
 
-To establish hierarchy and adjust visual emphasis, bg, text, and icon elements can be modified with **secondary** and **tertiary** variations. Similarly, for borders, there are three options: the default option, which doesn’t require a modifier `--db-color-border` can be used as for standard divider, **strong** for a darker border, and **light** for a lighter border.
+To establish hierarchy and adjust visual emphasis, bg, text, and icon elements can be modified with `secondary` and `tertiary` variations. Similarly, borders have three options: `--db-color-border`, which does not require a modifier and can be used for a standard divider, `strong` for a darker border, and `light` for a lighter border.
 
 <Pre>
 <ColorSwatch color="var(--db-color-text-secondary)" /> --db-color-text-<b>secondary</b>​  
@@ -98,7 +98,7 @@ To establish hierarchy and adjust visual emphasis, bg, text, and icon elements c
 
 ### Interaction (optional)
 
-The interaction state of an element can be modified using the **hover** and **pressed** modifiers.
+The interaction state of an element can be modified using the `hover` and `pressed` modifiers.
 
 <Pre>
 <ColorSwatch color="var(--db-color-bg-brand-pressed)" /> --db-color-bg-brand-<b>pressed</b>​ 
@@ -109,7 +109,7 @@ The interaction state of an element can be modified using the **hover** and **pr
 
 To apply custom styles for specific themes or appearances, use CSS classes to target them. The root element dynamically adds classes like `theme-blue` and `appearance-light` based on the current theme and appearance.
 
-For example, to style a node specifically for **dark mode** and **red theme**, use the following CSS:
+For example, to style a node specifically for dark mode and the red theme, use the following CSS:
 
 ```css
 :global(.theme-red.appearance-dark div) {

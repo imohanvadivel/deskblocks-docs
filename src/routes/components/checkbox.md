@@ -1,7 +1,7 @@
 ---
 title: Checkbox
 dir: components
-description: A checkbox allows users to select one or multiple options from a set.
+description: A checkbox allows users to select one or more options from a set.
 slug: checkbox
 url: /components/checkbox
 index: 9
@@ -33,7 +33,7 @@ index: 9
 
 ## Checkbox group
 
-The Group Checkbox allows users to select multiple options, binding the selections to a shared array.
+The CheckboxGroup allows users to select multiple options, binding the selections to a shared array.
 
 ```svelte example
 <script>
@@ -66,8 +66,8 @@ The Group Checkbox allows users to select multiple options, binding the selectio
 <Info header="Tips:" type="success">
 
 - It is recommended to use the `name` prop on the "CheckboxGroup" instead of individual "Checkbox" components.
-- To change the row gap in the CheckboxGroup, use `rowGap` prop.
-- To change the column gap in the inline CheckboxGroup, use `columnGap` prop.
+- To change the row gap in the CheckboxGroup, use the `rowGap` prop.
+- To change the column gap in the inline CheckboxGroup, use the `columnGap` prop.
 
 </Info>
 
@@ -102,15 +102,14 @@ The Group Checkbox allows users to select multiple options, binding the selectio
 
 ## CheckboxGroup props
 
-| Prop       | Type    | Default   | Description                                                         |
-| ---------- | ------- | --------- | ------------------------------------------------------------------- |
-| `id`       | string  | undefined | Specifies a unique identifier for the checkbox.                     |
-| `name`     | string  | undefined | Assigns a name to the checkbox, useful for form submissions.        |
-| `value`    | string  | undefined | Sets the value associated with the checkbox.                        |
-| `disabled` | boolean | false     | Disables the checkbox, preventing user interaction.                 |
-| `checked`  | boolean | false     | Determines whether the checkbox is checked by default.              |
-| `required` | boolean | false     | Indicates that the checkbox must be checked before form submission. |
-| `class`    | string  | undefined | Custom CSS class name for additional styling.                       |
+| Prop        | Type            | Default   | Description                                                                        |
+| ----------- | --------------- | --------- | ---------------------------------------------------------------------------------- |
+| `name`      | string          | undefined | Assigns a shared name to every checkbox in the group, useful for form submissions. |
+| `group`     | string[]        | []        | Binds the values of the checked checkboxes to an array.                            |
+| `inline`    | boolean         | false     | Displays the checkboxes in a horizontal row if set to `true`.                      |
+| `rowGap`    | CSS length unit | 0.25rem   | Defines the vertical spacing between rows of checkboxes.                           |
+| `columnGap` | CSS length unit | 1rem      | Defines the horizontal spacing between checkboxes in a row.                        |
+| `class`     | string          | undefined | Custom CSS class name for additional styling.                                      |
 
 ## Events
 

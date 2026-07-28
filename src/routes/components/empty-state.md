@@ -1,7 +1,7 @@
 ---
 title: Empty State
 dir: components
-description: An empty state fills a blank region with a muted glyph, a headline and guidance on what to do next.
+description: Empty State explains why a region has no content and can offer a clear next step.
 slug: empty-state
 url: /components/empty-state
 index: 28
@@ -19,7 +19,7 @@ index: 28
 
 ## Usage
 
-The icon defaults to the archive (inbox) glyph.
+Provide a short title that names the empty condition and a description that helps the user understand what to do next. The component uses the archive icon by default.
 
 ```svelte example
 <script>
@@ -34,7 +34,7 @@ The icon defaults to the archive (inbox) glyph.
 
 ## Custom icon
 
-Pass any raw SVG string from `deskblocks/icons` via `icon`.
+Pass an SVG string from `deskblocks/icons` through `icon`. Set `icon=""` when the empty state does not need an illustration.
 
 ```svelte example
 <script>
@@ -51,7 +51,7 @@ Pass any raw SVG string from `deskblocks/icons` via `icon`.
 
 ## With an action
 
-Use the `action` slot for a follow-up control — a `Button` or a `Link`.
+Use the `action` slot for a follow-up control, such as a `Button` or a `Link`.
 
 ```svelte example
 <script>
@@ -70,13 +70,13 @@ Use the `action` slot for a follow-up control — a `Button` or a `Link`.
 
 ## Slots
 
-- `action` — optional call-to-action rendered below the description (e.g. a `Button` or `Link`).
+- `action`: optional call-to-action rendered below the description, for example a `Button` or `Link`.
 
 ## Props
 
-| Prop          | Type   | Default              | Description                                                          |
-| ------------- | ------ | -------------------- | --------------------------------------------------------------------- |
-| `icon`        | string | archive (inbox) glyph | Raw SVG string (e.g. from `deskblocks/icons`) for the 64px muted glyph. |
-| `title`       | string | —                    | Bold headline.                                                         |
-| `description` | string | undefined            | Muted supporting line (wraps at ~34 characters per line).              |
-| `class`       | string | undefined            | Custom CSS class name for additional styling.                          |
+| Prop          | Type   | Default      | Description                                                       |
+| ------------- | ------ | ------------ | ----------------------------------------------------------------- |
+| `icon`        | string | Archive icon | SVG string for the illustration. Pass an empty string to hide it. |
+| `title`       | string | Required     | Headline that describes the empty condition.                      |
+| `description` | string | undefined    | Supporting text displayed below the headline.                     |
+| `class`       | string | undefined    | Custom CSS class name for additional styling.                     |

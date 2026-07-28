@@ -51,15 +51,15 @@ index: 12
 
 ## Props
 
-| Prop       | Type                | Default   | Description                                                          |
-| ---------- | ------------------- | --------- | -------------------------------------------------------------------- |
-| `checked`  | boolean             | false     | Determines whether the switch is in the "on" (checked) state.        |
-| `disabled` | boolean             | false     | Disables the switch, preventing user interaction.                    |
-| `value`    | string              | undefined | Sets the value associated with the switch when it is checked.        |
-| `required` | boolean             | false     | Indicates whether the switch must be toggled before form submission. |
-| `size`     | 'small' \| 'medium' | 'small'   | Specifies the size of the switch.                                    |
-| `id`       | string              | randomId  | Specifies a unique identifier for the switch.                        |
-| `class`    | string              | undefined | Custom CSS class name for additional styling.                        |
+| Prop       | Type               | Default   | Description                                                          |
+| ---------- | ------------------ | --------- | -------------------------------------------------------------------- |
+| `checked`  | boolean            | false     | Determines whether the switch is in the "on" (checked) state.        |
+| `disabled` | boolean            | false     | Disables the switch, preventing user interaction.                    |
+| `value`    | string             | undefined | Sets the value associated with the switch when it is checked.        |
+| `required` | boolean            | false     | Indicates whether the switch must be toggled before form submission. |
+| `size`     | <code>'small' &#124; 'large'</code> | 'small'   | Specifies the size of the switch.                                    |
+| `id`       | string             | randomId  | Specifies a unique identifier for the switch.                        |
+| `class`    | string             | undefined | Custom CSS class name for additional styling.                        |
 
 ## Events
 

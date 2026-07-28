@@ -1,7 +1,7 @@
 ---
 title: Icon
 dir: components
-description: An icon is a small graphical element that represents actions, objects, or concepts, adding visual clarity to interface.
+description: An icon is a small graphical element that represents actions, objects, or concepts, adding visual clarity to the interface.
 slug: icon
 url: /components/icon
 index: 14
@@ -20,7 +20,7 @@ index: 14
 
 ## Usage
 
-The `Icon` component can be imported from 'deskblocks,' along with your preferred icons from 'deskblocks/icons.'
+The `Icon` component can be imported from `deskblocks`, along with your preferred icons from `deskblocks/icons`.
 
 ```svelte example hideFont hideTheme
 <script>
@@ -33,7 +33,7 @@ The `Icon` component can be imported from 'deskblocks,' along with your preferre
 
 <Info header="Tip:" type="success">
 
-- Checkout the [icon gallery](/guidelines/icons#icon-gallery) for exploring all the icons.
+- Check out the [icon gallery](/guidelines/icons#icon-gallery) to explore all the icons.
 - Click on any icon in the icon gallery to copy the icon name to your clipboard.
 
 </Info>
@@ -101,9 +101,9 @@ To render a custom icon, the SVG string can be directly passed to the `icon` pro
 
 ## Props
 
-| Prop            | Type                | Default   | Description                                                                           |
-| --------------- | ------------------- | --------- | ------------------------------------------------------------------------------------- |
-| `icon`          | SVG string          | undefined | SVG string or text glyph to be rendered as the icon.                                  |
-| `size`          | 'small' \| 'medium' | 'small'   | Specifies the size of the icon.                                                       |
-| `color`         | CSS custom variable | undefined | Specifies the color of the icon using a CSS custom variable.                          |
-| `class`         | string              | undefined | Custom CSS class name for additional styling.                                         |
+| Prop    | Type                                     | Default   | Description                                                        |
+| ------- | ---------------------------------------- | --------- | ------------------------------------------------------------------ |
+| `icon`  | SVG string                               | undefined | SVG string or text glyph to be rendered as the icon.               |
+| `size`  | <code>'small' &#124; 'medium' &#124; 'large' &#124; number</code> | 'small'   | Specifies the size of the icon. A number is interpreted as pixels. |
+| `color` | CSS custom variable                      | undefined | Specifies the color of the icon using a CSS custom variable.       |
+| `class` | string                                   | undefined | Custom CSS class name for additional styling.                      |

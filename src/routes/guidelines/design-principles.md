@@ -44,5 +44,4 @@ Latency of less than 100 milliseconds feels near-instantaneous, ensuring that us
 
 ## Embrace inclusive design
 
-Ensure that individuals with diverse needs can use the application by adhering to the accessibility standards outlined in [WCAG 2.2](https://www.w3.org/TR/WCAG22/).
-
+Ensure that individuals with diverse needs can use the extension by adhering to the accessibility standards outlined in [WCAG 2.2](https://www.w3.org/TR/WCAG22/).

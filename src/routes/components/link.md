@@ -19,7 +19,7 @@ index: 16
 
 ## Usage
 
-<!-- Import `Link` component form 'deskblocks'. -->
+<!-- Import the `Link` component from 'deskblocks'. -->
 
 ```svelte example hideToolbar
 <script>
@@ -93,7 +93,7 @@ Include the [Icon component](/components/icon) alongside the text, and ensure th
 
 | Prop       | Type                  | Default   | Description                                                                    |
 | ---------- | --------------------- | --------- | ------------------------------------------------------------------------------ |
-| `target`   | '\_blank' \| '\_self' | '\_blank' | Specifies where to open the linked document.                                   |
+| `target`   | <code>'\_blank' &#124; '\_self'</code> | '\_blank' | Specifies where to open the linked document.                                   |
 | `href`     | string                | undefined | The URL or path to navigate to when the link is clicked.                       |
 | `inline`   | boolean               | true      | Determines whether the link is displayed inline with surrounding content.      |
 | `rel`      | string                | undefined | Defines the relationship between the current document and the linked resource. |

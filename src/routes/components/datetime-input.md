@@ -17,7 +17,7 @@ index: 7
 
 Use the [datetime string format](https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#date_strings) (YYYY-MM-DDTHH:MM:SS) for setting the value.
 
-<!-- Import the `TextInput` component form 'deskblocks'. -->
+<!-- Import the `DateTimeInput` component from 'deskblocks'. -->
 
 ```svelte example
 <script>
@@ -55,7 +55,7 @@ Use the [datetime string format](https://developer.mozilla.org/en-US/docs/Web/HT
 
 <!-- - Icons can be placed on either side of the input field. -->
 
-Pass the [Icon component](/components/icon) within the `left` to render it on the left side of the input.
+Pass the [Icon component](/components/icon) within the `left-icon` slot to render it on the left side of the input.
 
 <!-- - For further icon customization, refer to the [Icon component](/components/icon). -->
 
@@ -146,7 +146,7 @@ Pass the [Icon component](/components/icon) within the `left` to render it on th
 | `value`    | [DateTime String Format](https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#date_strings) | undefined | Sets the current value of the datetime input in a string format (e.g., `1977-04-01T14:00:30`). |
 | `min`      | [DateTime String Format](https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#date_strings) | undefined | Defines the earliest datetime allowed for selection (e.g., `1977-04-01T00:00:00`).             |
 | `max`      | [DateTime String Format](https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#date_strings) | undefined | Defines the latest datetime allowed for selection (e.g., `2077-12-31T23:59:59`).               |
-| `step`     | string \| number                                                                                               | undefined | Specifies the increment step for datetime values (e.g., in seconds, minutes, or hours).        |
+| `step`     | <code>string &#124; number</code> | undefined | Specifies the increment step for datetime values (e.g., in seconds, minutes, or hours).        |
 | `name`     | string                                                                                                         | undefined | Assigns a name to the datetime input field, useful for form submissions.                       |
 | `disabled` | boolean                                                                                                        | false     | Disables the datetime input field, preventing user interaction.                                |
 | `invalid`  | boolean                                                                                                        | false     | Marks the datetime input field as invalid, typically used for form validation.                 |

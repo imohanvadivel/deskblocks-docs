@@ -69,7 +69,7 @@ Icon buttons support the same variants as [Button](/components/button).
 
 | Prop            | Type                                                                                | Default   | Description                                                    |
 | --------------- | ----------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------- |
-| `variant`       | 'primary' \| 'secondary' \| 'tertiary' \| 'ghost' \| 'danger' \| 'danger-secondary' | 'primary' | Visual style of the button.                                    |
+| `variant`       | <code>'primary' &#124; 'secondary' &#124; 'tertiary' &#124; 'ghost' &#124; 'danger' &#124; 'danger-secondary'</code> | 'primary' | Visual style of the button.                                    |
 | `disabled`      | boolean                                                                              | false     | Disables the button.                                           |
 | `href`          | string                                                                               | undefined | If set, the button renders as a link.                          |
 | `tabindex`      | number                                                                               | 0         | Tab order of the button.                                       |

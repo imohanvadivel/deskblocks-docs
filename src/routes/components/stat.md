@@ -1,7 +1,7 @@
 ---
 title: Stat
 dir: components
-description: A stat is a compact KPI card showing a labelled metric with an optional trend pill and caption.
+description: Stat presents a key metric in a compact card with an optional trend and supporting caption.
 slug: stat
 url: /components/stat
 index: 23
@@ -41,16 +41,28 @@ The `sub` prop adds a muted helper line under the value.
 
 ## Trend
 
-Pass `trend` to show a tinted delta pill: `direction` picks the arrow and tint (`up` success, `down` danger, `flat` neutral), `value` is the pre-formatted delta text.
+Pass `trend` to display a delta pill. The `direction` sets its arrow and color: `up` uses success, `down` uses danger and `flat` uses neutral. Pass the already formatted change as `value`.
 
 ```svelte example hideScript
 <script>
 	import { Stat } from 'deskblocks';
 </script>
 
-<div style="display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); gap: 12px; align-items: start;">
-	<Stat label="Resolved today" value="38" trend={{ direction: 'up', value: '+12%' }} sub="vs yesterday" />
-	<Stat label="Backlog" value="112" trend={{ direction: 'down', value: '-8%' }} sub="vs last week" />
+<div
+	style="display: grid; grid-template-columns: repeat(3, minmax(160px, 1fr)); gap: 12px; align-items: start;"
+>
+	<Stat
+		label="Resolved today"
+		value="38"
+		trend={{ direction: 'up', value: '+12%' }}
+		sub="vs yesterday"
+	/>
+	<Stat
+		label="SLA compliance"
+		value="86%"
+		trend={{ direction: 'down', value: '-8%' }}
+		sub="vs last week"
+	/>
 	<Stat label="Happiness" value="94%" trend={{ direction: 'flat', value: '±0%' }} />
 </div>
 ```
@@ -59,7 +71,7 @@ Cards stretch to the row height (`align-self: stretch`), so stats placed side by
 
 ## Custom value slot
 
-Use the `value` slot instead of the `value` prop when the metric area needs markup — for example a spinner while the figure loads.
+Use the `value` slot instead of the `value` prop when the metric area needs markup, such as a spinner while the figure loads.
 
 ```svelte example
 <script>
@@ -73,14 +85,21 @@ Use the `value` slot instead of the `value` prop when the metric area needs mark
 
 ## Slots
 
-- `value` — replaces the value text (e.g. a `Spinner` while loading).
+- `value`: replaces the value text, for example a `Spinner` while the figure loads.
 
 ## Props
 
-| Prop    | Type                                                            | Default   | Description                                                             |
-| ------- | --------------------------------------------------------------- | --------- | ----------------------------------------------------------------------- |
-| `label` | string                                                           | —         | Small caption shown above the value.                                     |
-| `value` | string \| number                                                 | undefined | Pre-formatted KPI value. Ignored when the `value` slot is used.          |
-| `sub`   | string                                                           | undefined | Muted helper line shown after the trend pill.                            |
-| `trend` | `{ direction: 'up' \| 'down' \| 'flat', value: string }`           | undefined | Optional delta pill; `value` is pre-formatted text such as `"+12%"`.     |
-| `class` | string                                                           | undefined | Custom CSS class name for additional styling.                            |
+| Prop    | Type                              | Default   | Description                                                     |
+| ------- | --------------------------------- | --------- | --------------------------------------------------------------- |
+| `label` | string                            | Required  | Small caption shown above the value.                            |
+| `value` | <code>string &#124; number</code> | undefined | Pre-formatted KPI value. Ignored when the `value` slot is used. |
+| `sub`   | string                            | undefined | Muted helper line shown after the trend pill.                   |
+| `trend` | `StatTrend`                       | undefined | Optional delta pill with a direction and display-ready value.   |
+| `class` | string                            | undefined | Custom CSS class name for additional styling.                   |
+
+```ts
+type StatTrend = {
+	direction: 'up' | 'down' | 'flat';
+	value: string;
+};
+```

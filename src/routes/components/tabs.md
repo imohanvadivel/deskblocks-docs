@@ -4,7 +4,7 @@ dir: components
 description: A tabs component organizes content into multiple sections, allowing users to switch between different views or groups of content within the same space.
 slug: tabs
 url: /components/tabs
-index: 13
+index: 13.5
 ---
 
 <script>
@@ -20,8 +20,8 @@ index: 13
 
 ## Usage
 
-- **Tab:** A Tab component groups multiple TabItems, allowing users to switch between different sections of content.
-- **TabItem:** A TabItem represents an individual tab and its associated content within a Tab component.
+- `Tab`: A Tab component groups multiple TabItems, allowing users to switch between different sections of content.
+- `TabItem`: A TabItem represents an individual tab and its associated content within a Tab component.
 
 ```svelte example
 <script>

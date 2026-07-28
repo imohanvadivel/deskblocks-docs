@@ -15,7 +15,7 @@ index: 4
 
 ## Usage
 
-<!-- Import the `TextInput` component form 'deskblocks'. -->
+<!-- Import the `NumberInput` component from 'deskblocks'. -->
 
 ```svelte example
 <script>
@@ -53,7 +53,7 @@ index: 4
 
 <!-- - Icons can be placed on either side of the input field. -->
 
-Pass the [Icon component](/components/icon) within the `left` or `right` slot to render it on the left or right side, respectively.
+Pass the [Icon component](/components/icon) within the `left-icon` or `right-icon` slot to render it on the left or right side, respectively.
 
 <!-- - For further icon customization, refer to the [Icon component](/components/icon). -->
 
@@ -161,9 +161,9 @@ Pass the [Icon component](/components/icon) within the `left` or `right` slot to
 | `id`          | string           | undefined | Specifies a unique identifier for the input field.                    |
 | `value`       | number           | undefined | Sets the current value of the input field.                            |
 | `placeholder` | string           | undefined | Provides a placeholder text that appears when the input is empty.     |
-| `min`         | string \| number | undefined | Defines the minimum value allowed for the input field.                |
-| `max`         | string \| number | undefined | Defines the maximum value allowed for the input field.                |
-| `step`        | string \| number | undefined | Specifies the increment step for numeric values.                      |
+| `min`         | <code>string &#124; number</code> | undefined | Defines the minimum value allowed for the input field.                |
+| `max`         | <code>string &#124; number</code> | undefined | Defines the maximum value allowed for the input field.                |
+| `step`        | <code>string &#124; number</code> | undefined | Specifies the increment step for numeric values.                      |
 | `name`        | string           | undefined | Assigns a name to the input field, useful for form submissions.       |
 | `disabled`    | boolean          | false     | Disables the input field, preventing user interaction.                |
 | `invalid`     | boolean          | false     | Marks the input field as invalid, typically used for form validation. |

@@ -15,7 +15,7 @@ index: 8
 
 ## Usage
 
-<!-- Import the `Textarea` component form 'deskblocks'. -->
+<!-- Import the `Textarea` component from 'deskblocks'. -->
 
 ```svelte example
 <script>
@@ -30,7 +30,7 @@ index: 8
 ```svelte example hideStyle hideScript
 <script>
 	import { Textarea } from 'deskblocks';
-	const message = `If, in your thinking, you rely entirely on others—often through purchase of professional advice—whenever outside a small territory of your own, you will suffer much calamity.`;
+	const message = `If, in your thinking, you rely entirely on others, often through purchase of professional advice, whenever outside a small territory of your own, you will suffer much calamity.`;
 </script>
 
 <div>
@@ -76,7 +76,7 @@ index: 8
 ```svelte example hideScript
 <script>
 	import { Textarea } from 'deskblocks';
-	const message = `Remember that just because other people agree or disagree with you doesn’t make you right or wrong—the only thing that matters is the correctness of your analysis and judgment.`;
+	const message = `Remember that just because other people agree or disagree with you doesn’t make you right or wrong. The only thing that matters is the correctness of your analysis and judgment.`;
 </script>
 
 <Textarea disabled value={message} />
@@ -89,7 +89,7 @@ index: 8
 | `id`          | string                                         | undefined | Specifies a unique identifier for the textarea field.                 |
 | `value`       | string                                         | undefined | Sets the current value of the textarea field.                         |
 | `placeholder` | string                                         | undefined | Provides placeholder text that appears when the textarea is empty.    |
-| `resize`      | 'horizontal' \| 'vertical' \| 'none' \| 'both' | 'none'    | Controls the resizing behavior of the textarea.                       |
+| `resize`      | <code>'horizontal' &#124; 'vertical' &#124; 'none' &#124; 'both'</code> | 'none'    | Controls the resizing behavior of the textarea.                       |
 | `minlength`   | string                                         | undefined | Specifies the minimum number of characters required in the textarea.  |
 | `maxlength`   | string                                         | undefined | Specifies the maximum number of characters allowed in the textarea.   |
 | `rows`        | number                                         | 2         | Sets the number of visible text lines for the textarea.               |

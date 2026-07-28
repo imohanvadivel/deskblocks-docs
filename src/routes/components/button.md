@@ -1,7 +1,7 @@
 ---
 title: Button
 dir: components
-description: A button allows users to trigger an action or event, such as submitting a form, triggering a process or navigate users within an application.
+description: A button allows users to trigger an action or event, such as submitting a form, triggering a process or navigating users within an extension.
 slug: button
 url: /components/button
 index: 1
@@ -88,7 +88,7 @@ A button can be turned into a link by using the `href` property, making it funct
 <Button disabled variant="ghost">Label</Button>
 ```
 
-## Buton with icon
+## Button with icon
 
 <!-- - Icons can be placed on both the left and right sides of the button. -->
 <!-- - The [Icon component](/components/icon) is used to render the icons. -->
@@ -96,7 +96,7 @@ A button can be turned into a link by using the `href` property, making it funct
 The slots labeled "left-icon" and "right-icon" should be used for placing icons on the left and right sides, respectively. The icon's color is automatically selected by the component based on the context.
 
 <Info header="Note:" type="info">
-	When an Icon component is passed to the designated slots (either "left-icon" or "right-icon"), the component automatically adjust its padding optically. However, if the Icon is placed in the default slot alongside the label, these padding adjustments won't be applied.
+	When an Icon component is passed to the designated slots (either "left-icon" or "right-icon"), the component automatically adjusts its padding optically. However, if the Icon is placed in the default slot alongside the label, these padding adjustments won't be applied.
 </Info>
 
 ```svelte example
@@ -156,7 +156,7 @@ The loading state for the button can be displayed by placing the [Spinner compon
 
 | Prop            | Type                                                                                | Default   | Description                                                                                        |
 | --------------- | ----------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------- |
-| `variant`       | 'primary' \| 'secondary' \| 'tertiary' \| 'ghost' \| 'danger' \| 'danger-secondary' | 'primary' | Determines the visual style of the button.                                                         |
+| `variant`       | <code>'primary' &#124; 'secondary' &#124; 'tertiary' &#124; 'ghost' &#124; 'danger' &#124; 'danger-secondary'</code> | 'primary' | Determines the visual style of the button.                                                         |
 | `disabled`      | boolean                                                                             | false     | Disables the button, preventing user interaction.                                                  |
 | `href`          | string                                                                              | undefined | Specifies the URL to navigate to when the button is clicked, making the button function as a link. |
 | `popovertarget` | string                                                                              | undefined | Specifies the ID of an associated popover element that will be triggered by the button.            |

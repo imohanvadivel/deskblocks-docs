@@ -1,7 +1,7 @@
 ---
 title: Portal
 dir: components
-description: A portal renders its children into a different part of the DOM, such as document.body — useful for overlays, dropdowns, and toasts that must escape a clipping or stacking context.
+description: A portal renders its children into a different part of the DOM, such as document.body. Reach for it when an overlay, dropdown or toast needs to escape a clipping or stacking context.
 slug: portal
 url: /components/portal
 index: 21
@@ -55,4 +55,4 @@ The `target` prop accepts a CSS selector or an `HTMLElement`.
 
 | Prop     | Type                  | Default | Description                                                    |
 | -------- | --------------------- | ------- | -------------------------------------------------------------- |
-| `target` | string \| HTMLElement | 'body'  | Where to render the content: a CSS selector or a DOM element.  |
+| `target` | <code>string &#124; HTMLElement</code> | 'body'  | Where to render the content: a CSS selector or a DOM element.  |

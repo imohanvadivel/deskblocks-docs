@@ -1,7 +1,7 @@
 ---
 title: Timeline
 dir: components
-description: A timeline presents a chronological, date-grouped stream of events along a vertical rail, such as a ticket's activity history.
+description: Timeline presents a chronological stream of events grouped by day.
 slug: timeline
 url: /components/timeline
 index: 24
@@ -19,7 +19,7 @@ index: 24
 
 ## Usage
 
-Pass pre-formatted `items`. Consecutive items sharing the same `day` string are grouped under one day header. All day and time strings are rendered as-is — format dates in your app before passing them.
+Pass events in the order you want them displayed. Consecutive items with the same `day` share one heading. The component does not sort events or format dates, so prepare `day` and `time` in your application.
 
 ```svelte example
 <script>
@@ -56,7 +56,7 @@ Pass pre-formatted `items`. Consecutive items sharing the same `day` string are 
 
 ## Event icons
 
-An event can carry an `icon` beside its title — either a raw SVG string (for example a glyph from `deskblocks/icons`) or a short text/emoji marker.
+An event can carry an `icon` beside its title, either a raw SVG string (for example a glyph from `deskblocks/icons`) or a short text or emoji marker.
 
 ```svelte example
 <script>
@@ -64,8 +64,20 @@ An event can carry an `icon` beside its title — either a raw SVG string (for e
 	import { IconMail, IconCall } from 'deskblocks/icons';
 
 	const items = [
-		{ day: 'Today (13 Jul)', time: '11:05 AM', title: 'Email Received', icon: IconMail, actor: 'Priya Raghavan' },
-		{ day: 'Today (13 Jul)', time: '10:12 AM', title: 'Call Logged', icon: IconCall, actor: 'Suresh Kumar' }
+		{
+			day: 'Today (13 Jul)',
+			time: '11:05 AM',
+			title: 'Email Received',
+			icon: IconMail,
+			actor: 'Priya Raghavan'
+		},
+		{
+			day: 'Today (13 Jul)',
+			time: '10:12 AM',
+			title: 'Call Logged',
+			icon: IconCall,
+			actor: 'Suresh Kumar'
+		}
 	];
 </script>
 
@@ -74,7 +86,7 @@ An event can carry an `icon` beside its title — either a raw SVG string (for e
 
 ## Details
 
-Each event can list `details` — muted label + value lines, useful for field transitions in an audit history.
+Use `details` for supporting information, such as field changes in an audit history. The label is optional, but every detail needs a value.
 
 ```svelte example
 <script>
@@ -96,20 +108,37 @@ Each event can list `details` — muted label + value lines, useful for field tr
 <Timeline {items} />
 ```
 
+## Events without a day
+
+The `day` field is optional. Events without it stay on the timeline rail but do not display a day heading or calendar icon.
+
+```svelte example hideScript
+<script>
+	import { Timeline } from 'deskblocks';
+
+	const items = [
+		{ time: '11:05 AM', title: 'Email received', actor: 'Priya Raghavan' },
+		{ time: '10:12 AM', title: 'Call logged', actor: 'Suresh Kumar' }
+	];
+</script>
+
+<Timeline {items} />
+```
+
 ## Props
 
-| Prop    | Type             | Default   | Description                                                              |
-| ------- | ---------------- | --------- | ------------------------------------------------------------------------ |
+| Prop    | Type             | Default   | Description                                                               |
+| ------- | ---------------- | --------- | ------------------------------------------------------------------------- |
 | `items` | `TimelineItem[]` | `[]`      | Events to render, in display order. Consecutive equal `day` values group. |
 | `class` | string           | undefined | Custom CSS class name for additional styling.                             |
 
 ### TimelineItem
 
-| Field     | Type                                  | Description                                                                    |
-| --------- | ------------------------------------- | ------------------------------------------------------------------------------ |
-| `day`     | string                                | Pre-formatted day-group header, e.g. `Today (13 Jul)`. Optional.               |
-| `time`    | string                                | Pre-formatted time label, e.g. `3:12 PM` or `20 minutes ago`. Optional.        |
-| `title`   | string                                | Event title.                                                                    |
-| `icon`    | string                                | Raw SVG string (rendered inline) or short text/emoji shown beside the title.   |
-| `actor`   | string                                | Person who performed the event; renders an initial avatar + name.              |
-| `details` | `{ label?: string; value: string }[]` | Label/value lines under the title.                                             |
+| Field     | Type                                  | Description                                                            |
+| --------- | ------------------------------------- | ---------------------------------------------------------------------- |
+| `day`     | string                                | Optional, pre-formatted group heading, such as `Today (13 Jul)`.       |
+| `time`    | string                                | Optional, pre-formatted time, such as `3:12 PM` or `20 minutes ago`.   |
+| `title`   | string                                | Event title.                                                           |
+| `icon`    | string                                | SVG string or short text marker displayed beside the title.            |
+| `actor`   | string                                | Person who performed the event. The first character becomes an avatar. |
+| `details` | `{ label?: string; value: string }[]` | Supporting label and value lines displayed below the event.            |

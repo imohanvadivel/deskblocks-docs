@@ -46,7 +46,7 @@ Use the [time string format](https://developer.mozilla.org/en-US/docs/Web/HTML/D
 
 ## Input with icon
 
-Pass the [Icon component](/components/icon) within the `left` slot to render it on the left side of the icon.
+Pass the [Icon component](/components/icon) within the `left-icon` slot to render it on the left side of the input.
 
 ```svelte example hideScript
 <script>
@@ -143,7 +143,7 @@ Specifies the increment step in seconds.
 | `value`    | [Time String Format](https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#times) | undefined | Sets the current value of the time input in the format `HH:MM:SS` (e.g., `14:00:30`). |
 | `min`      | [Time String Format](https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#times) | undefined | Defines the earliest time allowed for selection (e.g., `00:00:00`).                   |
 | `max`      | [Time String Format](https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats#times) | undefined | Defines the latest time allowed for selection (e.g., `23:59:59`).                     |
-| `step`     | string \| number                                                                                    | undefined | Specifies the increment step for time values in seconds.                              |
+| `step`     | <code>string &#124; number</code> | undefined | Specifies the increment step for time values in seconds.                              |
 | `name`     | string                                                                                              | undefined | Assigns a name to the time input field, useful for form submissions.                  |
 | `disabled` | boolean                                                                                             | false     | Disables the time input field, preventing user interaction.                           |
 | `invalid`  | boolean                                                                                             | false     | Marks the time input field as invalid, typically used for form validation.            |

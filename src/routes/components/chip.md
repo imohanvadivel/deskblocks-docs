@@ -58,7 +58,7 @@ To make a chip dismissible, pass the `dismissible` prop. Once enabled, the chip 
 
 ## Chip with avatar
 
-<!-- A chip can include an avatar by passing the [Avatar component](/components/avatar) into the `icon` slot. -->
+<!-- Use the `disabled` prop to disable the chip. -->
 
 ```svelte example
 <script>
@@ -72,7 +72,7 @@ To make a chip dismissible, pass the `dismissible` prop. Once enabled, the chip 
 
 ## Tone
 
-The `tone` prop applies a semantic color treatment — useful for status badges and category tags. It defaults to `neutral`, the standard chip appearance.
+The `tone` prop applies a semantic color treatment, which suits status badges and category tags. It defaults to `neutral`, the standard chip appearance.
 
 ```svelte example hideScript
 <script>
@@ -109,11 +109,9 @@ The `tone` prop applies a semantic color treatment — useful for status badges 
 
 ## Props
 
-Here is the completed description for the `Chip` component props:
-
 | Prop          | Type                                                       | Default   | Description                                                         |
 | ------------- | ---------------------------------------------------------- | --------- | ------------------------------------------------------------------- |
-| `tone`        | 'neutral' \| 'info' \| 'success' \| 'warning' \| 'danger' | 'neutral' | Applies a semantic color treatment to the chip.                     |
+| `tone`        | <code>'neutral' &#124; 'info' &#124; 'success' &#124; 'warning' &#124; 'danger'</code> | 'neutral' | Applies a semantic color treatment to the chip.                     |
 | `dismissible` | boolean                                                    | false     | Determines whether the chip can be dismissed (removed) by the user. |
 | `disabled`    | boolean                                                    | false     | Disables the chip.                                                  |
 | `class`       | string                                                     | undefined | Custom CSS class name for additional styling.                       |

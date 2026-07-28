@@ -1,7 +1,7 @@
 ---
 title: Note
 dir: components
-description: A note is a tinted callout that surfaces contextual information, confirmations or warnings inline.
+description: Note highlights contextual information, confirmations and warnings within a page.
 slug: note
 url: /components/note
 index: 22
@@ -36,7 +36,7 @@ The `tone` prop picks the tint, border and leading status glyph: `info` (default
 	import { Note } from 'deskblocks';
 </script>
 
-<Note tone="info">Customer replied 5 minutes ago — refresh to see the latest thread.</Note>
+<Note tone="info">Customer replied 5 minutes ago. Refresh to see the latest thread.</Note>
 <Note tone="success">Refund of $42.00 was processed successfully.</Note>
 <Note tone="warning">First-response SLA is due in 30 minutes.</Note>
 <Note tone="danger">This contact has 3 escalated tickets open.</Note>
@@ -72,7 +72,7 @@ Pass `dismissible` to render a close button. Clicking it hides the note and fire
 
 ## Custom icon
 
-The leading glyph defaults per tone (info, checkmark, warning, alert). Pass a raw SVG string via `icon` to override it.
+Each tone has a default icon. Pass an SVG string from `deskblocks/icons` to replace it.
 
 ```svelte example
 <script>
@@ -83,20 +83,26 @@ The leading glyph defaults per tone (info, checkmark, warning, alert). Pass a ra
 <Note tone="info" icon={IconClock}>Agent working hours end at 6:00 PM IST.</Note>
 ```
 
+If both `title` and the default slot are empty, the component does not render.
+
 ## Slots
 
-- `default` — the note body text.
+- `default`: the note body text.
 
 ## Props
 
-| Prop          | Type                                          | Default   | Description                                                                       |
-| ------------- | --------------------------------------------- | --------- | --------------------------------------------------------------------------------- |
-| `tone`        | 'info' \| 'success' \| 'warning' \| 'danger' | 'info'    | Semantic color treatment; also selects the default leading status glyph.          |
-| `title`       | string                                        | undefined | Optional bold title line rendered above the body.                                 |
-| `dismissible` | boolean                                       | false     | Renders a close button that hides the note and fires `dismiss`.                   |
-| `icon`        | string                                        | undefined | Raw SVG string (e.g. from `deskblocks/icons`) overriding the tone's default glyph. |
-| `class`       | string                                        | undefined | Custom CSS class name for additional styling.                                     |
+| Prop          | Type                                                                  | Default   | Description                                                              |
+| ------------- | --------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------ |
+| `tone`        | <code>'info' &#124; 'success' &#124; 'warning' &#124; 'danger'</code> | 'info'    | Semantic color treatment; also selects the default leading status glyph. |
+| `title`       | string                                                                | undefined | Optional bold title line rendered above the body.                        |
+| `dismissible` | boolean                                                               | false     | Renders a close button that hides the note and fires `dismiss`.          |
+| `icon`        | string                                                                | undefined | SVG string that replaces the tone's default icon.                        |
+| `class`       | string                                                                | undefined | Custom CSS class name for additional styling.                            |
 
 ## Events
 
-- `on:dismiss` — fired when the close button is clicked (the note hides itself).
+- `on:dismiss`: fires when the close button is clicked (the note hides itself).
+
+## Accessibility
+
+Notes use `role="status"` so updates can be announced without interrupting the user. A dismissible note includes a close button with an accessible label.
