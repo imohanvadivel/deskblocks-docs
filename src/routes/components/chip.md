@@ -118,4 +118,4 @@ The `tone` prop applies a semantic color treatment, which suits status badges an
 
 ## Events
 
-- `on:dismiss`
+- `on:dismiss`: fires when the close icon of a `dismissible` chip is clicked; a `disabled` chip never dispatches it. `event.detail` is `{ id, tone, element, originalEvent }`, where `id` is the chip's `id` attribute (`undefined` if none was passed), `tone` is the resolved tone, `element` is the chip's root element and `originalEvent` is the underlying `MouseEvent`.

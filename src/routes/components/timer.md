@@ -59,12 +59,12 @@ Set `display="clock"` for a live `HH:MM:SS` countdown. Durations longer than 24 
 
 ## Props
 
-| Prop       | Type                                          | Default    | Description                                                                 |
-| ---------- | --------------------------------------------- | ---------- | --------------------------------------------------------------------------- |
-| `deadline` | <code>string &#124; number &#124; null</code> | undefined  | Deadline as an ISO date string or epoch milliseconds.                       |
-| `display`  | <code>'text' &#124; 'clock'</code>            | `'text'`   | Displays a compact text duration or a live clock that updates every second. |
-| `label`    | `string`                                      | `'Due in'` | The small label rendered above the value.                                   |
-| `class`    | `string`                                      | undefined  | Custom CSS class name for additional styling.                               |
+| Prop       | Type                                                           | Default    | Description                                                                 |
+| ---------- | -------------------------------------------------------------- | ---------- | --------------------------------------------------------------------------- |
+| `deadline` | <code>string &#124; number &#124; null &#124; undefined</code> | undefined  | Deadline as an ISO date string or epoch milliseconds.                       |
+| `display`  | <code>'text' &#124; 'clock'</code>                             | `'text'`   | Displays a compact text duration or a live clock that updates every second. |
+| `label`    | `string`                                                       | `'Due in'` | The small label rendered above the value.                                   |
+| `class`    | `string`                                                       | undefined  | Custom CSS class name for additional styling.                               |
 
 ## Events
 

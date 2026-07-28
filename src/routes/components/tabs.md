@@ -67,3 +67,7 @@ Pass the `background` prop to apply a background color to the tabs.
 | `open`  | boolean | undefined | Indicates whether the tab is currently active and its content is visible. |
 | `title` | string  | undefined | Sets the label or title displayed on the tab.                             |
 | `class` | string  | undefined | Custom CSS class for additional styling of the tab item.                  |
+
+## Events
+
+- `on:change`: fires on `Tabs` when the selected tab changes after mount; the initial selection made while the tabs mount does not dispatch it. `event.detail` is `{ node, title }`, where `node` is the newly shown panel element (`null` if no tab is selected) and `title` is the `title` of the selected TabItem (an empty string when unavailable).

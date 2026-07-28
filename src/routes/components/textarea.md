@@ -7,6 +7,10 @@ url: /components/textarea
 index: 8
 ---
 
+<script>
+  import 'deskblocks/globalStyles';
+</script>
+
 # Textarea
 
 {description}
