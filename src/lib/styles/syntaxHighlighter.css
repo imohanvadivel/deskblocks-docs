@@ -42,6 +42,11 @@ pre[class*='language-'] {
 	overflow: auto;
 	background: #f6f8fa;
 	background: var(--color-bg-secondary);
+	/* Plain fenced blocks are bare `pre` elements: `Pre.svelte` carries a border but
+	   is never mapped as an mdsvex component, so the border has to live here. Matches
+	   the `section` border on ExampleWrapper so both kinds of code block agree. */
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
 }
 :not(pre) > code[class*='language-'] {
 	padding: 0.1em 0.3em;
