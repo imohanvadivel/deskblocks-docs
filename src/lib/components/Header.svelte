@@ -6,9 +6,62 @@
 	import SearchIcon from '$lib/icons/Search.svg';
 	import { fade } from 'svelte/transition';
 	import { tooltip } from '$lib/utils/tooltip.js';
+	import { onMount } from 'svelte';
+	import SearchModal from '$lib/components/SearchModal.svelte';
+	import { searchConfigured, warnIfUnconfigured } from '$lib/search/config.js';
 
-	const version = `0.1.5`;
+	/* The `deskblocks` version shown in the header badge. The library now exposes
+	 * `./package.json` in its exports map, but Vite still fails to resolve the
+	 * specifier through the local source symlink, so keep this literal in sync
+	 * with the library on every release. */
+	const version = `0.3.0`;
+
+	let searchOpen = false;
+	let searchInput: HTMLInputElement;
+	let searchButton: HTMLButtonElement;
+	/* Whatever opened the dialog, so focus can go back to it on close. */
+	let searchTrigger: HTMLElement | null = null;
+	/* Rendered server-side as the Mac form, corrected on mount. */
+	let shortcutHint = '⌘K';
+
+	onMount(() => {
+		if (/Mac|iPhone|iPad|iPod/.test(navigator.platform || navigator.userAgent)) return;
+		shortcutHint = 'Ctrl K';
+	});
+
+	function openSearch(event?: Event) {
+		warnIfUnconfigured();
+		const target = event?.currentTarget;
+		searchTrigger = target instanceof HTMLElement ? target : null;
+		searchOpen = true;
+	}
+
+	function closeSearch() {
+		searchOpen = false;
+
+		/* Prefer the element that opened it; on small viewports the header input
+		 * is display:none and cannot take focus, so fall back to the icon. */
+		const fallback = searchInput?.offsetParent ? searchInput : searchButton;
+		const target = searchTrigger?.offsetParent ? searchTrigger : fallback;
+		target?.focus();
+		searchTrigger = null;
+	}
+
+	function onTriggerKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Enter' && event.key !== ' ') return;
+		event.preventDefault();
+		openSearch(event);
+	}
+
+	function onWindowKeydown(event: KeyboardEvent) {
+		if (event.key.toLowerCase() !== 'k' || !(event.metaKey || event.ctrlKey)) return;
+		event.preventDefault();
+		if (searchOpen) closeSearch();
+		else openSearch();
+	}
 </script>
+
+<svelte:window on:keydown={onWindowKeydown} />
 
 <header transition:fade>
 	<div class="logo">
@@ -24,19 +77,43 @@
 		<span class="version">{version}</span>
 	</div>
 
-	<input
-		class="global-search"
-		type="search"
-		placeholder="Search components, guidelines, resources..."
-	/>
+	<div class="global-search">
+		<input
+			class="global-search-input"
+			type="search"
+			readonly
+			disabled={!searchConfigured}
+			aria-haspopup="dialog"
+			aria-label="Search components, guidelines, resources"
+			title={searchConfigured ? undefined : 'Search is unavailable: Algolia is not configured'}
+			placeholder={searchConfigured
+				? 'Search components, guidelines, resources...'
+				: 'Search unavailable — not configured'}
+			bind:this={searchInput}
+			on:click={openSearch}
+			on:keydown={onTriggerKeydown}
+		/>
+		{#if searchConfigured}
+			<kbd class="global-search-hint" aria-hidden="true">{shortcutHint}</kbd>
+		{/if}
+	</div>
 
 	<div class="right-part">
-		<!-- Search Icon -->
-
-		<!-- <button aria-label="search" type="button" title="Search" class="icon-container search">
+		<!-- Search Icon — the only search affordance on small viewports, where the
+		     header input is hidden. -->
+		<button
+			aria-label="search"
+			type="button"
+			class="icon-container search"
+			aria-haspopup="dialog"
+			aria-expanded={searchOpen}
+			disabled={!searchConfigured}
+			bind:this={searchButton}
+			on:click={openSearch}
+		>
 			<span class="sr-only">Search Components, Guidelines, Resources and more</span>
 			{@html SearchIcon}
-		</button> -->
+		</button>
 
 		<!-- DarkMode Icon -->
 		<button
@@ -76,6 +153,8 @@
 		</a>
 	</div>
 </header>
+
+<SearchModal open={searchOpen} on:close={closeSearch} />
 
 <style>
 	.logo-link {
@@ -157,7 +236,15 @@
 	}
 
 	.global-search {
-		visibility: hidden;
+		position: relative;
+		display: flex;
+		align-items: center;
+		grid-column: span 2;
+	}
+
+	/* The icon is the search affordance only where the input is hidden. */
+	.icon-container.search {
+		display: none;
 	}
 
 	@media (--small-viewport) {
@@ -167,24 +254,62 @@
 		.global-search {
 			display: none;
 		}
-		/* .icon-container.search {
-			display: block;
-		} */
+		.icon-container.search {
+			display: flex;
+		}
 	}
 
-	input {
-		border: var(--color-border);
+	.global-search-input {
+		width: 100%;
 		background-color: var(--color-bg-secondary);
 		border: 1px solid var(--color-border);
 		border-radius: 4px;
 		height: 2rem;
-		grid-column: span 2;
 		text-indent: 1rem;
+		/* Room for the ⌘K hint. */
+		padding-right: 3.25rem;
+		font-family: var(--docs-sans);
 		font-size: 0.875rem;
+		color: var(--color-text);
+		cursor: default;
 	}
 
-	input::placeholder {
+	.global-search-input:hover:not(:disabled) {
+		background-color: var(--color-bg-tertiary);
+	}
+
+	.global-search-input:focus-visible {
+		outline: 2px solid var(--color-border-brand-strong);
+		outline-offset: 1px;
+	}
+
+	.global-search-input:disabled {
+		background-color: var(--color-bg);
+		color: var(--color-text-tertiary);
+		cursor: not-allowed;
+	}
+
+	.global-search-input::placeholder {
 		color: var(--color-text-secondary);
+	}
+
+	.global-search-hint {
+		position: absolute;
+		right: 0.5rem;
+		pointer-events: none;
+		border: 1px solid var(--color-border);
+		border-radius: 3px;
+		background-color: var(--color-bg);
+		color: var(--color-text-secondary);
+		font-family: var(--docs-mono);
+		font-size: 0.6875rem;
+		line-height: 1.4;
+		padding: 0 0.25rem;
+	}
+
+	.icon-container.search:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
 	}
 
 	.right-part {

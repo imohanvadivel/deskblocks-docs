@@ -5,6 +5,10 @@ import svgLoader from 'vite-svg-loader'; // Vite plugin: loads SVG files as comp
 
 export default defineConfig({
 	plugins: [sveltekit(), examples, svgLoader({ defaultImport: 'raw' })],
+	server: {
+		// `deskblocks` is linked to the sibling source checkout; let Vite serve from it.
+		fs: { allow: ['..'] }
+	},
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	}
