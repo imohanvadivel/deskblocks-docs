@@ -1,7 +1,7 @@
 ---
 title: Table
 dir: components
-description: A data table with aligned columns, optional click-to-sort headers, badge cells, and clickable rows.
+description: Table organizes structured data into aligned columns with optional sorting, badges and row actions.
 slug: table
 url: /components/table
 index: 26
@@ -19,7 +19,7 @@ index: 26
 
 ## Usage
 
-Pass `columns` (each with a `key` and `label`) and `rows` (plain objects keyed by column `key`). Cell values are display-ready strings or numbers — format dates, currency and entity names before passing them in. Empty cells (`null`, `undefined` or `''`) render as an em dash.
+Define each column with a `key` and `label`, then pass row objects that use the same keys. Cell values should be ready for display, so format dates, currency and entity names in your application. Empty cells display a dash placeholder.
 
 ```svelte example
 <script>
@@ -42,7 +42,7 @@ Pass `columns` (each with a `key` and `label`) and `rows` (plain objects keyed b
 
 ## Badge cells
 
-Set `badge: true` on a column to render its cells as tone-tinted chips. A badge cell value can be a plain string (neutral tone) or a `{ text, tone }` object — tones follow the Chip convention (`neutral`, `info`, `success`, `warning`, `danger`). Empty badge cells fall back to a plain em dash.
+Set `badge: true` on a column to render its values as tinted chips. Pass a plain string for the neutral tone or a `{ text, tone }` object to control the tone for an individual cell. Empty badge cells display the same dash placeholder as other empty cells.
 
 ```svelte example
 <script>
@@ -77,7 +77,9 @@ Set `badge: true` on a column to render its cells as tone-tinted chips. A badge 
 
 ## Sortable columns
 
-Pass `sortable` to enable click-to-sort on every header — clicking toggles ascending/descending and shows a ▲/▼ indicator. A column can opt out (or in) individually via its own `sortable` field. Numeric values sort numerically; everything else sorts alphabetically.
+Pass `sortable` to make every column sortable, then set a column's `sortable` field to override the table setting. Selecting a header toggles between ascending and descending order. The active arrow uses a stronger color.
+
+A column sorts numerically only when every non-empty value can be converted to a number. Other values sort alphabetically, and empty cells remain at the end in either direction. Headers can be activated with a pointer, Enter or Space.
 
 ```svelte example hideScript
 <script>
@@ -100,7 +102,7 @@ Pass `sortable` to enable click-to-sort on every header — clicking toggles asc
 
 ## Alignment and width
 
-Each column accepts `align` (`left` | `center` | `right`) and a CSS `width` (e.g. `"120px"`, `"30%"`). The table scrolls horizontally inside its own wrapper when it overflows.
+Each column accepts `align` and a CSS `width`, such as `"120px"` or `"30%"`. The table scrolls horizontally inside its own container when it is wider than the available space.
 
 ```svelte example hideScript
 <script>
@@ -123,7 +125,7 @@ Each column accepts `align` (`left` | `center` | `right`) and a CSS `width` (e.g
 
 ## Clickable rows
 
-Pass `clickableRows` to give rows a pointer cursor and hover background, and listen to `on:rowClick` — the event detail carries the clicked `row` object and its `index` in the currently sorted order.
+Pass `clickableRows` to add a pointer cursor and hover treatment, then listen to `rowClick`. The event includes both the row's original index and its current position after sorting.
 
 ```svelte example
 <script>
@@ -139,19 +141,39 @@ Pass `clickableRows` to give rows a pointer cursor and hover background, and lis
 	];
 </script>
 
-<Table {columns} {rows} clickableRows on:rowClick={(e) => alert('Open ticket #' + e.detail.row.id)} />
+<Table
+	{columns}
+	{rows}
+	clickableRows
+	on:rowClick={(e) => alert(`Open ticket #${e.detail.row.id} from row ${e.detail.index}`)}
+/>
 ```
 
 ## Props
 
-| Prop            | Type                                                                                        | Default   | Description                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------ |
-| `columns`       | `{ key: string; label: string; align?: 'left'\|'center'\|'right'; width?: string; badge?: boolean; sortable?: boolean }[]` | `[]`      | Column definitions.                                                                              |
-| `rows`          | `Record<string, string \| number \| null \| { text: string; tone?: Tone }>[]`               | `[]`      | Row objects keyed by column `key`. Badge columns accept `{ text, tone }` cells.                  |
-| `sortable`      | `boolean`                                                                                    | `false`   | Enables click-to-sort on all headers; a column's own `sortable` field overrides this per column. |
-| `clickableRows` | `boolean`                                                                                    | `false`   | Rows show a pointer cursor and hover background.                                                 |
-| `class`         | `string`                                                                                     | undefined | Custom CSS class name for additional styling.                                                    |
+| Prop            | Type            | Default   | Description                                                                      |
+| --------------- | --------------- | --------- | -------------------------------------------------------------------------------- |
+| `columns`       | `TableColumn[]` | `[]`      | Column definitions.                                                              |
+| `rows`          | `TableRow[]`    | `[]`      | Row objects keyed by each column's `key`.                                        |
+| `sortable`      | `boolean`       | `false`   | Makes every header sortable. A column's `sortable` field overrides this setting. |
+| `clickableRows` | `boolean`       | `false`   | Adds an interactive appearance and enables the `rowClick` event.                 |
+| `class`         | `string`        | undefined | Custom CSS class name for additional styling.                                    |
+
+### TableColumn
+
+| Field      | Type                                               | Description                                                |
+| ---------- | -------------------------------------------------- | ---------------------------------------------------------- |
+| `key`      | `string`                                           | Property read from each row.                               |
+| `label`    | `string`                                           | Text displayed in the header.                              |
+| `align`    | <code>'left' &#124; 'center' &#124; 'right'</code> | Horizontal alignment for the header and cells.             |
+| `width`    | `string`                                           | CSS width for the column, such as `"120px"` or `"30%"`.    |
+| `badge`    | `boolean`                                          | Displays non-empty cells in this column as chips.          |
+| `sortable` | `boolean`                                          | Overrides the table-level sorting setting for this column. |
+
+### TableRow
+
+A row is an object keyed by the column definitions. Regular cells accept a string, number, `null` or `undefined`. Badge cells also accept `{ text: string, tone?: Tone }`, where `Tone` is `neutral`, `info`, `success`, `warning` or `danger`.
 
 ## Events
 
-- `on:rowClick` — fired when a row is clicked; `event.detail` is `{ row, index }` (index within the current sort order).
+- `on:rowClick`: fires when a row is clicked while `clickableRows` is set. `event.detail` is `{ row, index, sortedIndex }`. The `index` points to the original `rows` array, while `sortedIndex` is the row's current display position.

@@ -1,7 +1,7 @@
 ---
 title: List
 dir: components
-description: A list renders rich rows — leading icon or avatar, title with subtitle meta, and trailing badges, counts, avatars, or icons — adapting automatically to narrow containers.
+description: List presents related records as responsive rows with supporting details and status indicators.
 slug: list
 url: /components/list
 index: 25
@@ -19,7 +19,7 @@ index: 25
 
 ## Usage
 
-Pass pre-formatted `items`. A row renders as a rich row when it has a `title`. Subtitle meta items are separated by a middle dot; format dates in your app before passing them (e.g. `2 days ago`).
+Pass display-ready items in the order you want them shown. An item with a `title` uses the rich row layout. Its subtitle entries appear below the title and are separated by a middle dot.
 
 ```svelte example
 <script>
@@ -49,7 +49,7 @@ Pass pre-formatted `items`. A row renders as a rich row when it has a `title`. S
 
 ## Leading icon or avatar
 
-A row can lead with a raw-SVG icon in a 36px circle (`leadingIcon`), or an initials avatar derived from a name (`avatarName`). `avatarName` wins when both are set; an empty name renders `?`.
+A rich row can start with an SVG icon, a photo, or an initials avatar. Pass the icon through `leadingIcon`, an image URL through `avatarSrc`, or the person's name through `avatarName`. When more than one is present, `avatarSrc` wins, then `avatarName`. A photo that cannot load falls back to the initials, so it is worth passing `avatarName` alongside `avatarSrc`.
 
 ```svelte example
 <script>
@@ -68,9 +68,15 @@ A row can lead with a raw-SVG icon in a 36px circle (`leadingIcon`), or an initi
 			subtitle: [{ text: 'Billing' }, { text: '1 hour ago' }]
 		},
 		{
+			avatarSrc: '/assets/avatar/pic1.jpg',
 			avatarName: 'Ananya Iyer',
 			title: 'Ananya Iyer',
 			subtitle: [{ text: 'ananya.iyer@zylker.com' }, { text: 'Chennai' }]
+		},
+		{
+			avatarName: 'Ravi Shankar',
+			title: 'Ravi Shankar',
+			subtitle: [{ text: 'ravi.shankar@zylker.com' }, { text: 'Coimbatore' }]
 		}
 	];
 </script>
@@ -80,7 +86,7 @@ A row can lead with a raw-SVG icon in a 36px circle (`leadingIcon`), or an initi
 
 ## Subtitle meta with icons
 
-Each subtitle meta item can carry its own small icon (raw SVG string).
+Each subtitle item can include a small SVG icon. Empty subtitle text is skipped.
 
 ```svelte example
 <script>
@@ -104,7 +110,7 @@ Each subtitle meta item can carry its own small icon (raw SVG string).
 
 ## Trailing elements
 
-Rows can end with any mix of trailing elements: a `badge` (tinted status pill), a `count` (number with an optional icon), a small `avatar` (initials), or a plain `icon`. On lists narrower than ~480px the trailing group wraps onto its own line under the text and the title relaxes to a two-line clamp.
+Rows can end with any combination of badges, counts, avatars and icons. In narrow containers, the trailing group moves below the main text and the title can wrap to two lines.
 
 ```svelte example
 <script>
@@ -138,7 +144,7 @@ Rows can end with any mix of trailing elements: a `badge` (tinted status pill), 
 
 ## Clickable rows
 
-Set `clickable` to make rich rows interactive — pointer cursor, hover background, keyboard activation (Enter/Space) — and listen for `itemClick`. Navigation itself (e.g. opening a URL) stays in your app.
+Set `clickable` to make rich rows interactive: rows get a pointer cursor, a hover background and keyboard activation with Enter or Space. Listen for `itemClick` to react. Navigation itself, such as opening a URL, stays in the extension.
 
 ```svelte example
 <script>
@@ -159,7 +165,7 @@ Set `clickable` to make rich rows interactive — pointer cursor, hover backgrou
 
 ## Label/value rows
 
-A row without a `title` falls back to the legacy label/value grid: each entry in `fields` renders a small label over a value, and `badge: true` renders the value as a chip.
+An item without a `title` can use `fields` to display a read-only label and value grid. Set `badge: true` on a field to display its non-empty value as a chip. Label and value rows do not become interactive when `clickable` is set.
 
 ```svelte example
 <script>
@@ -188,32 +194,43 @@ A row without a `title` falls back to the legacy label/value grid: each entry in
 
 ## Props
 
-| Prop        | Type         | Default   | Description                                                                  |
-| ----------- | ------------ | --------- | ---------------------------------------------------------------------------- |
-| `items`     | `ListItem[]` | `[]`      | Rows to render.                                                               |
-| `clickable` | boolean      | false     | Makes rich rows interactive and enables the `itemClick` event.                |
-| `class`     | string       | undefined | Custom CSS class name for additional styling.                                 |
+| Prop        | Type         | Default   | Description                                                    |
+| ----------- | ------------ | --------- | -------------------------------------------------------------- |
+| `items`     | `ListItem[]` | `[]`      | Rows to render.                                                |
+| `clickable` | boolean      | false     | Makes rich rows interactive and enables the `itemClick` event. |
+| `class`     | string       | undefined | Custom CSS class name for additional styling.                  |
 
 ### ListItem
 
-| Field         | Type                 | Description                                                                       |
-| ------------- | -------------------- | --------------------------------------------------------------------------------- |
-| `title`       | string               | Primary text. Its presence selects the rich-row layout.                           |
-| `subtitle`    | `{ text: string; icon?: string }[]` | Meta items under the title, dot-separated; `icon` is a raw SVG string. Empty-text items are skipped. |
-| `leadingIcon` | string               | Raw SVG string shown in a 36px leading circle.                                    |
-| `avatarName`  | string               | Name for a 36px leading initials avatar (takes precedence over `leadingIcon`).    |
-| `trailing`    | `ListTrailing[]`     | Trailing elements (see below).                                                    |
-| `fields`      | `{ label: string; value: string; badge?: boolean }[]` | Legacy label/value columns, used when `title` is absent. |
+| Field         | Type                                                  | Description                                                                                          |
+| ------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `title`       | string                                                | Primary text. A defined value selects the rich row layout.                                           |
+| `subtitle`    | `{ text: string; icon?: string }[]`                   | Meta items under the title, dot-separated; `icon` is a raw SVG string. Empty-text items are skipped. |
+| `leadingIcon` | string                                                | SVG string shown in a leading icon circle.                                                           |
+| `avatarName`  | string                                                | Name for a leading initials avatar. A non-empty value takes precedence over `leadingIcon`.           |
+| `avatarSrc`   | string                                                | Image URL for a leading photo avatar. Wins over `avatarName`, and falls back to it if it fails.       |
+| `trailing`    | `ListTrailing[]`                                      | Trailing elements (see below).                                                                       |
+| `fields`      | `{ label: string; value: string; badge?: boolean }[]` | Legacy label/value columns, used when `title` is absent.                                             |
 
 ### ListTrailing
 
-| Variant  | Shape                                                                    | Description                                        |
-| -------- | ------------------------------------------------------------------------ | -------------------------------------------------- |
-| `badge`  | `{ kind: 'badge'; text: string; tone?: 'neutral' \| 'info' \| 'success' \| 'warning' \| 'danger' }` | Tinted status pill. Hidden when `text` is empty.   |
-| `count`  | `{ kind: 'count'; value: string \| number; icon?: string }`              | Numeric indicator with an optional raw-SVG icon.   |
-| `avatar` | `{ kind: 'avatar'; name: string }`                                       | Small 30px initials avatar.                        |
-| `icon`   | `{ kind: 'icon'; icon: string }`                                         | Plain raw-SVG icon in the secondary text color.    |
+| Variant  | Shape                                          | Description                                       |
+| -------- | ---------------------------------------------- | ------------------------------------------------- |
+| `badge`  | `{ kind: 'badge'; text: string; tone?: Tone }` | Tinted status label. Hidden when `text` is empty. |
+| `count`  | `ListCount`                                    | Value with an optional SVG icon.                  |
+| `avatar` | `{ kind: 'avatar'; name: string }`             | Small 30px initials avatar.                       |
+| `icon`   | `{ kind: 'icon'; icon: string }`               | SVG icon in the secondary text color.             |
+
+`Tone` can be `neutral`, `info`, `success`, `warning` or `danger`.
+
+```ts
+type ListCount = {
+	kind: 'count';
+	value: string | number;
+	icon?: string;
+};
+```
 
 ## Events
 
-- `on:itemClick` — fired when a rich row is clicked or activated with Enter/Space while `clickable` is set; `event.detail` is `{ item, index }`.
+- `on:itemClick`: fires when a rich row is clicked or activated with Enter/Space while `clickable` is set; `event.detail` is `{ item, index }`.

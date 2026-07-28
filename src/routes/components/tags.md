@@ -1,7 +1,7 @@
 ---
 title: Tags
 dir: components
-description: A wrapping row of bordered tag pills, with optional semantic tones, in the Desk status-pill style.
+description: Tags displays a wrapping group of compact labels with an optional semantic tone.
 slug: tags
 url: /components/tags
 index: 35
@@ -19,9 +19,9 @@ index: 35
 
 ## Usage
 
-Pass tag labels as `tags`. Each renders as a bordered pill (tinted background, squared radius) — the Desk status-pill look. The row wraps with an 8px gap; an empty list renders a single "—" placeholder. For the softer rounded chip style, use the [Chip component](/components/chip) directly.
+Pass an array of labels to `tags`. Blank labels are ignored, and the row wraps when it runs out of space. If there are no visible labels, the component displays a muted dash placeholder.
 
-```svelte example
+```svelte example hideTheme
 <script>
 	import { Tags } from 'deskblocks';
 </script>
@@ -31,9 +31,9 @@ Pass tag labels as `tags`. Each renders as a bordered pill (tinted background, s
 
 ## Tone
 
-The `tone` prop applies a semantic color treatment (tinted background, colored border and text) to every pill — useful when the tag set carries one meaning, like escalation labels.
+Use `tone` when every label in the group shares the same meaning. For example, a danger tone can identify escalation tags, while a success tone can identify completed work. Leave the tone unset for the neutral appearance.
 
-```svelte example hideScript
+```svelte example hideScript hideTheme
 <script>
 	import { Tags } from 'deskblocks';
 </script>
@@ -46,7 +46,7 @@ The `tone` prop applies a semantic color treatment (tinted background, colored b
 
 ## Empty state
 
-```svelte example hideScript
+```svelte example hideScript hideTheme
 <script>
 	import { Tags } from 'deskblocks';
 </script>
@@ -54,13 +54,17 @@ The `tone` prop applies a semantic color treatment (tinted background, colored b
 <Tags tags={[]} />
 ```
 
+## Tags or Chip
+
+Use `Tags` to display a group of plain, read-only labels. Use [Chip](/components/chip) when you need one label with an icon, avatar, disabled state or dismiss action.
+
 ## Props
 
-| Prop    | Type                                                        | Default     | Description                                                       |
-| ------- | ----------------------------------------------------------- | ----------- | ------------------------------------------------------------------ |
-| `tags`  | `string[]`                                                  | `[]`        | Tag labels. An empty list renders a "—" placeholder.               |
-| `tone`  | `'neutral' \| 'info' \| 'success' \| 'warning' \| 'danger'` | undefined   | Semantic color treatment applied to every pill.                    |
-| `class` | `string`                                                    | undefined   | Custom CSS class name for additional styling.                      |
+| Prop    | Type                                                                                   | Default   | Description                                      |
+| ------- | -------------------------------------------------------------------------------------- | --------- | ------------------------------------------------ |
+| `tags`  | `string[]`                                                                             | `[]`      | Labels to display. Blank labels are ignored.     |
+| `tone`  | <code>'neutral' &#124; 'info' &#124; 'success' &#124; 'warning' &#124; 'danger'</code> | undefined | Semantic color treatment applied to every label. |
+| `class` | `string`                                                                               | undefined | Custom CSS class name for additional styling.    |
 
 ## Events
 

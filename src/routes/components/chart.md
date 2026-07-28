@@ -1,7 +1,7 @@
 ---
 title: Chart
 dir: components
-description: An inline-SVG chart that renders 13 shapes — from pies and columns to gauges, funnels and sparklines — using theme tokens so it adapts to light and dark automatically.
+description: Chart visualizes data in various chart types.
 slug: chart
 url: /components/chart
 index: 30
@@ -19,7 +19,7 @@ index: 30
 
 ## Usage
 
-Pass a `type` and prepared `data` — one `{ label, value }` entry per category. The chart takes already-aggregated numbers; grouping raw records ("tickets by status") and counting/summing happen in your app before the data reaches the component.
+Pass a `type` and prepared `data`, with one label and numeric value for each category. Aggregate, count and format raw records in your application before passing them to the chart.
 
 ```svelte example
 <script>
@@ -36,9 +36,9 @@ Pass a `type` and prepared `data` — one `{ label, value }` entry per category.
 <Chart type="column" title="Tickets by status" data={byStatus} />
 ```
 
-## Pie & donut
+## Pie and donut
 
-Slices are colored from the built-in categorical palette. The donut variant adds a centre total.
+Slices are colored from the built-in categorical palette. The donut variant adds a center total.
 
 ```svelte example
 <script>
@@ -59,7 +59,7 @@ Slices are colored from the built-in categorical palette. The donut variant adds
 
 ## Bar
 
-Horizontal bars with the value printed at the end of each bar — good for longer category names.
+Horizontal bars print the value at the end of each bar, which works well for longer category names.
 
 ```svelte example hideScript
 <script>
@@ -76,9 +76,9 @@ Horizontal bars with the value printed at the end of each bar — good for longe
 <Chart type="bar" title="Resolved this week" data={byAgent} />
 ```
 
-## Line, area & spline
+## Line, area and spline
 
-Point-per-entry trend charts. Date-like labels (ISO strings) are automatically compacted to "Jan '26" on the axis; crowded axes thin their tick labels. Charts with many points grow wider than the container and scroll horizontally.
+These chart types plot one point for each entry. Date-like labels that begin with a year and month are shortened to a format such as "Jan '26". Charts with many points grow wider and scroll horizontally instead of crowding the axis.
 
 ```svelte example
 <script>
@@ -97,6 +97,25 @@ Point-per-entry trend charts. Date-like labels (ISO strings) are automatically c
 <Chart type="line" title="Ticket inflow" data={inflow} />
 <Chart type="area" title="Ticket inflow" data={inflow} />
 <Chart type="spline" title="Ticket inflow" data={inflow} />
+```
+
+## Negative values
+
+Bar, column, stacked column, line, area and spline charts place negative values below or to the left of the zero line. Use non-negative values for pie, donut, gauge, funnel and heatmap charts.
+
+```svelte example
+<script>
+	import { Chart } from 'deskblocks';
+
+	const change = [
+		{ label: 'Jan', value: 14 },
+		{ label: 'Feb', value: -6 },
+		{ label: 'Mar', value: 9 },
+		{ label: 'Apr', value: -3 }
+	];
+</script>
+
+<Chart type="column" title="Monthly backlog change" data={change} />
 ```
 
 ## Funnel
@@ -137,7 +156,7 @@ A single headline value on a 0-to-`max` dial. The first datum supplies the value
 />
 ```
 
-## Scorecard & sparkline
+## Scorecard and sparkline
 
 Compact single-metric views over a value series. The scorecard shows the latest value, the trend versus the first value and a mini sparkline; the sparkline is just the trend line.
 
@@ -157,9 +176,9 @@ Compact single-metric views over a value series. The scorecard shows the latest 
 <Chart type="sparkline" title="Avg CSAT trend" data={weekly} />
 ```
 
-## Tone & custom colors
+## Tone and custom colors
 
-Each datum's `color` accepts a semantic tone name (`info`, `success`, `warning`, `danger`, `neutral`, `brand`) — the same vocabulary as [Chip](/components/chip) tones — or a `--db-*` token, hex, `rgb()`/`hsl()` or CSS named color. Unresolvable values fall back to the palette, never to black.
+Each datum's `color` accepts a semantic tone name (`info`, `success`, `warning`, `danger`, `neutral`, `brand`), the same vocabulary as [Chip](/components/chip) tones, or a `--db-*` token, hex, `rgb()`/`hsl()` or CSS named color. Unresolvable values fall back to the palette, never to black.
 
 ```svelte example hideScript
 <script>
@@ -208,7 +227,7 @@ For grouped/stacked columns, grouped bars, multi-line charts and heatmaps, pass 
 
 ## Empty state
 
-With no data the chart renders a muted message instead of an empty drawing.
+When there is no data, the chart displays a muted message instead of an empty drawing.
 
 ```svelte example hideScript
 <script>
@@ -220,20 +239,24 @@ With no data the chart renders a muted message instead of an empty drawing.
 
 ## Props
 
-| Prop         | Type                                                                                                                                                              | Default             | Description                                                                                                                    |
-| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| type         | `'bar' \| 'column' \| 'stackedColumn' \| 'line' \| 'area' \| 'spline' \| 'pie' \| 'donut' \| 'gauge' \| 'funnel' \| 'heatmap' \| 'scorecard' \| 'sparkline'` | `'column'`          | Chart shape to draw.                                                                                                            |
-| data         | `{ label: string; value: number; color?: string }[]`                                                                                                              | `[]`                | Single-series data, one entry per category/point. Ignored when `series` is set.                                                 |
-| labels       | `string[]`                                                                                                                                                        | `undefined`         | Category labels for multi-series charts, aligned with each series' `values`.                                                    |
-| series       | `{ name?: string; color?: string; values: number[] }[]`                                                                                                           | `undefined`         | Multi-series data; when set, `labels` provides the categories and `data` is ignored.                                            |
-| title        | `string`                                                                                                                                                          | `undefined`         | Optional heading rendered above the chart.                                                                                      |
-| max          | `number`                                                                                                                                                          | `undefined`         | Scale ceiling — the value axis tops out at the larger of the data max and this. Gauges use it as the dial maximum.              |
-| unit         | `string`                                                                                                                                                          | `undefined`         | Suffix appended to every rendered value (e.g. `"%"`, `"h"`).                                                                    |
-| height       | `number`                                                                                                                                                          | `undefined`         | Drawing height in px for `column`/`stackedColumn`/`line`/`area`/`spline` (default 200). Other types size to their content.      |
-| showLegend   | `boolean`                                                                                                                                                         | `true`              | Show the legend under multi-series charts (it auto-hides when there are fewer than 2 named series).                             |
-| emptyMessage | `string`                                                                                                                                                          | `'No data to chart.'` | Muted text shown when there is no data.                                                                                       |
-| class        | `string`                                                                                                                                                          | `''`                | Extra class on the root element.                                                                                                |
+| Prop         | Type                                                                                                                                                                                                                    | Default               | Description                                                                                                                |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| type         | <code>'bar' &#124; 'column' &#124; 'stackedColumn' &#124; 'line' &#124; 'area' &#124; 'spline' &#124; 'pie' &#124; 'donut' &#124; 'gauge' &#124; 'funnel' &#124; 'heatmap' &#124; 'scorecard' &#124; 'sparkline'</code> | `'column'`            | Chart shape to draw.                                                                                                       |
+| data         | `{ label: string; value: number; color?: string }[]`                                                                                                                                                                    | `[]`                  | Single-series data, one entry per category/point. Ignored when `series` is set.                                            |
+| labels       | `string[]`                                                                                                                                                                                                              | `undefined`           | Category labels for multi-series charts, aligned with each series' `values`.                                               |
+| series       | `{ name?: string; color?: string; values: number[] }[]`                                                                                                                                                                 | `undefined`           | Multi-series data; when set, `labels` provides the categories and `data` is ignored.                                       |
+| title        | `string`                                                                                                                                                                                                                | `undefined`           | Optional heading rendered above the chart.                                                                                 |
+| max          | `number`                                                                                                                                                                                                                | `undefined`           | Scale ceiling. The value axis tops out at the larger of the data max and this value. Gauges use it as the dial maximum.    |
+| unit         | `string`                                                                                                                                                                                                                | `undefined`           | Suffix appended to every rendered value (e.g. `"%"`, `"h"`).                                                               |
+| height       | `number`                                                                                                                                                                                                                | `undefined`           | Drawing height in px for `column`/`stackedColumn`/`line`/`area`/`spline` (default 200). Other types size to their content. |
+| showLegend   | `boolean`                                                                                                                                                                                                               | `true`                | Show the legend under multi-series charts (it auto-hides when there are fewer than 2 named series).                        |
+| emptyMessage | `string`                                                                                                                                                                                                                | `'No data to chart.'` | Muted text shown when there is no data.                                                                                    |
+| class        | `string`                                                                                                                                                                                                                | `''`                  | Extra class on the root element.                                                                                           |
 
 ### Color values
 
-A `color` (per datum or per series) may be a tone name (`'info'`, `'brand'`, `'success'`, `'warning'`, `'danger'`, `'neutral'`), a `--db-*` token name, a `var(--token)` expression, a hex color, an `rgb()`/`hsl()` value, or a CSS named color. Anything unresolvable falls back to the built-in categorical palette entry for that index — never to black or `currentColor`.
+A `color` (per datum or per series) may be a tone name (`'info'`, `'brand'`, `'success'`, `'warning'`, `'danger'`, `'neutral'`), a `--db-*` token name, a `var(--token)` expression, a hex color, an `rgb()`/`hsl()` value, or a CSS named color. Anything unresolvable falls back to the built-in categorical palette entry for that index, never to black or `currentColor`.
+
+## Accessibility
+
+The chart uses the image role. Its accessible name comes from `title`, or falls back to a label based on the chart type. Provide a concise title that explains what the visualization measures.

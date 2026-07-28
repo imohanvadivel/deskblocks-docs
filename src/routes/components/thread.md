@@ -1,7 +1,7 @@
 ---
 title: Thread
 dir: components
-description: A thread displays a conversation as flush message rows with avatars and timestamps; long messages clamp to a preview and expand on click.
+description: Thread presents messages and comments as a readable conversation with sender, channel and timing details.
 slug: thread
 url: /components/thread
 index: 32
@@ -19,7 +19,9 @@ index: 32
 
 ## Usage
 
-Pass pre-formatted `messages`. A row becomes expandable when its `body` differs from its `preview`, or when the preview alone is longer than 120 characters — clicking the row (or pressing Enter/Space) toggles between the two-line clamp and the full body. Expansion state is managed internally. Time strings are rendered as-is; format them in your app.
+Pass messages in display order. Format absolute and relative time values in your application because the component renders them as provided.
+
+Set `outgoing={false}` for an incoming customer message and `outgoing={true}` for an agent reply. If the direction is not known or does not apply, leave `outgoing` undefined and no direction badge will appear.
 
 ```svelte example
 <script>
@@ -30,21 +32,25 @@ Pass pre-formatted `messages`. A row becomes expandable when its `body` differs 
 			author: 'Ananya Iyer',
 			time: '13 Jul 9:41 AM',
 			relativeTime: '2 hours ago',
-			preview: 'Hi team, I reset my password this morning but I still cannot log in to the customer portal…',
-			body: 'Hi team, I reset my password this morning but I still cannot log in to the customer portal. I have tried three different browsers and cleared the cache each time. The error says "invalid credentials" even though the reset email confirmed the change. Could you check whether my account is locked on your side? This is blocking our month-end reporting.'
+			preview:
+				'Hi team, I reset my password this morning but I still cannot log in to the customer portal…',
+			body: 'Hi team, I reset my password this morning but I still cannot log in to the customer portal. I have tried three different browsers and cleared the cache each time. The error says "invalid credentials" even though the reset email confirmed the change. Could you check whether my account is locked on your side? This is blocking our month-end reporting.',
+			outgoing: false
 		},
 		{
 			author: 'Suresh Kumar',
 			time: '13 Jul 10:05 AM',
 			relativeTime: '1 hour ago',
-			preview: 'Thanks for the details, Ananya. Your account was locked after repeated attempts — I have unlocked it now.',
+			preview:
+				'Thanks for the details, Ananya. Your account was locked after repeated attempts, and I have unlocked it now.',
 			outgoing: true
 		},
 		{
 			author: 'Ananya Iyer',
 			time: '13 Jul 10:12 AM',
 			relativeTime: '55 minutes ago',
-			preview: 'That fixed it, thank you!'
+			preview: 'That fixed it, thank you!',
+			outgoing: false
 		}
 	];
 </script>
@@ -52,9 +58,9 @@ Pass pre-formatted `messages`. A row becomes expandable when its `body` differs 
 <Thread {messages} />
 ```
 
-## Outgoing messages
+## Message direction
 
-Mark agent replies with `outgoing` — the row gets a brand-colored left border and a tinted background so the back-and-forth is scannable.
+Incoming and outgoing messages use different direction badges. Outgoing messages also receive a brand-tinted card, making the exchange easier to scan.
 
 ```svelte example
 <script>
@@ -64,13 +70,43 @@ Mark agent replies with `outgoing` — the row gets a brand-colored left border 
 		{
 			author: 'Priya Raghavan',
 			time: '12 Jul 4:20 PM',
-			preview: 'Is there an update on the refund for order #88231?'
+			preview: 'Is there an update on the refund for order #88231?',
+			outgoing: false
 		},
 		{
 			author: 'Zylker Support',
 			time: '12 Jul 4:32 PM',
-			preview: 'Yes — the refund was processed today and should reflect in 3–5 business days.',
+			preview: 'Yes, the refund was processed today and should reflect in 3 to 5 business days.',
 			outgoing: true
+		}
+	];
+</script>
+
+<Thread {messages} />
+```
+
+## Public and private comments
+
+Set `type="comment"` to display a comment instead of a message. Public comments use the info treatment. Private comments use the warning treatment so they are not confused with content visible to the customer. When `visibility` is omitted, a comment is treated as public.
+
+```svelte example
+<script>
+	import { Thread } from 'deskblocks';
+
+	const messages = [
+		{
+			author: 'Suresh Kumar',
+			time: '13 Jul 10:25 AM',
+			preview: 'Asked the billing team to confirm the refund reference.',
+			type: 'comment',
+			visibility: 'private'
+		},
+		{
+			author: 'Zylker Support',
+			time: '13 Jul 10:40 AM',
+			preview: 'We are checking the refund with our billing team.',
+			type: 'comment',
+			visibility: 'public'
 		}
 	];
 </script>
@@ -80,7 +116,7 @@ Mark agent replies with `outgoing` — the row gets a brand-colored left border 
 
 ## Avatars
 
-Rows show an initials avatar derived from `author`; pass an `avatar` image URL to show a picture instead.
+Each row derives an initials avatar from `author`. Pass an image URL through `avatar` to show a picture. If the image cannot load, the component returns to the initials, as the third row below shows.
 
 ```svelte example
 <script>
@@ -90,19 +126,33 @@ Rows show an initials avatar derived from `author`; pass an `avatar` image URL t
 		{
 			author: 'Lakshmi Narayanan',
 			time: '11 Jul 11:15 AM',
-			preview: 'Attaching the HAR file you asked for.'
+			preview: 'Attaching the HAR file you asked for.',
+			avatar: '/assets/avatar/pic1.jpg'
 		},
 		{
 			author: 'Ravi Shankar',
 			time: '11 Jul 11:40 AM',
-			preview: 'Received — analysing it now.',
-			outgoing: true
+			preview: 'Received. Analysing it now.',
+			outgoing: true,
+			avatar: '/assets/avatar/pic2.jpg'
+		},
+		{
+			author: 'Meera Krishnan',
+			time: '11 Jul 12:02 PM',
+			preview: 'Adding our billing contact to this thread.',
+			avatar: 'https://example.com/avatar-that-cannot-load.png'
 		}
 	];
 </script>
 
 <Thread {messages} />
 ```
+
+## Expandable messages
+
+A message becomes expandable when `body` contains more content than `preview`, or when the preview is longer than 120 characters. Users can select the row or press Enter or Space to switch between the preview and full body. The component manages the open state and fires `toggle` after each change.
+
+If `preview` is empty, the component creates a preview from `body`.
 
 ## Props
 
@@ -113,16 +163,18 @@ Rows show an initials avatar derived from `author`; pass an `avatar` image URL t
 
 ### ThreadMessage
 
-| Field          | Type    | Description                                                                     |
-| -------------- | ------- | -------------------------------------------------------------------------------- |
-| `author`       | string  | Sender's display name; the initials avatar is derived from it.                   |
-| `time`         | string  | Pre-formatted absolute time, e.g. `04 Jul 3:12 PM`. Optional.                    |
-| `relativeTime` | string  | Pre-formatted relative time shown in parentheses, e.g. `2 hours ago`. Optional.  |
-| `preview`      | string  | Collapsed summary text (two-line clamp when the row is expandable).              |
-| `body`         | string  | Full body; when it differs from `preview`, the row becomes expandable.           |
-| `avatar`       | string  | Avatar image URL; falls back to author initials.                                 |
-| `outgoing`     | boolean | Marks an agent reply: brand left border + tinted background.                     |
+| Field          | Type                                    | Description                                                          |
+| -------------- | --------------------------------------- | -------------------------------------------------------------------- |
+| `author`       | string                                  | Sender's display name. The initials avatar is derived from it.       |
+| `time`         | string                                  | Optional, pre-formatted absolute time.                               |
+| `relativeTime` | string                                  | Optional, pre-formatted relative time displayed in parentheses.      |
+| `preview`      | string                                  | Text displayed while the row is collapsed.                           |
+| `body`         | string                                  | Full text. A different value makes the row expandable.               |
+| `avatar`       | string                                  | Image URL that falls back to the author's initials when it fails.    |
+| `type`         | <code>'message' &#124; 'comment'</code> | Content type. Defaults to `message`.                                 |
+| `visibility`   | <code>'public' &#124; 'private'</code>  | Comment visibility. Used only for comments and defaults to `public`. |
+| `outgoing`     | boolean                                 | Message direction. Use `true` for outgoing and `false` for incoming. |
 
 ## Events
 
-- `on:toggle` — fired when a row is expanded or collapsed; `event.detail` is `{ index, open }`.
+- `on:toggle`: fires when a row is expanded or collapsed; `event.detail` is `{ index, open }`.

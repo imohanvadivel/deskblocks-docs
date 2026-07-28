@@ -1,7 +1,7 @@
 ---
 title: Rating
 dir: components
-description: A read-only rating display — a row of stars, a thumbs-up count, or an upvote count.
+description: Rating presents a read-only score as stars, a thumbs-up count or an upvote count.
 slug: rating
 url: /components/rating
 index: 34
@@ -19,7 +19,7 @@ index: 34
 
 ## Usage
 
-The default `stars` variant renders `max` stars (1–20, default 5) and fills `value` of them, rounded to the nearest star. Filled stars use the warning/amber icon color; empty stars are muted.
+The default `stars` variant rounds `value` to the nearest whole star. It displays up to `max` stars, with a default scale of five.
 
 ```svelte example
 <script>
@@ -31,6 +31,8 @@ The default `stars` variant renders `max` stars (1–20, default 5) and fills `v
 
 ## Custom scale
 
+Set `max` to use a different scale. The component accepts between 1 and 20 stars and clamps the filled count to that range.
+
 ```svelte example hideScript
 <script>
 	import { Rating } from 'deskblocks';
@@ -41,7 +43,7 @@ The default `stars` variant renders `max` stars (1–20, default 5) and fills `v
 
 ## Thumbs and votes
 
-`variant="thumbs"` shows a green thumbs-up glyph with the value as a count; `variant="votes"` shows a brand-colored upvote arrow with the count — handy for community-forum content.
+Use `variant="thumbs"` for a helpful or like count. Use `variant="votes"` for an upvote count, such as the score on a community post or feature request.
 
 ```svelte example hideScript
 <script>
@@ -54,14 +56,18 @@ The default `stars` variant renders `max` stars (1–20, default 5) and fills `v
 
 ## Props
 
-| Prop      | Type                                | Default   | Description                                                                    |
-| --------- | ----------------------------------- | --------- | ------------------------------------------------------------------------------ |
-| `value`   | `number`                            | `0`       | The rating. Stars: rounded to the nearest star. Thumbs/votes: shown as a count. |
-| `max`     | `number`                            | `5`       | Number of stars (stars variant only). Clamped to 1–20.                          |
-| `variant` | `'stars' \| 'thumbs' \| 'votes'`    | `'stars'` | Which glyph treatment to render.                                                |
-| `label`   | `string`                            | undefined | Optional small label rendered above the rating.                                 |
-| `class`   | `string`                            | undefined | Custom CSS class name for additional styling.                                   |
+| Prop      | Type                                                | Default   | Description                                                                     |
+| --------- | --------------------------------------------------- | --------- | ------------------------------------------------------------------------------- |
+| `value`   | `number`                                            | `0`       | The rating. Stars: rounded to the nearest star. Thumbs/votes: shown as a count. |
+| `max`     | `number`                                            | `5`       | Number of stars for the stars variant. Clamped from 1 to 20.                    |
+| `variant` | <code>'stars' &#124; 'thumbs' &#124; 'votes'</code> | `'stars'` | Which glyph treatment to render.                                                |
+| `label`   | `string`                                            | undefined | Optional small label rendered above the rating.                                 |
+| `class`   | `string`                                            | undefined | Custom CSS class name for additional styling.                                   |
+
+## Accessibility
+
+The visual rating has an accessible label. Star ratings announce the filled and maximum values, while thumbs and votes announce their count.
 
 ## Events
 
-None — the rating is a read-only display.
+None. The rating is a read-only display.
