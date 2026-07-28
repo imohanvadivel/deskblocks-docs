@@ -44,7 +44,7 @@ The `tone` prop picks the tint, border and leading status glyph: `info` (default
 
 ## With a title
 
-Pass `title` to add a bold headline above the note body.
+Pass `title` to add a headline above the note body.
 
 ```svelte example hideScript
 <script>
@@ -94,7 +94,7 @@ If both `title` and the default slot are empty, the component does not render.
 | Prop          | Type                                                                  | Default   | Description                                                              |
 | ------------- | --------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------ |
 | `tone`        | <code>'info' &#124; 'success' &#124; 'warning' &#124; 'danger'</code> | 'info'    | Semantic color treatment; also selects the default leading status glyph. |
-| `title`       | string                                                                | undefined | Optional bold title line rendered above the body.                        |
+| `title`       | string                                                                | undefined | Optional title line rendered above the body.                             |
 | `dismissible` | boolean                                                               | false     | Renders a close button that hides the note and fires `dismiss`.          |
 | `icon`        | string                                                                | undefined | SVG string that replaces the tone's default icon.                        |
 | `class`       | string                                                                | undefined | Custom CSS class name for additional styling.                            |

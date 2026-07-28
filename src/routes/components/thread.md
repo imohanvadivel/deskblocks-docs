@@ -1,7 +1,7 @@
 ---
 title: Thread
 dir: components
-description: Thread presents messages and comments as a readable conversation with sender, channel and timing details.
+description: Thread presents messages and comments as a readable conversation with sender and timing details.
 slug: thread
 url: /components/thread
 index: 32
@@ -60,7 +60,7 @@ Set `outgoing={false}` for an incoming customer message and `outgoing={true}` fo
 
 ## Message direction
 
-Incoming and outgoing messages use different direction badges. Outgoing messages also receive a brand-tinted card, making the exchange easier to scan.
+Incoming and outgoing messages share the same neutral card surface. Direction is carried only by the arrow badge, making the exchange easier to scan.
 
 ```svelte example
 <script>

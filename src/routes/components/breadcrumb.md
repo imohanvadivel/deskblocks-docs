@@ -19,7 +19,7 @@ index: 33
 
 ## Usage
 
-Pass the trail as `items`. Every item except the last renders as a brand-colored link; the last renders as the current page (medium weight, `aria-current="page"`). Clicking an ancestor fires `on:navigate` with the clicked item's index — the host owns the actual navigation (e.g. popping its drill-down stack back to that level).
+Pass the trail as `items`. Every item except the last renders as a brand-colored link; the last renders as the current page (medium weight, `aria-current="page"`). Clicking an ancestor fires `on:navigate` with the clicked item's index. The host owns the actual navigation (e.g. popping its drill-down stack back to that level).
 
 ```svelte example
 <script>
@@ -41,7 +41,7 @@ Pass the trail as `items`. Every item except the last renders as a brand-colored
 
 ## Single crumb
 
-With one item the trail is just the current page — no separators, nothing clickable.
+With one item, the trail is just the current page, with no separators and nothing clickable.
 
 ```svelte example hideScript
 <script>
@@ -60,4 +60,4 @@ With one item the trail is just the current page — no separators, nothing clic
 
 ## Events
 
-- `on:navigate` — fired when an ancestor crumb is clicked; `event.detail` is `{ index, id, item }`.
+- `on:navigate` fires when an ancestor crumb is clicked; `event.detail` is `{ index, id, item }`.
