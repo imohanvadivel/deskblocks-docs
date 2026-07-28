@@ -24,7 +24,7 @@ index: 3
 
 Zoho Desk supports three typefaces: Zoho Puvi, Roboto, and Lato. While Zoho Puvi is the default selection, users have the flexibility to choose their preferred font.
 
-As a developer, you don't need to handle font management manually—Deskblocks takes care of the complexities for you. Simply use the provided tokens to adjust typography-related parameters, and the system will automatically adapt. If users switch fonts in their interface, your extension will seamlessly update its typography settings.
+As a developer, you don't need to handle font management manually. Deskblocks takes care of the complexities for you. Simply use the provided tokens to adjust typography-related parameters, and the system will automatically adapt. If users switch fonts in their interface, your extension will seamlessly update its typography settings.
 
 <Info type="success" header="Note:" maxWidth="47rem">
 
@@ -83,5 +83,5 @@ Letter spacing is resolved in em units.
 
 |                             |         |
 | --------------------------- | ------- |
-| `--db-letterspacing-small`  | 0       |
-| `--db-letterspacing-medium` | -0.01em |
+| `--db-letterSpacing-small`  | 0       |
+| `--db-letterSpacing-medium` | -0.01em |
