@@ -47,6 +47,6 @@
 	"type": "module",
 	"dependencies": {
 		"algoliasearch": "^5.56.0",
-		"deskblocks": "^0.3.0"
+		"deskblocks": "link:../deskblocks"
 	}
 }
