@@ -156,20 +156,20 @@ Pass the [Icon component](/components/icon) within the `left-icon` or `right-ico
 
 ## Props
 
-| Prop          | Type             | Default   | Description                                                           |
-| ------------- | ---------------- | --------- | --------------------------------------------------------------------- |
-| `id`          | string           | undefined | Specifies a unique identifier for the input field.                    |
-| `value`       | number           | undefined | Sets the current value of the input field.                            |
-| `placeholder` | string           | undefined | Provides a placeholder text that appears when the input is empty.     |
+| Prop          | Type                              | Default   | Description                                                           |
+| ------------- | --------------------------------- | --------- | --------------------------------------------------------------------- |
+| `id`          | string                            | undefined | Specifies a unique identifier for the input field.                    |
+| `value`       | number                            | undefined | Sets the current value of the input field.                            |
+| `placeholder` | string                            | undefined | Provides a placeholder text that appears when the input is empty.     |
 | `min`         | <code>string &#124; number</code> | undefined | Defines the minimum value allowed for the input field.                |
 | `max`         | <code>string &#124; number</code> | undefined | Defines the maximum value allowed for the input field.                |
 | `step`        | <code>string &#124; number</code> | undefined | Specifies the increment step for numeric values.                      |
-| `name`        | string           | undefined | Assigns a name to the input field, useful for form submissions.       |
-| `disabled`    | boolean          | false     | Disables the input field, preventing user interaction.                |
-| `invalid`     | boolean          | false     | Marks the input field as invalid, typically used for form validation. |
-| `required`    | boolean          | false     | Indicates that the input field is required before form submission.    |
-| `readonly`    | boolean          | false     | Makes the input field read-only, preventing user modifications.       |
-| `class`       | string           | undefined | Custom CSS class name for additional styling.                         |
+| `name`        | string                            | undefined | Assigns a name to the input field, useful for form submissions.       |
+| `disabled`    | boolean                           | false     | Disables the input field, preventing user interaction.                |
+| `invalid`     | boolean                           | false     | Marks the input field as invalid, typically used for form validation. |
+| `required`    | boolean                           | false     | Indicates that the input field is required before form submission.    |
+| `readonly`    | boolean                           | false     | Makes the input field read-only, preventing user modifications.       |
+| `class`       | string                            | undefined | Custom CSS class name for additional styling.                         |
 
 ## Slots
 

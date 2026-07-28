@@ -63,7 +63,7 @@ Pass the `invalid` prop to render the message in the danger color, typically alo
 
 ## Props
 
-| Prop       | Type    | Default | Description                                    |
-| ---------- | ------- | ------- | ---------------------------------------------- |
-| `invalid`  | boolean | false   | Renders the message in the danger color.       |
-| `disabled` | boolean | false   | Renders the message in the disabled color.     |
+| Prop       | Type    | Default | Description                                |
+| ---------- | ------- | ------- | ------------------------------------------ |
+| `invalid`  | boolean | false   | Renders the message in the danger color.   |
+| `disabled` | boolean | false   | Renders the message in the disabled color. |

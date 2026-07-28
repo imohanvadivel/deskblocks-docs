@@ -25,7 +25,7 @@ index: 20
 	import { VisuallyHidden } from 'deskblocks';
 </script>
 
-<VisuallyHidden> Content to hide </VisuallyHidden>
+<VisuallyHidden>Content to hide</VisuallyHidden>
 ```
 
 <p style="margin-top: 1.5rem; margin-bottom: -1rem;">

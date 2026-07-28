@@ -77,26 +77,26 @@ index: 10
 
 ## Radio props
 
-| Prop       | Type             | Default   | Description                                                                  |
-| ---------- | ---------------- | --------- | ---------------------------------------------------------------------------- |
-| `id`       | string           | randomId  | Specifies a unique identifier for the radio button.                          |
-| `name`     | string           | undefined | Assigns a name to the radio button, useful for grouping in form submissions. |
-| `value`    | string           | undefined | Sets the value associated with the radio button.                             |
-| `disabled` | boolean          | false     | Disables the radio button, preventing user interaction.                      |
+| Prop       | Type                              | Default   | Description                                                                  |
+| ---------- | --------------------------------- | --------- | ---------------------------------------------------------------------------- |
+| `id`       | string                            | randomId  | Specifies a unique identifier for the radio button.                          |
+| `name`     | string                            | undefined | Assigns a name to the radio button, useful for grouping in form submissions. |
+| `value`    | string                            | undefined | Sets the value associated with the radio button.                             |
+| `disabled` | boolean                           | false     | Disables the radio button, preventing user interaction.                      |
 | `group`    | <code>string &#124; number</code> | undefined | Links the radio button to a specific radio button group.                     |
-| `class`    | string           | undefined | Custom CSS class name for additional styling.                                |
+| `class`    | string                            | undefined | Custom CSS class name for additional styling.                                |
 
 ## RadioGroup props
 
-| Prop        | Type             | Default    | Description                                                            |
-| ----------- | ---------------- | ---------- | ---------------------------------------------------------------------- |
+| Prop        | Type                              | Default    | Description                                                            |
+| ----------- | --------------------------------- | ---------- | ---------------------------------------------------------------------- |
 | `group`     | <code>string &#124; number</code> | undefined  | Binds the value of the selected radio button.                          |
-| `disabled`  | boolean          | false      | Disables the entire radio button group, preventing user interaction.   |
-| `name`      | string           | randomName | Assigns a name to the radio button group, useful for form submissions. |
-| `inline`    | boolean          | false      | Displays the radio buttons in a horizontal row if set to `true`.       |
-| `rowGap`    | CSS length unit  | 0.25rem    | Defines the vertical spacing between rows of radio buttons.            |
-| `columnGap` | CSS length unit  | 1rem       | Defines the horizontal spacing between radio buttons in a row.         |
-| `class`     | string           | undefined  | Custom CSS class name for additional styling.                          |
+| `disabled`  | boolean                           | false      | Disables the entire radio button group, preventing user interaction.   |
+| `name`      | string                            | randomName | Assigns a name to the radio button group, useful for form submissions. |
+| `inline`    | boolean                           | false      | Displays the radio buttons in a horizontal row if set to `true`.       |
+| `rowGap`    | CSS length unit                   | 0.25rem    | Defines the vertical spacing between rows of radio buttons.            |
+| `columnGap` | CSS length unit                   | 1rem       | Defines the horizontal spacing between radio buttons in a row.         |
+| `class`     | string                            | undefined  | Custom CSS class name for additional styling.                          |
 
 ## Events
 

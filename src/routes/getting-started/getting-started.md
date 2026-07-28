@@ -24,12 +24,12 @@ index: 2
 
 - Clone the template repository and install the necessary packages.
 - The template is pre-configured with Deskblocks, TypeScript definitions, and other essential utilities.
+
 ```bash
  git clone https://github.com/imohanvadivel/desk-ext-template.git
  cd desk-ext-template
  npm i
 ```
-
 
 ## Configuring the SVG loader
 
@@ -73,7 +73,6 @@ This fails silently: there is no build error and nothing is logged to the browse
 - Your extension should now be visible inside Desk in the placeholder location specified in the `plugin-&#8288;manifest.json` file.
 - Now that all the scaffolding is done, go ahead and build the [rest of the extension :)](https://www.reddit.com/r/funny/comments/eccj2/how_to_draw_an_owl/)
 
-
 <Info header="Note:" type="info">
 
 The first time you run the server, you may need to grant sudo permissions to generate a TLS certificate because the development server runs over HTTPS.
@@ -97,7 +96,7 @@ The first time you run the server, you may need to grant sudo permissions to gen
 - Place static assets (such as images) in the `assets` folder inside the `public` directory. You can reference them in your code like this:
 
 ```html
- <img src="assets/img.png" />
+<img src="assets/img.png" />
 ```
 
 ## Additional Resources

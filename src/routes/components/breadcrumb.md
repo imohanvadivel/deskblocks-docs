@@ -53,10 +53,10 @@ With one item the trail is just the current page — no separators, nothing clic
 
 ## Props
 
-| Prop    | Type                                | Default   | Description                                                             |
-| ------- | ----------------------------------- | --------- | ------------------------------------------------------------------------ |
-| `items` | `{ label: string; id?: string }[]`  | `[]`      | The trail, root first. The last item is the current page (not clickable). |
-| `class` | `string`                            | undefined | Custom CSS class name for additional styling.                             |
+| Prop    | Type                               | Default   | Description                                                               |
+| ------- | ---------------------------------- | --------- | ------------------------------------------------------------------------- |
+| `items` | `{ label: string; id?: string }[]` | `[]`      | The trail, root first. The last item is the current page (not clickable). |
+| `class` | `string`                           | undefined | Custom CSS class name for additional styling.                             |
 
 ## Events
 

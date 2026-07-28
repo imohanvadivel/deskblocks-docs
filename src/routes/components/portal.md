@@ -53,6 +53,6 @@ The `target` prop accepts a CSS selector or an `HTMLElement`.
 
 ## Props
 
-| Prop     | Type                  | Default | Description                                                    |
-| -------- | --------------------- | ------- | -------------------------------------------------------------- |
-| `target` | <code>string &#124; HTMLElement</code> | 'body'  | Where to render the content: a CSS selector or a DOM element.  |
+| Prop     | Type                                   | Default | Description                                                   |
+| -------- | -------------------------------------- | ------- | ------------------------------------------------------------- |
+| `target` | <code>string &#124; HTMLElement</code> | 'body'  | Where to render the content: a CSS selector or a DOM element. |

@@ -109,12 +109,12 @@ The `tone` prop applies a semantic color treatment, which suits status badges an
 
 ## Props
 
-| Prop          | Type                                                       | Default   | Description                                                         |
-| ------------- | ---------------------------------------------------------- | --------- | ------------------------------------------------------------------- |
+| Prop          | Type                                                                                   | Default   | Description                                                         |
+| ------------- | -------------------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------- |
 | `tone`        | <code>'neutral' &#124; 'info' &#124; 'success' &#124; 'warning' &#124; 'danger'</code> | 'neutral' | Applies a semantic color treatment to the chip.                     |
-| `dismissible` | boolean                                                    | false     | Determines whether the chip can be dismissed (removed) by the user. |
-| `disabled`    | boolean                                                    | false     | Disables the chip.                                                  |
-| `class`       | string                                                     | undefined | Custom CSS class name for additional styling.                       |
+| `dismissible` | boolean                                                                                | false     | Determines whether the chip can be dismissed (removed) by the user. |
+| `disabled`    | boolean                                                                                | false     | Disables the chip.                                                  |
+| `class`       | string                                                                                 | undefined | Custom CSS class name for additional styling.                       |
 
 ## Events
 

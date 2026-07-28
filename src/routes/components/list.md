@@ -208,7 +208,7 @@ An item without a `title` can use `fields` to display a read-only label and valu
 | `subtitle`    | `{ text: string; icon?: string }[]`                   | Meta items under the title, dot-separated; `icon` is a raw SVG string. Empty-text items are skipped. |
 | `leadingIcon` | string                                                | SVG string shown in a leading icon circle.                                                           |
 | `avatarName`  | string                                                | Name for a leading initials avatar. A non-empty value takes precedence over `leadingIcon`.           |
-| `avatarSrc`   | string                                                | Image URL for a leading photo avatar. Wins over `avatarName`, and falls back to it if it fails.       |
+| `avatarSrc`   | string                                                | Image URL for a leading photo avatar. Wins over `avatarName`, and falls back to it if it fails.      |
 | `trailing`    | `ListTrailing[]`                                      | Trailing elements (see below).                                                                       |
 | `fields`      | `{ label: string; value: string; badge?: boolean }[]` | Legacy label/value columns, used when `title` is absent.                                             |
 

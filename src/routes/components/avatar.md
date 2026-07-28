@@ -66,9 +66,9 @@ index: 17
 
 ## Props
 
-| Prop    | Type                                     | Default   | Description                                                                          |
-| ------- | ---------------------------------------- | --------- | ------------------------------------------------------------------------------------ |
-| `src`   | string                                   | undefined | The URL of the image to be displayed as the avatar.                                  |
-| `name`  | string                                   | undefined | The name whose initials will be displayed as a fallback if the image is unavailable. |
+| Prop    | Type                                                              | Default   | Description                                                                          |
+| ------- | ----------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------ |
+| `src`   | string                                                            | undefined | The URL of the image to be displayed as the avatar.                                  |
+| `name`  | string                                                            | undefined | The name whose initials will be displayed as a fallback if the image is unavailable. |
 | `size`  | <code>"small" &#124; "medium" &#124; "large" &#124; number</code> | "medium"  | Specifies the size of the avatar. A number is interpreted as pixels.                 |
-| `class` | string                                   | undefined | Custom CSS class name for additional styling.                                        |
+| `class` | string                                                            | undefined | Custom CSS class name for additional styling.                                        |

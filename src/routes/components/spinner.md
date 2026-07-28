@@ -44,8 +44,8 @@ index: 18
 
 ## Props
 
-| Prop      | Type                                     | Default   | Description                                                                             |
-| --------- | ---------------------------------------- | --------- | --------------------------------------------------------------------------------------- |
+| Prop      | Type                                                              | Default   | Description                                                                             |
+| --------- | ----------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------- |
 | `size`    | <code>'small' &#124; 'medium' &#124; 'large' &#124; number</code> | 'small'   | Specifies the size of the spinner, either using preset sizes or a custom numeric value. |
-| `onbrand` | boolean                                  | false     | If true, the spinner color is adjusted to match the brand color scheme.                 |
-| `class`   | string                                   | undefined | Custom CSS class name for additional styling.                                           |
+| `onbrand` | boolean                                                           | false     | If true, the spinner color is adjusted to match the brand color scheme.                 |
+| `class`   | string                                                            | undefined | Custom CSS class name for additional styling.                                           |

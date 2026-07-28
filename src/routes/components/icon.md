@@ -101,9 +101,9 @@ To render a custom icon, the SVG string can be directly passed to the `icon` pro
 
 ## Props
 
-| Prop    | Type                                     | Default   | Description                                                        |
-| ------- | ---------------------------------------- | --------- | ------------------------------------------------------------------ |
-| `icon`  | SVG string                               | undefined | SVG string or text glyph to be rendered as the icon.               |
+| Prop    | Type                                                              | Default   | Description                                                        |
+| ------- | ----------------------------------------------------------------- | --------- | ------------------------------------------------------------------ |
+| `icon`  | SVG string                                                        | undefined | SVG string or text glyph to be rendered as the icon.               |
 | `size`  | <code>'small' &#124; 'medium' &#124; 'large' &#124; number</code> | 'small'   | Specifies the size of the icon. A number is interpreted as pixels. |
-| `color` | CSS custom variable                      | undefined | Specifies the color of the icon using a CSS custom variable.       |
-| `class` | string                                   | undefined | Custom CSS class name for additional styling.                      |
+| `color` | CSS custom variable                                               | undefined | Specifies the color of the icon using a CSS custom variable.       |
+| `class` | string                                                            | undefined | Custom CSS class name for additional styling.                      |

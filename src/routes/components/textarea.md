@@ -88,21 +88,21 @@ index: 8
 
 ## Props
 
-| Prop          | Type                                           | Default   | Description                                                           |
-| ------------- | ---------------------------------------------- | --------- | --------------------------------------------------------------------- |
-| `id`          | string                                         | undefined | Specifies a unique identifier for the textarea field.                 |
-| `value`       | string                                         | undefined | Sets the current value of the textarea field.                         |
-| `placeholder` | string                                         | undefined | Provides placeholder text that appears when the textarea is empty.    |
+| Prop          | Type                                                                    | Default   | Description                                                           |
+| ------------- | ----------------------------------------------------------------------- | --------- | --------------------------------------------------------------------- |
+| `id`          | string                                                                  | undefined | Specifies a unique identifier for the textarea field.                 |
+| `value`       | string                                                                  | undefined | Sets the current value of the textarea field.                         |
+| `placeholder` | string                                                                  | undefined | Provides placeholder text that appears when the textarea is empty.    |
 | `resize`      | <code>'horizontal' &#124; 'vertical' &#124; 'none' &#124; 'both'</code> | 'none'    | Controls the resizing behavior of the textarea.                       |
-| `minlength`   | string                                         | undefined | Specifies the minimum number of characters required in the textarea.  |
-| `maxlength`   | string                                         | undefined | Specifies the maximum number of characters allowed in the textarea.   |
-| `rows`        | number                                         | 2         | Sets the number of visible text lines for the textarea.               |
-| `name`        | string                                         | undefined | Assigns a name to the textarea field, useful for form submissions.    |
-| `spellcheck`  | boolean                                        | false     | Enables or disables spellchecking for the textarea field.             |
-| `disabled`    | boolean                                        | false     | Disables the textarea field, preventing user interaction.             |
-| `required`    | boolean                                        | false     | Indicates that the textarea field is required before form submission. |
-| `readonly`    | boolean                                        | false     | Makes the textarea field read-only, preventing user modifications.    |
-| `class`       | string                                         | undefined | Custom CSS class name for additional styling.                         |
+| `minlength`   | string                                                                  | undefined | Specifies the minimum number of characters required in the textarea.  |
+| `maxlength`   | string                                                                  | undefined | Specifies the maximum number of characters allowed in the textarea.   |
+| `rows`        | number                                                                  | 2         | Sets the number of visible text lines for the textarea.               |
+| `name`        | string                                                                  | undefined | Assigns a name to the textarea field, useful for form submissions.    |
+| `spellcheck`  | boolean                                                                 | false     | Enables or disables spellchecking for the textarea field.             |
+| `disabled`    | boolean                                                                 | false     | Disables the textarea field, preventing user interaction.             |
+| `required`    | boolean                                                                 | false     | Indicates that the textarea field is required before form submission. |
+| `readonly`    | boolean                                                                 | false     | Makes the textarea field read-only, preventing user modifications.    |
+| `class`       | string                                                                  | undefined | Custom CSS class name for additional styling.                         |
 
 ## Events
 

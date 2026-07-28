@@ -60,7 +60,6 @@ Deskblocks includes a [Figma plugin](https://www.figma.com/community/plugin/1429
 
 Deskblocks is powered by [Vite](https://vitejs.dev/), bringing all the advantages of a modern build tool to your development workflow. With Vite, you get hot module replacement, ultra-fast compilation, lazy loading, optimized builds, and more, so development stays smooth and efficient from start to finish.
 
-
 ## Installation
 
 To get started, clone the starter template and install the dependencies:

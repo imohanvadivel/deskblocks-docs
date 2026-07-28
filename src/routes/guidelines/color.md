@@ -113,10 +113,9 @@ For example, to style a node specifically for dark mode and the red theme, use t
 
 ```css
 :global(.theme-red.appearance-dark div) {
-  /* Your styles here */
+	/* Your styles here */
 }
-``` 
-
+```
 
 ## Color Token Usage Examples
 

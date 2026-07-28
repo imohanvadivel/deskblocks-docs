@@ -28,6 +28,7 @@ index: 11
 
 <Select bind:selected={value} {options} placeholder="Choose a fruit" />
 ```
+
 <br/>
 
 The select component's options can be provided as an array of strings, numbers, or option objects.
@@ -162,6 +163,7 @@ You can start with no options and let users populate MultiSelect from scratch. I
 ```
 
 ## Help Message
+
 ```svelte example hideScript
 <script>
 	import { Select } from 'deskblocks';
@@ -169,11 +171,11 @@ You can start with no options and let users populate MultiSelect from scratch. I
 	let value = ['Apple'];
 </script>
 
-<Select bind:selected={value} options={fruits} >
+<Select bind:selected={value} options={fruits}>
 	<span slot="help-msg">An apple a day keeps the docter away</span>
 </Select>
 
-<Select invalid bind:selected={value} options={fruits} >
+<Select invalid bind:selected={value} options={fruits}>
 	<span slot="error-msg">An apple a day keeps the docter away</span>
 </Select>
 ```
@@ -192,35 +194,35 @@ You can start with no options and let users populate MultiSelect from scratch. I
 
 ## Props
 
-| Prop              | Type                                              | Default                 | Description                                                                                                                                                                                      |
-| ----------------- | ------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| activeIndex       | number                                            | null                    | The position of the currently active option in the list of filtered options.                                                                                                                     |
-| activeOption      | Option                                            | null                    | The option that is currently active, either because the user is hovering over it or has navigated to it using arrow keys.                                                                        |
-| allowUserOptions  | <code>boolean &#124; "append"</code> | false                   | Determines if users can create custom options. If set to true, users can add new options to the selection. If set to "append", new options are added to both the selection and the options list. |
-| allowEmpty        | boolean                                           | false                   | When true, prevents console errors from being shown when the options list is empty. This is useful for scenarios where having no options is acceptable.                                          |
-| disabled          | boolean                                           | false                   | When set to true, this makes the entire select component non-interactive. Users won't be able to open the dropdown or make selections.                                                           |
-| duplicates        | boolean                                           | false                   | If true, allows the same option to be selected multiple times. This only applies to the list of selected items, not the options in the dropdown.                                                 |
-| key               | (opt: Option) => unknown                          | Custom function         | A function that determines how to compare options for equality. By default, it compares the lowercase versions of option labels.                                                                 |
-| filterFunc        | (opt: Option, searchText: string) => boolean      | Custom function         | A custom function to determine which options should be shown based on the user's search text. This allows for advanced filtering logic.                                                          |
-| id                | string                                            | null                    | Sets the ID attribute for the select component. This is important for accessibility, allowing labels to be associated with the select.                                                           |
-| invalid           | boolean                                           | false                   | When true, visually indicates that the current selection is invalid. This can be used for form validation feedback.                                                                              |
-| maxOptions        | <code>number &#124; undefined</code> | undefined               | Limits the number of options shown in the dropdown at once. If undefined, all options are shown.                                                                                                 |
-| maxSelect         | number                                            | 1                       | The maximum number of options that can be selected. Set to null for unlimited selections. When set to 1, the component behaves like a single-select.                                             |
-| name              | string                                            | null                    | Sets the name attribute for the select, which is used when submitting form data.                                                                                                                 |
-| open              | boolean                                           | false                   | Controls whether the dropdown list of options is visible. Can be bound to for external control of the dropdown state.                                                                            |
-| options           | Option[]                                          | Required                | An array of options to be shown in the dropdown. Each option can be a string, number, or an option object (see option types above).                                                              |
-| createOptionMsg   | string                                            | "Create this option..." | The message shown when a user can create a new option that doesn't exist in the list. Only applicable when allowUserOptions is enabled.                                                          |
-| parseLabelsAsHtml | boolean                                           | false                   | If true, option labels are parsed as HTML. Use with caution as it can introduce security risks if used with user-generated content.                                                              |
-| pattern           | string                                            | null                    | A regular expression pattern for validating the input value. Useful for ensuring selected values match a specific format.                                                                        |
-| placeholder       | string                                            | null                    | Text displayed in the input when no option is selected, providing a hint to the user about what to select.                                                                                       |
-| minSelect         | number                                            | null                    | The minimum number of options that must be selected. Useful for requiring a certain number of selections.                                                                                        |
-| required          | boolean                                           | false                   | When true, the select must have a value for form submission to be valid.                                                                                                                         |
-| resetFilterOnAdd  | boolean                                           | true                    | If true, clears the search text input after an option is selected, allowing for a fresh search.                                                                                                  |
-| searchText        | string                                            | ''                      | The current text in the search input. Can be bound to for external control of the search functionality.                                                                                          |
-| selected          | Option[]                                          | []                      | An array of the currently selected options. Can be bound to for two-way data flow.                                                                                                               |
+| Prop              | Type                                                                  | Default                 | Description                                                                                                                                                                                      |
+| ----------------- | --------------------------------------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| activeIndex       | number                                                                | null                    | The position of the currently active option in the list of filtered options.                                                                                                                     |
+| activeOption      | Option                                                                | null                    | The option that is currently active, either because the user is hovering over it or has navigated to it using arrow keys.                                                                        |
+| allowUserOptions  | <code>boolean &#124; "append"</code>                                  | false                   | Determines if users can create custom options. If set to true, users can add new options to the selection. If set to "append", new options are added to both the selection and the options list. |
+| allowEmpty        | boolean                                                               | false                   | When true, prevents console errors from being shown when the options list is empty. This is useful for scenarios where having no options is acceptable.                                          |
+| disabled          | boolean                                                               | false                   | When set to true, this makes the entire select component non-interactive. Users won't be able to open the dropdown or make selections.                                                           |
+| duplicates        | boolean                                                               | false                   | If true, allows the same option to be selected multiple times. This only applies to the list of selected items, not the options in the dropdown.                                                 |
+| key               | (opt: Option) => unknown                                              | Custom function         | A function that determines how to compare options for equality. By default, it compares the lowercase versions of option labels.                                                                 |
+| filterFunc        | (opt: Option, searchText: string) => boolean                          | Custom function         | A custom function to determine which options should be shown based on the user's search text. This allows for advanced filtering logic.                                                          |
+| id                | string                                                                | null                    | Sets the ID attribute for the select component. This is important for accessibility, allowing labels to be associated with the select.                                                           |
+| invalid           | boolean                                                               | false                   | When true, visually indicates that the current selection is invalid. This can be used for form validation feedback.                                                                              |
+| maxOptions        | <code>number &#124; undefined</code>                                  | undefined               | Limits the number of options shown in the dropdown at once. If undefined, all options are shown.                                                                                                 |
+| maxSelect         | number                                                                | 1                       | The maximum number of options that can be selected. Set to null for unlimited selections. When set to 1, the component behaves like a single-select.                                             |
+| name              | string                                                                | null                    | Sets the name attribute for the select, which is used when submitting form data.                                                                                                                 |
+| open              | boolean                                                               | false                   | Controls whether the dropdown list of options is visible. Can be bound to for external control of the dropdown state.                                                                            |
+| options           | Option[]                                                              | Required                | An array of options to be shown in the dropdown. Each option can be a string, number, or an option object (see option types above).                                                              |
+| createOptionMsg   | string                                                                | "Create this option..." | The message shown when a user can create a new option that doesn't exist in the list. Only applicable when allowUserOptions is enabled.                                                          |
+| parseLabelsAsHtml | boolean                                                               | false                   | If true, option labels are parsed as HTML. Use with caution as it can introduce security risks if used with user-generated content.                                                              |
+| pattern           | string                                                                | null                    | A regular expression pattern for validating the input value. Useful for ensuring selected values match a specific format.                                                                        |
+| placeholder       | string                                                                | null                    | Text displayed in the input when no option is selected, providing a hint to the user about what to select.                                                                                       |
+| minSelect         | number                                                                | null                    | The minimum number of options that must be selected. Useful for requiring a certain number of selections.                                                                                        |
+| required          | boolean                                                               | false                   | When true, the select must have a value for form submission to be valid.                                                                                                                         |
+| resetFilterOnAdd  | boolean                                                               | true                    | If true, clears the search text input after an option is selected, allowing for a fresh search.                                                                                                  |
+| searchText        | string                                                                | ''                      | The current text in the search input. Can be bound to for external control of the search functionality.                                                                                          |
+| selected          | Option[]                                                              | []                      | An array of the currently selected options. Can be bound to for two-way data flow.                                                                                                               |
 | sortSelected      | <code>boolean &#124; ((op1: Option, op2: Option) =&gt; number)</code> | false                   | Determines how selected options are sorted. If true, uses default sorting. Can also be a custom comparison function for advanced sorting.                                                        |
-| value             | <code>Option &#124; Option[] &#124; null</code> | null                    | Represents the current value of the select. For single-select (maxSelect=1), it's a single Option or null. For multi-select, it's an array of Options.                                           |
-| class             | string                                            | ''                      | Custom CSS class name for additional styling.                                                                                                                                                    |
+| value             | <code>Option &#124; Option[] &#124; null</code>                       | null                    | Represents the current value of the select. For single-select (maxSelect=1), it's a single Option or null. For multi-select, it's an array of Options.                                           |
+| class             | string                                                                | ''                      | Custom CSS class name for additional styling.                                                                                                                                                    |
 
 ## Slots
 
@@ -228,23 +230,23 @@ You can start with no options and let users populate MultiSelect from scratch. I
 
 ## Events
 
--	`on:open`
--	`on:close`
--	`on:create`
--	`on:add`
--	`on:remove`
--	`on:removeAll`
--	`on:change`
--	`on:blur`
--	`on:change`
--	`on:click`
--	`on:focus`
--	`on:keydown`
--	`on:keyup`
--	`on:mousedown`
--	`on:mouseenter`
--	`on:mouseleave`
--	`on:touchcancel`
--	`on:touchend`
--	`on:touchmove`
--	`on:touchstart`
+- `on:open`
+- `on:close`
+- `on:create`
+- `on:add`
+- `on:remove`
+- `on:removeAll`
+- `on:change`
+- `on:blur`
+- `on:change`
+- `on:click`
+- `on:focus`
+- `on:keydown`
+- `on:keyup`
+- `on:mousedown`
+- `on:mouseenter`
+- `on:mouseleave`
+- `on:touchcancel`
+- `on:touchend`
+- `on:touchmove`
+- `on:touchstart`

@@ -47,7 +47,9 @@ Icon buttons support the same variants as [Button](/components/button).
 <IconButton variant="tertiary"><Icon icon={IconEdit} /></IconButton>
 <IconButton variant="ghost"><Icon icon={IconEdit} /></IconButton>
 <IconButton variant="danger"><Icon icon={IconEdit} color="--db-color-text-ondanger" /></IconButton>
-<IconButton variant="danger-secondary"><Icon icon={IconEdit} color="--db-color-text-danger" /></IconButton>
+<IconButton variant="danger-secondary"
+	><Icon icon={IconEdit} color="--db-color-text-danger" /></IconButton
+>
 ```
 
 ## Disabled state
@@ -67,14 +69,14 @@ Icon buttons support the same variants as [Button](/components/button).
 
 ## Props
 
-| Prop            | Type                                                                                | Default   | Description                                                    |
-| --------------- | ----------------------------------------------------------------------------------- | --------- | -------------------------------------------------------------- |
-| `variant`       | <code>'primary' &#124; 'secondary' &#124; 'tertiary' &#124; 'ghost' &#124; 'danger' &#124; 'danger-secondary'</code> | 'primary' | Visual style of the button.                                    |
-| `disabled`      | boolean                                                                              | false     | Disables the button.                                           |
-| `href`          | string                                                                               | undefined | If set, the button renders as a link.                          |
-| `tabindex`      | number                                                                               | 0         | Tab order of the button.                                       |
-| `popovertarget` | string                                                                               | undefined | ID of the popover element the button controls.                 |
-| `class`         | string                                                                               | undefined | Custom CSS class name for additional styling.                  |
+| Prop            | Type                                                                                                                 | Default   | Description                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------- |
+| `variant`       | <code>'primary' &#124; 'secondary' &#124; 'tertiary' &#124; 'ghost' &#124; 'danger' &#124; 'danger-secondary'</code> | 'primary' | Visual style of the button.                    |
+| `disabled`      | boolean                                                                                                              | false     | Disables the button.                           |
+| `href`          | string                                                                                                               | undefined | If set, the button renders as a link.          |
+| `tabindex`      | number                                                                                                               | 0         | Tab order of the button.                       |
+| `popovertarget` | string                                                                                                               | undefined | ID of the popover element the button controls. |
+| `class`         | string                                                                                                               | undefined | Custom CSS class name for additional styling.  |
 
 ## Events
 
