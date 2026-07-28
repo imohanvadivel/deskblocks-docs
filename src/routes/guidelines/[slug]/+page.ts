@@ -1,9 +1,16 @@
+import { error } from '@sveltejs/kit';
+
 export async function load({ params }) {
-	const post = await import(`../${params.slug}.md`);
-	const content = post.default;
+	let post;
+	try {
+		post = await import(`../${params.slug}.md`);
+	} catch {
+		// Mirrors components/[slug]: a missing .md is a 404, not a 500.
+		throw error(404, `No guideline page for "${params.slug}".`);
+	}
 
 	return {
-		content,
+		content: post.default,
 		...post.metadata
 	};
 }
