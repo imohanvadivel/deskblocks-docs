@@ -2,6 +2,7 @@
 	"name": "deskblocks-docs",
 	"version": "0.0.1",
 	"private": false,
+	"packageManager": "pnpm@11.10.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -47,6 +48,6 @@
 	"type": "module",
 	"dependencies": {
 		"algoliasearch": "^5.56.0",
-		"deskblocks": "link:../deskblocks"
+		"deskblocks": "^0.4.0"
 	}
 }
