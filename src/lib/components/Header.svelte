@@ -10,11 +10,12 @@
 	import SearchModal from '$lib/components/SearchModal.svelte';
 	import { searchConfigured, warnIfUnconfigured } from '$lib/search/config.js';
 
-	/* The `deskblocks` version shown in the header badge. The library now exposes
-	 * `./package.json` in its exports map, but Vite still fails to resolve the
-	 * specifier through the local source symlink, so keep this literal in sync
-	 * with the library on every release. */
-	const version = `0.3.0`;
+	/* The `deskblocks` version shown in the header badge, read from the library's
+	 * own package.json via its exports map. This used to be a hand-synced literal
+	 * because Vite could not resolve the specifier through the local source
+	 * symlink — the docs now depend on the published package, so it resolves, and
+	 * the badge can no longer drift from the installed version. */
+	import { version } from 'deskblocks/package.json';
 
 	let searchOpen = false;
 	let searchInput: HTMLInputElement;
