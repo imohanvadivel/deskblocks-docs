@@ -1,10 +1,11 @@
 ---
 title: Select
 dir: components
+category: Forms
 description: Select dropdowns allow users to pick one or multiple choices from a predefined list, create custom tags, and more.
 slug: select
 url: /components/select
-index: 11
+index: 3
 ---
 
 # Select

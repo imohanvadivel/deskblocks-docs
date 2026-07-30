@@ -1,10 +1,11 @@
 ---
 title: Radio
 dir: components
+category: Forms
 description: A radio button lets users select a single option from a set, ensuring that only one choice is possible.
 slug: radio
 url: /components/radio
-index: 10
+index: 5
 ---
 
 <script>

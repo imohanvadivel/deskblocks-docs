@@ -1,10 +1,11 @@
 ---
 title: Visually Hidden
 dir: components
+category: Utilities
 description: The visually hidden component hides content from sighted users while keeping it accessible to screen readers, ensuring inclusivity.
 slug: visually-hidden
 url: /components/visually-hidden
-index: 20
+index: 2
 ---
 
 <script>

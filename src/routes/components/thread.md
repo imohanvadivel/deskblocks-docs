@@ -1,10 +1,11 @@
 ---
 title: Thread
 dir: components
+category: Data Display
 description: Thread presents messages and comments as a readable conversation with sender and timing details.
 slug: thread
 url: /components/thread
-index: 32
+index: 7
 ---
 
 <script>

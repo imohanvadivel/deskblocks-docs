@@ -1,10 +1,11 @@
 ---
 title: Date Input
 dir: components
+category: Forms
 description: A date input allows users to enter or select a specific date using a calendar or predefined format.
 slug: date-input
 url: /components/date-input
-index: 6
+index: 8
 ---
 
 # Date Input

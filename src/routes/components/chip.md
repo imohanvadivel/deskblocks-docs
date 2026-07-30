@@ -1,10 +1,11 @@
 ---
 title: Chip
 dir: components
+category: Data Display
 description: A chip displays a compact element, often representing an entity, tag, or a piece of information.
 slug: chip
 url: /components/chip
-index: 13
+index: 11
 ---
 
 <script>

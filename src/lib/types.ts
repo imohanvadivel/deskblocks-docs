@@ -5,6 +5,9 @@ export type Meta = {
 	description: string;
 	url: string;
 	index?: number;
+	/** Sidebar grouping for components; `index` then orders within the group.
+	 *  Optional because only pages under components/ carry one. */
+	category?: string;
 };
 
 export type NavHeader = {

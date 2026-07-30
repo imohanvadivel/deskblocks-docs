@@ -1,10 +1,11 @@
 ---
 title: Property Grid
 dir: components
+category: Data Display
 description: Property Grid presents read-only record details as clear label and value pairs.
 slug: property-grid
 url: /components/property-grid
-index: 27
+index: 5
 ---
 
 <script>

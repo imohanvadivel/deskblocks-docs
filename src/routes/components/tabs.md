@@ -1,10 +1,11 @@
 ---
 title: Tabs
 dir: components
+category: Navigation
 description: A tabs component organizes content into multiple sections, allowing users to switch between different views or groups of content within the same space.
 slug: tabs
 url: /components/tabs
-index: 13.5
+index: 1
 ---
 
 <script>

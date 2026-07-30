@@ -1,10 +1,11 @@
 ---
 title: Text
 dir: components
+category: Typography & Media
 description: The Text component defines typography styles for text elements, ensuring consistent and readable text throughout the interface.
 slug: text
 url: /components/text
-index: 15
+index: 1
 ---
 
 <script>

@@ -1,10 +1,11 @@
 ---
 title: Number Input
 dir: components
+category: Forms
 description: A number input allows users to enter numeric values, providing controls like step increment, validation and range limits.
 slug: number-input
 url: /components/number-input
-index: 4
+index: 7
 ---
 
 # Number Input

@@ -1,10 +1,11 @@
 ---
 title: Table
 dir: components
+category: Data Display
 description: Table organizes structured data into aligned columns with optional sorting, badges and row actions.
 slug: table
 url: /components/table
-index: 26
+index: 1
 ---
 
 <script>

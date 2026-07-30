@@ -1,10 +1,11 @@
 ---
 title: Icon
 dir: components
+category: Typography & Media
 description: An icon is a small graphical element that represents actions, objects, or concepts, adding visual clarity to the interface.
 slug: icon
 url: /components/icon
-index: 14
+index: 2
 ---
 
 <script>

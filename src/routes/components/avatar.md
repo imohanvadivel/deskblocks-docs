@@ -1,10 +1,11 @@
 ---
 title: Avatar
 dir: components
+category: Typography & Media
 description: An avatar displays a user’s profile picture or a representative image, often used to visually identify or represent a user.
 slug: avatar
 url: /components/avatar
-index: 17
+index: 3
 ---
 
 <script>

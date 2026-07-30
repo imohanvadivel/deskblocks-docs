@@ -1,6 +1,7 @@
 ---
 title: Button
 dir: components
+category: Actions
 description: A button allows users to trigger an action or event, such as submitting a form, triggering a process or navigating users within an extension.
 slug: button
 url: /components/button

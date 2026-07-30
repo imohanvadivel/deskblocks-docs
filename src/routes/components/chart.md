@@ -1,10 +1,11 @@
 ---
 title: Chart
 dir: components
+category: Data Display
 description: Chart visualizes data in various chart types.
 slug: chart
 url: /components/chart
-index: 30
+index: 4
 ---
 
 <script>

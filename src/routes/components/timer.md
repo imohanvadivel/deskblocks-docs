@@ -1,10 +1,11 @@
 ---
 title: Timer
 dir: components
+category: Data Display
 description: Timer counts down to a deadline, then shows the overdue duration in the danger color.
 slug: timer
 url: /components/timer
-index: 31
+index: 9
 ---
 
 <script>

@@ -1,10 +1,11 @@
 ---
 title: Textarea
 dir: components
+category: Forms
 description: A textarea provides a larger input field for users to enter multi-line text.
 slug: textarea
 url: /components/textarea
-index: 8
+index: 2
 ---
 
 <script>

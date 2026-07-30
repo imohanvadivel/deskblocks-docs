@@ -1,10 +1,11 @@
 ---
 title: Form Label
 dir: components
+category: Forms
 description: A form label provides a clear and accessible name for form inputs, helping users understand the purpose of each field.
 slug: form-label
 url: /components/form-label
-index: 2
+index: 11
 ---
 
 <script>

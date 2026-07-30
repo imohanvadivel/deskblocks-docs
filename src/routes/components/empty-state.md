@@ -1,10 +1,11 @@
 ---
 title: Empty State
 dir: components
+category: Feedback
 description: Empty State explains why a region has no content and can offer a clear next step.
 slug: empty-state
 url: /components/empty-state
-index: 28
+index: 4
 ---
 
 <script>

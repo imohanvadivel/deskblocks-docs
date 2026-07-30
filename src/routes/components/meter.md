@@ -1,10 +1,11 @@
 ---
 title: Meter
 dir: components
+category: Data Display
 description: Meter shows how much of a known range has been used.
 slug: meter
 url: /components/meter
-index: 29
+index: 8
 ---
 
 <script>

@@ -1,10 +1,11 @@
 ---
 title: Timeline
 dir: components
+category: Data Display
 description: Timeline presents a chronological stream of events grouped by day.
 slug: timeline
 url: /components/timeline
-index: 24
+index: 6
 ---
 
 <script>

@@ -1,10 +1,11 @@
 ---
 title: Portal
 dir: components
+category: Utilities
 description: A portal renders its children into a different part of the DOM, such as document.body. Reach for it when an overlay, dropdown or toast needs to escape a clipping or stacking context.
 slug: portal
 url: /components/portal
-index: 21
+index: 1
 ---
 
 <script>

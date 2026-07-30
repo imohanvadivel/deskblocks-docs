@@ -1,10 +1,11 @@
 ---
 title: Form Help Msg
 dir: components
+category: Forms
 description: A form help message displays supporting text below a form field, such as hints, validation errors, or additional context.
 slug: form-help-msg
 url: /components/form-help-msg
-index: 2.5
+index: 12
 ---
 
 <script>

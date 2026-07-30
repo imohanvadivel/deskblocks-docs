@@ -1,10 +1,11 @@
 ---
 title: Tooltip
 dir: components
+category: Feedback
 description: A tooltip displays a brief, informative message when users hover over or focus on an element, providing additional context or guidance.
 slug: tooltip
 url: /components/tooltip
-index: 19
+index: 3
 ---
 
 <script>

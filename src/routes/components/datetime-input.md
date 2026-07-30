@@ -1,10 +1,11 @@
 ---
 title: Datetime Input
 dir: components
+category: Forms
 description: A datetime input allows users to enter or select both date and time values in a single field, combining calendar and time controls for more precise timestamps.
 slug: datetime-input
 url: /components/datetime-input
-index: 7
+index: 10
 ---
 
 # Datetime Input

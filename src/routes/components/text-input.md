@@ -1,10 +1,11 @@
 ---
 title: Text Input
 dir: components
+category: Forms
 description: A text input allows users to enter freeform text.
 slug: text-input
 url: /components/text-input
-index: 3
+index: 1
 ---
 
 <script>

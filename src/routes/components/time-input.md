@@ -1,10 +1,11 @@
 ---
 title: Time Input
 dir: components
+category: Forms
 description: A time input allows users to enter or select a specific time, providing controls for hours and minutes.
 slug: time-input
 url: /components/time-input
-index: 5
+index: 9
 ---
 
 # Time Input

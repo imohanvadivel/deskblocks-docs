@@ -1,10 +1,11 @@
 ---
 title: Link
 dir: components
+category: Navigation
 description: A link navigates users to another page or resource.
 slug: link
 url: /components/link
-index: 16
+index: 2
 ---
 
 <script>

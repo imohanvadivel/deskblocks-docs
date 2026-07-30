@@ -1,10 +1,11 @@
 ---
 title: List
 dir: components
+category: Data Display
 description: List presents related records as responsive rows with supporting details and status indicators.
 slug: list
 url: /components/list
-index: 25
+index: 2
 ---
 
 <script>

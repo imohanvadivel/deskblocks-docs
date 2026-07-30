@@ -1,10 +1,11 @@
 ---
 title: Checkbox
 dir: components
+category: Forms
 description: A checkbox allows users to select one or more options from a set.
 slug: checkbox
 url: /components/checkbox
-index: 9
+index: 4
 ---
 
 <script>

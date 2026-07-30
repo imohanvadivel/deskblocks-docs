@@ -1,10 +1,11 @@
 ---
 title: Breadcrumb
 dir: components
+category: Navigation
 description: A breadcrumb trail showing the path to the current page, with clickable ancestors for navigating back up.
 slug: breadcrumb
 url: /components/breadcrumb
-index: 33
+index: 3
 ---
 
 <script>

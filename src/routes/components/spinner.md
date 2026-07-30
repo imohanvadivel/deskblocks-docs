@@ -1,10 +1,11 @@
 ---
 title: Spinner
 dir: components
+category: Feedback
 description: A spinner indicates ongoing activity, such as loading or processing, providing users with immediate visual feedback.
 slug: spinner
 url: /components/spinner
-index: 18
+index: 2
 ---
 
 # Spinner

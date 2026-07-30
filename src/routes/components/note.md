@@ -1,10 +1,11 @@
 ---
 title: Note
 dir: components
+category: Feedback
 description: Note highlights contextual information, confirmations and warnings within a page.
 slug: note
 url: /components/note
-index: 22
+index: 1
 ---
 
 <script>

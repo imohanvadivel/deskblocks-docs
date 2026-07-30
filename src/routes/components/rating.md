@@ -1,10 +1,11 @@
 ---
 title: Rating
 dir: components
+category: Data Display
 description: Rating presents a read-only score as stars, a thumbs-up count or an upvote count.
 slug: rating
 url: /components/rating
-index: 34
+index: 12
 ---
 
 <script>

@@ -1,10 +1,11 @@
 ---
 title: Icon Button
 dir: components
+category: Actions
 description: An icon button is a compact, square button that contains only an icon, used for common actions where an icon alone communicates the intent.
 slug: icon-button
 url: /components/icon-button
-index: 1.5
+index: 2
 ---
 
 <script>

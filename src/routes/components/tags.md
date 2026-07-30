@@ -1,10 +1,11 @@
 ---
 title: Tags
 dir: components
+category: Data Display
 description: Tags displays a wrapping group of compact labels with an optional semantic tone.
 slug: tags
 url: /components/tags
-index: 35
+index: 10
 ---
 
 <script>

@@ -1,10 +1,11 @@
 ---
 title: Stat
 dir: components
+category: Data Display
 description: Stat presents a key metric in a compact card with an optional trend and supporting caption.
 slug: stat
 url: /components/stat
-index: 23
+index: 3
 ---
 
 <script>
