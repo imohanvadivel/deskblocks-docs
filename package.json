@@ -48,6 +48,6 @@
 	"type": "module",
 	"dependencies": {
 		"algoliasearch": "^5.56.0",
-		"deskblocks": "^0.4.0"
+		"deskblocks": "^0.5.0"
 	}
 }
