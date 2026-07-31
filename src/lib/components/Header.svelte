@@ -79,6 +79,7 @@
 	</div>
 
 	<div class="global-search">
+		<span class="global-search-icon" aria-hidden="true">{@html SearchIcon}</span>
 		<input
 			class="global-search-input"
 			type="search"
@@ -266,7 +267,8 @@
 		border: 1px solid var(--color-border);
 		border-radius: 4px;
 		height: 2rem;
-		text-indent: 1rem;
+		/* Room for the search icon on the left. */
+		text-indent: 1.875rem;
 		/* Room for the ⌘K hint. */
 		padding-right: 3.25rem;
 		font-family: var(--docs-sans);
@@ -292,6 +294,22 @@
 
 	.global-search-input::placeholder {
 		color: var(--color-text-secondary);
+	}
+
+	.global-search-icon {
+		position: absolute;
+		left: 0.5rem;
+		display: flex;
+		align-items: center;
+		pointer-events: none;
+		color: var(--color-text-secondary);
+	}
+	/* Search.svg hardcodes an inline `style="width: 1.5rem"`, which no class can
+	   outrank — hence !important. 1.5rem is sized for the modal's taller field and
+	   overwhelms this 2rem-tall input. */
+	.global-search-icon :global(svg) {
+		width: 1rem !important;
+		height: 1rem !important;
 	}
 
 	.global-search-hint {

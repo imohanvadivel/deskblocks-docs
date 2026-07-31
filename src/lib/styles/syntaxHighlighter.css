@@ -48,6 +48,15 @@ pre[class*='language-'] {
 	border: 1px solid var(--color-border);
 	border-radius: 6px;
 }
+/* ...but an example's code block is already inside ExampleWrapper's bordered
+   `section`, separated from the preview by a border-top. Letting the rule above
+   reach it draws a second, rounded box inside the first, so every example on the
+   site rendered as a box within a box. The border belongs only to standalone
+   fenced blocks. */
+.example-wrapper pre[class*='language-'] {
+	border: 0;
+	border-radius: 0;
+}
 :not(pre) > code[class*='language-'] {
 	padding: 0.1em 0.3em;
 	border-radius: 0.3em;
